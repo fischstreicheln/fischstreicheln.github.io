@@ -1,0 +1,36 @@
+# Check whether you have Ruby 2.1.0 or higher installed:
+ruby --version
+- Success
+
+# Install Bundler:
+gem install bundler
+- Success
+
+# Create an empty folder for your blog and create git repo inside:
+git init
+- Success, Initialized empty Git repository in ***/.git/
+
+# (In mainland China) Update gem sources
+gem sources add 'https://gems.ruby-china.org/' remove 'https://rubygems.org'
+- Success, check source with gem sources command
+
+# Check whether you have Gemfile in the root directory, create one if not:
+source 'https://rubygems.org'
+(replace source in mainland China) source 'https://gems.ruby-china.org/'
+gem 'github-pages', group: :jekyll_plugins
+- Success
+
+# Install Jekyll and other dependencies from the GitHub Pages gem:
+bundle install
+- Failed, An error occurred while installing commonmarker (0.17.9), and Bundler cannot continue. Make sure that `gem install commonmarker -v '0.17.9'` succeeds before bundling.
+
+# Try gem install commonmarker command:
+- Failed, Error installing commonmarker: ERROR: Failed to build gem native extension.
+
+# It seems needed to install ruby-dev in advanced:
+sudo apt-get install ruby-dev
+- Success
+
+# Try bundle install Jekyll and dependencies again:
+bundle install
+- Success,

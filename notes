@@ -33,4 +33,42 @@ sudo apt-get install ruby-dev
 
 # Try bundle install Jekyll and dependencies again:
 bundle install
-- Success,
+- Success
+
+# Create site files locally, or fork from github:
+jekyll new Site-Folder-Name
+- This would create a new folder, or using 'jekyll new . --force' command in the existing non-empty Folder
+
+# Edit your Gemfile and remove the following line: "jekyll", "3.3.0"
+# delete the # at the beginning of this line: gem "github-pages", group: :jekyll_plugins
+
+# Keeping your site up to date with the GitHub Pages gem:
+bundle update
+- Success
+
+# Run and preview local site:
+bundle exec jekyll serve
+- Success, prewiew on http://localhost:4000/
+
+# Push the work to github repo:
+git remote add origin https://github.com/sleepyjason/sleepyjason.github.io.git
+git add .
+git commit -m "initial commit"
+git push -u origin master
+
+# Fork a desirable theme repo to your github account
+# Usually, the theme repo has 2 branches, master and gh-pages
+# Delete the gp-pages branch and recreate a new gh-pages branch and make it default
+
+
+
+
+
+
+
+
+
+
+# Configuring Jekylling with _config.yml - Theme setting
+To activate one of the officially supported themes, type theme: followed by the name
+To activate any other open source Jekyll theme hosted on GitHub, type remote_theme: followed by the name

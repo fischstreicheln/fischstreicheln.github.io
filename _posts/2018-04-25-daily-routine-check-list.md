@@ -2,50 +2,32 @@
 layout: post
 title:  "Daily Routine Check List Template"
 date:   2018-04-25 21:30:00 +0800
+mathjax: true
 ---
 
-| [ ] | Sun | Mon | Tue | Wed | Thu | Fri | Sat |
-| [ ] | Weekend | Workday | Workday | Workday | Workday | Workday | Weekend |
-| [ ] | - [ ] ABC | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
-| [ ] | --- | --- | --- | --- | --- | --- | --- |
-| [ ] | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
-| [ ] | --- | --- | --- | --- | --- | --- | --- |
-| [ ] | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
-| [ ] | --- | --- | --- | --- | --- | --- | --- |
-| [ ] | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
+## Weekdays
+### Plan 01
+- [ ] 07:00 Get up
+- [ ] 07:00-07:45 Yoga/Meditation
+- [ ] 07:45-08:30 Breakfast/Brain Train
+- [ ] 08:30-09:30 Commute/Deustch
+- [ ] 09:30-10:00 Finance Track
+- [ ] 10:00-11:30 **Work Project**
+- [ ] 11:30-12:00 Filing
+- [ ] 12:00-13:00 Lunch/restart
+- [ ] 13:00-13:30 **HR Course**
+- [ ] 13:30-14:00 Meditation/Rest
+- [ ] 14:00-15:00 **Work Project**
+- [ ] 15:00-16:30 **Work Project**
+- [ ] 16:30-17:00 Procedure
+- [ ] 17:00-18:00 Commute/Deustch
+- [ ] 18:00-23:00 Dinner/**3 hrs DS Course**
+- [ ] 23:00 Sleep
 
 
-- [ ] dffd
+Test for math equation: (in line) $$ X = AB $$
 
-
-
-$$ X = AB $$
-
-
-
-
-
-
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
-
-To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
-
-- [ ] First todo item.
-- [x] Write a blog for adding github checkbox feature.
-
-
-Jekyll also offers powerful support for code snippets:
-
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
-
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
-
-[jekyll-docs]: https://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
+$$
+(math box)
+X = AB
+$$

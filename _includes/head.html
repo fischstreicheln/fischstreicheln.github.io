@@ -8,7 +8,7 @@
   title, description, keywords, url, baseurl,
   author-img(for the name of iamge file and stored in assets/img/)
   # Page settings:
-  title, description, keywords, date, categories, tags, mathjax,
+  title, description, keywords, date, categories, tags, mathjax, seq-diagram, mermaid,
   img(for the name of iamge file and stored in assets/img/)
 -->
 <head>
@@ -83,13 +83,25 @@
   </script>
   {% endif %}
 
+  {% if page.seq-diagram %}
+  <script src="{{ site.baseurl }}/assets/js/webfont.js"></script>
+  <script src="{{ site.baseurl }}/assets/js/snap.svg-min.js"></script>
+  <script src="{{ site.baseurl }}/assets/js/underscore-min.js"></script>
+  <script src="{{ site.baseurl }}/assets/js/sequence-diagram-min.js"></script>
+  {% endif %}
+
+  {% if page.mermaid %}
+  <script src="/assets/js/mermaid.min.js"></script>
+  {% endif %}
+
   <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
 
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+
   <!--[if lte IE 8]><script src="assets/js/html5shiv.js"></script><![endif]-->
-  <script src="{{ site.baseurl }}/assets/js/jquery.min.js"></script>
-  <script src="{{ site.baseurl }}/assets/js/skel.min.js"></script>
+  <!-- <script src="{{ site.baseurl }}/assets/js/skel.min.js"></script>
   <script src="{{ site.baseurl }}/assets/js/skel-layers.min.js"></script>
-  <script src="{{ site.baseurl }}/assets/js/init.js"></script>
+  <script src="{{ site.baseurl }}/assets/js/init.js"></script> -->
   <!-- <noscript>
       <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/skel.css" />
       <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css" />

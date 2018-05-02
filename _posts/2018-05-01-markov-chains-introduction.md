@@ -5,17 +5,28 @@ date:   2018-05-01 15:04:00 +0800
 mathjax: true
 mermaid: true
 ---
-texxt [^2][^3]
+> Note[^1]
+
+# Markov Property
+
+**Markov** property, i.e. **Memoryless** property, states that the future evolution of
+the process depends **only** on its **current** state.
+
+# Stochastic Process
+
+$$ \{X(t), t\in T\} $$ THe
+
+<div class="mermaid">
+graph TD;
+    A[Stochastic Process]-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+</div>
+
+
 
 
 ***
 
 [^1]: This is a brief study note of Markov Chains. Main reference as listed below:
-[^2]:{% assign bibref = site.data.bib._0misc__WKEN_Chi-squared_test_ %}{% include show_ref.html %}
-[^3]: {% assign bibref = site.data.bib._0misc__WKEN_Chi-squared_test_ %}{% include show_ref.html %}
-[^4]: adjflkein
-
-[author]: # "author"
-[title]: # "title"
-[year]: # "year"
-[publisher]: # "publisher"

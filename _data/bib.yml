@@ -1,24 +1,11 @@
-#//#Substitution (bibtex -> yml)
-#//# Comments - //# -> #//#
-#//# @ -> _0
-#//# _, -> _:
-#//#  = { -> : "
-#//# }, -> ,"
-#//# }} -> ."
-#//# { -> __
-
-#//#Substitution (yml -> bibtex)
-#//# Comments - #//# -> //#
-#//# _0 -> @
-#//# _: -> _,
-#//# : " ->  = {
-#//# ," -> },
-#//# ." -> }}
-#//# __ -> {
+#//# Put your bibliography here!
+#//# If you have a bibtex file, you can transform into yml by simple substitution.
+#//# Show bibliography in post using liquid templates:
+#//# {% include bib_single.html idx = "your-bib-yml-index" %}
 
 #//#ARTICLE####################################################################
 
-_0article__ATC_Cochran1952_:
+_bib_article__ATC_Cochran1952_:
   author: "William G. Cochran,"
   title: "The chi-squared Test of Goodness of Fit,"
   journal: "The Annals of Mathematical Statistics,"
@@ -26,7 +13,7 @@ _0article__ATC_Cochran1952_:
   year: "1952,"
   pages: "315-345."
 
-_0article__ATC_Pearson1893_:
+_bib_article__ATC_Pearson1893_:
   author: "Karl Pearson,"
   title: "Contributions to the mathematical theory of evolution [abstract],"
   journal: "Proceedings of the Royal Society,"
@@ -35,7 +22,7 @@ _0article__ATC_Pearson1893_:
   pages: "329-333,"
   note: "JSTOR:115538, doi:10.1098/rspl.1893.0079."
 
-_0article__ATC_Pearson1895_:
+_bib_article__ATC_Pearson1895_:
   author: "Karl Pearson,"
   title: "Contributions to the mathematical theory of evolution, II: Skew variation in homogeneous material,"
   journal: "Philosophical Transactions of the Royal Society,"
@@ -44,7 +31,7 @@ _0article__ATC_Pearson1895_:
   pages: "343-414,"
   note: "Bibcode:1895RSPTA.186..343P, JSTOR:90649, doi:10.1098/rsta.1895.0010."
 
-_0article__ATC_Pearson1900_:
+_bib_article__ATC_Pearson1900_:
   author: "Karl Pearson,"
   title: "On the criterion that a given system of deviations from the probable in the case of a correlated system of variables is such that it can be reasonably supposed to have arisen from random sampling,"
   journal: "Philosophical Magazine Series 5,"
@@ -54,7 +41,7 @@ _0article__ATC_Pearson1900_:
   howpublished: "http://www.economics.soton.ac.uk/staff/aldrich/1900.pdf,"
   note: "doi:10.1080/14786440009463897."
 
-_0article__ATC_Pearson1901_:
+_bib_article__ATC_Pearson1901_:
   author: "Karl Pearson,"
   title: "Mathematical contributions to the theory of evolution, X: Supplement to a memoir on skew variation,"
   journal: "Philosophical Transactions of the Royal Society A,"
@@ -63,7 +50,7 @@ _0article__ATC_Pearson1901_:
   pages: "443-459,"
   note: "Bibcode:1901RSPTA.197..443P, JSTOR:90841, doi:10.1098/rsta.1901.0023."
 
-_0article__ATC_Pearson1916_:
+_bib_article__ATC_Pearson1916_:
   author: "Karl Pearson,"
   title: "Mathematical contributions to the theory of evolution, XIX: Second supplement to a memoir on skew variation,"
   journal: "Philosophical Transactions of the Royal Society A,"
@@ -72,7 +59,7 @@ _0article__ATC_Pearson1916_:
   pages: "429-457,"
   note: "Bibcode:1916RSPTA.216..429P, JSTOR:91092, doi:10.1098/rsta.1916.0009."
 
-_0article__ATC_Fisher1922_:
+_bib_article__ATC_Fisher1922_:
  author: "Ronald A. Fisher,"
  title: "On the Interpretation of chi-squared from Contingency Tables, and the Calculation of P,"
  journal: "Journal of the Royal Statistical Society,"
@@ -81,7 +68,7 @@ _0article__ATC_Fisher1922_:
  pages: "87-94,"
  note: "JSTOR:2340521."
 
-_0article__ATC_Fisher1924_:
+_bib_article__ATC_Fisher1924_:
  author: "Ronald A. Fisher,"
  title: "The Conditions Under Which chi-squared Measures the Discrepancey Between Observation and Hypothesis,"
  journal: "Journal of the Royal Statistical Society,"
@@ -92,35 +79,35 @@ _0article__ATC_Fisher1924_:
 
 #//#BOOK#######################################################################
 
-_0book__BK_CHANXiRu2009_:
-  author: {"陈希孺,","https://zh.wikipedia.org/wiki/%E9%99%88%E5%B8%8C%E5%AD%BA,"}
+_bib_book__BK_CHANXiRu2009_:
+  author: "陈希孺,"
   title: "概率论与数理统计,"
   year: "2009,"
   publisher: "中国科学技术大学出版社."
 
 #//#BOOK(UNPUBLISHED)##########################################################
 
-_0unpublished__Unpub_Boyd2017_:
+_bib_unpublished__Unpub_Boyd2017_:
   author: "Stephen Boyd, Lieven Vandenberghe,"
   title: "Introduction to Applied Linear Algebra – Vectors, Matrices, and Least Squares,"
   note: "A draft version posted on https://web.stanford.edu/~boyd/vmls/vmls.pdf, scheduled to be published in 2018."
 
 #//#LECTURE####################################################################
 
-_0misc__LEC_Standford_MatrixMethod_:
+_bib_misc__LEC_Standford_MatrixMethod_:
   title: "Lecture: Introduction to Matrix Methods,"
   howpublished: "http://stanford.edu/class/ee103/lectures.html."
 
-_0misc__LEC_Standford_LinearDynamicalSystem_:
+_bib_misc__LEC_Standford_LinearDynamicalSystem_:
   title: "Lecture: Introduction to Linear Dynamical Systems,"
   howpublished: "http://ee263.stanford.edu/lectures.html."
 
 #//#WEB########################################################################
 
-_0misc__WKEN_Chi-squared_test_:
+_bib_misc__WKEN_Chi-squared_test_:
   title: "Wikipedia-EN: Chi-squared test,"
   howpublished: "https://en.wikipedia.org/wiki/Chi-squared\_test."
 
-_0misc__WKEN_VectorSpace_:
+_bib_misc__WKEN_VectorSpace_:
   title: "Wikipedia-EN: Vector Space,"
   howpublished: "https://en.wikipedia.org/wiki/Vector\_space."

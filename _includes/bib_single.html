@@ -1,0 +1,1 @@
+{% for ref_entry in site.data.bib[include.idx] %}{% if ref_entry[0] == "howpublished" %}<a href="{{ ref_entry[1] }}">Link. </a>{% else %}{{ ref_entry[1] }} {% endif %}{% endfor %}

@@ -72,3 +72,8 @@ git push -u origin master
 # Configuring Jekylling with _config.yml - Theme setting
 To activate one of the officially supported themes, type theme: followed by the name
 To activate any other open source Jekyll theme hosted on GitHub, type remote_theme: followed by the name
+
+
+
+
+gem jekyll

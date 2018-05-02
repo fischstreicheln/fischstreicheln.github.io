@@ -1,6 +1,23 @@
-# Check whether you have Ruby 2.1.0 or higher installed:
+---
+layout: post
+title:  "Jekyll Steup Notes"
+date:   2018-04-26 22:30:00 +0800
+---
+
+# Praperation
+## Ruby
+Check whether Ruby 2.1.0 or higher is installed:
+```
 ruby --version
-- Success
+```
+If not, try this in ubuntu
+```
+apt-get upgrade ruby
+```
+or this in Mac OS
+```
+brew upgrade ruby
+```
 
 # Install Bundler:
 gem install bundler

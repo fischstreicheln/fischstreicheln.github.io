@@ -38,3 +38,6 @@ $ which -a ruby
 /usr/local/bin/ruby
 ```
 Homebrews would always take precedence ```/usr/local/bin```.
+
+# homebrews should always take precedence
+export PATH=/usr/local/bin:$PATH

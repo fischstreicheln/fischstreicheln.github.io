@@ -6,7 +6,6 @@ mathjax: true
 mermaid: true
 post-toc: true
 ---
-
 ## Stochastic Process
 ### Definition
 * **Stochastic Process** can be defined as a family of random variables
@@ -22,12 +21,37 @@ forms the **state space** of the stochastic process.
 graph LR;
     A(Stochastic Process)-->B(state space);
     A-->C(parameter space);
-    B-->D(discrete states, which is referred to as a chain);
+    B-->D(discrete states, i.e. <b>chain</b>);
     B-->E(continuous states);
     C-->F(discrete parameters);
     C-->G(continuous parameters);
 </div>
-For instance, we could deal with
+* For instance, we could deal with the stochastic process of **discrete state space**
+where states are usually identified with a subset of the set of natural numbers
+$$\{0,1,2,...\}$$. This stochastic process is referred to as a **Chain**.  
+* If the stochastic process is of **discrete parameter space**, we could call it
+**discrete parameter** stochastic process or **discrete-time** stochastic process.
+* **Markov Process** is a special type of stochastic process. If the states space
+is discrete, then it is a **Markov Chain**. Hence, there are discrete-time Markov
+Chain and continuous-time Markov Chain with regards to different type of parameter
+space.
+
+#### Time Dependency of Evolution
+<div class="mermaid">
+graph LR;
+    A(Stochastic Process)-->B(initial time);
+    A-->C(elapsed time);
+    B--depending-->D(non-stationary);
+    B--not depending-->E(stationary);
+    C--depending-->F(non-homogeneous);
+    C--not-depending-->G(homogeneous);
+</div>
+* A **stationary** stochastic process is invariant under an arbitrary shift of
+time origin, i.e. mathematically $$\forall \alpha, \forall n, t_i, x_i$$(with
+$$i = 1,2,...,n$$),
+
+$$P(X(t_1)<x_1,X(t_2)<x_2,...,X(t_n)<x_n) \\
+= P(X(t_1+\alpha )<x_1,X(t_2+\alpha )<x_2,...,X(t_n+\alpha )<x_n)$$
 
 ## Markov Property
 *
@@ -41,4 +65,4 @@ the process depends **only** on its **current** state.
 > This is a brief study note of Markov Chains. Main reference as listed below:[^1]
 
 ***
-[^1]: This is a brief study note of Markov Chains. Main reference as listed below:
+[^1]: {% include bib_single.html idx = "_bib_book__BK_Stewart2009_" %}

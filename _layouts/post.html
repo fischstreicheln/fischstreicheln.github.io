@@ -4,10 +4,11 @@ layout: default
 <style>
   .toc-div{
     float: right;
+    max-width:300px;
     border: 1px dotted #CCCCCC;
     background-color: #EFF5FF;
     margin: 10px;
-    padding:5px 10px 0px 5px;
+    padding:10px 10px 0px 5px;
   }
 </style>
 
@@ -28,7 +29,7 @@ layout: default
   <div class="post-content e-content" itemprop="articleBody">
     {% if page.post-toc %}
       <div class="toc-div">
-        <p style="text-align:center; font-weight:bold; margin-bottom: 0;">Contents
+        <p style="text-align:center; font-weight:bold; margin: 0;">Contents
         {% include toc.html html=content h_max=4%}
       </div>
     {% endif %}

@@ -85,6 +85,13 @@ _bib_book__BK_CHANXiRu2009_:
   year: "2009,"
   publisher: "中国科学技术大学出版社."
 
+_bib_book__BK_Stewart2009_:
+  author: "William J. Stewart,"
+  title: "Probability, Markov Chains, Queues, and Simulation(The Mathematical Basis of Performance Modeling),"
+  year: "2009,"
+  publisher: "Princeton University Press,"
+  howpublished: "https://press.princeton.edu/titles/8844.html."
+
 #//#BOOK(UNPUBLISHED)##########################################################
 
 _bib_unpublished__Unpub_Boyd2017_:

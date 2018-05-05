@@ -74,3 +74,21 @@ or use jQuery to do all the work:
 <script>
 $(".diagram").sequenceDiagram({theme: 'hand'});
 </script>
+
+![Alt text](https://g.gravizo.com/svg?
+  digraph G {
+    aize ="4,4";
+    mainly [shape=box];
+    mainly -> parse [weight=80];
+    parse -> execute;
+    mainly -> init [style=dotted];
+    mainly -> cleanup;
+    execute -> { make_string; printf}
+    init -> make_string;
+    edge [color=red];
+    mainly -> printf [style=bold,label="100 times"];
+    make_string [label="make a string"];
+    node [shape=box,style=filled,color=".7 .3 1.0"];
+    execute -> compare;
+  }
+)

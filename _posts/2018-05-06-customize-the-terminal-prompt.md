@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Customize the terminal promt"
+title:  "Customize the terminal prompt"
 date:   2018-05-06 01:39:00 +0800
 post-toc: false
 ---
@@ -8,28 +8,28 @@ post-toc: false
 By default, the terminal prompt set to ```username@hostname:directory$ ``` in
 Ubuntu and ```hostname:directory$``` in OXS.
 
-But we can change the prompt by redefining the environment variable PS1.
+But we can change the prompt by redefining the environment variable ```PS1```.
 
 ## In Ubuntu
-Open the .bashrc file in the home directory in a text editor and append the
-following line at the end.
+Open the ```.bashrc``` file in the home directory in a text editor and append
+the following line at the end.
 ```
 {% raw %}export PS1="\n\e[35;1m\u@\h \D{%m-%d} \A:\w\e[0m\n$ "{% endraw %}
 ```
 Save the file and restart the terminal, then we would have the new prompt. We
-will talk about the meaning of the backslash-excaped special characters later.
+will talk about the meaning of the backslash-escaped special characters later.
 
 ## In OXS
-Open the .bash_profile file in the home directory in a text editor and append
-the following line at the end.
+Open the ```.bash_profile``` file in the home directory in a text editor and
+append the following line at the end.
 ```
 {% raw %}export PS1="\n\e[35;1m\u@\h \D{%m-%d} \A:\w\e[0m\n$ "{% endraw %}
 ```
 Save the file and restart the terminal, then we would have the new prompt.
 
 ## Special Characters
-By entering ```man bash```, the following list of special characters could be
-found in the ```PROMPTING``` paragraph:
+By entering ```man bash``` command, the following list of special characters
+could be found in the ```PROMPTING``` paragraph:
 ```
 PROMPTING
   When executing interactively, bash displays the primary prompt PS1 when it is
@@ -88,11 +88,14 @@ sequence ```<ESC character>``` + ```[``` + ```<Color code>``` + ```m```(a finish
 For example, the color sequence ```\e[35;1m``` we used in the prompt string,
 it consists of Control Sequence Introducer, Color code and the finishing symbol:
 * Control Sequence Introducer consists of a ESC character ```\e``` and a ```[```.
-* Color code consists of Color ```35``` which means purple, a seperation ```;```
+* Color code consists of Color ```35``` which means purple, a separation ```;```
 and Text Decoration ```1``` which means **Bold**.
 * Finishing symbol is ```m```.
 
 And we also have this color sequence ```\e[0m``` which means to reset all color
 and text decoration attributes.
+
+More details about the color in the terminal could be found in
+[my another post here](/2018/05/07/color-in-the-terminal.html).
 
 ## Have fun!

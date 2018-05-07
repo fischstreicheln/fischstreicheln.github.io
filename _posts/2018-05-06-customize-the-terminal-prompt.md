@@ -82,20 +82,19 @@ we want it to be.
 
 ## Color in Terminal
 Not only the prompt string could be changed,
-we could also change the color of the prompt too by using the special excape
-sequence ```<ESC character>``` + ```[``` + ```<Color code>``` + ```m```(a finishing symbol).  
+we could also change the color of the prompt too by using the special escaped
+sequence ```<ESC character>``` + ```[``` + ```<Color code>``` + ```m```(a finishing symbol).
 
 For example, the color sequence ```\e[35;1m``` we used in the prompt string,
-it consists of Control Sequence Introducer, Color code and the finishing symbol:
-* Control Sequence Introducer consists of a ESC character ```\e``` and a ```[```.
-* Color code consists of Color ```35``` which means purple, a separation ```;```
-and Text Decoration ```1``` which means **Bold**.
-* Finishing symbol is ```m```.
+it consists of **Control Sequence Introducer**, **Color code** and the **finishing
+symbol**:
+* **Control Sequence Introducer** consists of a escaped character ```\e``` and a ```[```.
+* **Color code** consists of color value ```35``` which means purple, a separation ```;```
+and text decoration value ```1``` which means **Bold**.
+* **Finishing** symbol is ```m```.
 
 And we also have this color sequence ```\e[0m``` which means to reset all color
 and text decoration attributes.
 
 More details about the color in the terminal could be found in
 [my another post here](/2018/05/07/color-in-the-terminal.html).
-
-## Have fun!

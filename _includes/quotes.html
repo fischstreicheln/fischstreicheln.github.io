@@ -1,0 +1,6 @@
+{% assign min = 1 %}
+{% assign max = 6 %}
+{% assign diff = max | minus: min %}
+{% assign pseudorandom = "now" | date: "%s" | modulo: diff | plus: min %}
+<h2 id="have-fun">Have fun!</h2>
+<p>If it's not working, try turning it off and on again! {{pseudorandom}}</p>

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Customize the terminal prompt"
+title:  "Customizing the terminal prompt"
 date:   2018-05-06 01:39:00 +0800
 post-toc: false
 ---
@@ -83,18 +83,18 @@ we want it to be.
 ## Color in Terminal
 Not only the prompt string could be changed,
 we could also change the color of the prompt too by using the special escaped
-sequence ```<ESC character>``` + ```[``` + ```<Color code>``` + ```m```(a finishing symbol).
+sequence ```<ESC character>``` + ```[``` + ```<Color code>``` + ```m```.
 
-For example, the color sequence ```\e[35;1m``` we used in the prompt string,
-it consists of **Control Sequence Introducer**, **Color code** and the **finishing
-symbol**:
-* **Control Sequence Introducer** consists of a escaped character ```\e``` and a ```[```.
+For example, the sequence ```\e[35;1m``` we used in the prompt string, it consists
+of **Control Sequence Introducer**, **Color code** and the **Finishing symbol**:
+* **Control Sequence Introducer** consists of a ```<ESC character>``` which is encoded
+by ```\e```, and a ```[```.
 * **Color code** consists of color value ```35``` which means purple, a separation ```;```
 and text decoration value ```1``` which means **Bold**.
-* **Finishing** symbol is ```m```.
+* **Finishing symbol** is ```m```.
 
-And we also have this color sequence ```\e[0m``` which means to reset all color
+And we also have this sequence ```\e[0m``` which means to reset all color
 and text decoration attributes.
 
 More details about the color in the terminal could be found in
-[my another post here](/2018/05/07/color-in-the-terminal.html).
+[my another post here](/2018/05/07/ANSI-escape-code-color-in-the-terminal.html).

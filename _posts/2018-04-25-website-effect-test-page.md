@@ -2,6 +2,7 @@
 layout: post
 title:  "Website Effect Test Page"
 date:   2018-04-25 21:30:00 +0800
+lang: en
 mathjax: true
 mermaid: true
 seq-diagram: true

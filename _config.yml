@@ -42,6 +42,10 @@ theme: minima
 plugins:
   - jekyll-feed
 
+# Language setting
+# lang_select: true
+# default_lang: en
+
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.

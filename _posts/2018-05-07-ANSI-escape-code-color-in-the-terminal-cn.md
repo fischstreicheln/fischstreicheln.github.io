@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "ANSI escape code: Color in the terminal"
+title:  "ANSI转义字符：终端中的颜色设置"
 date:   2018-05-07 14:39:00 +0800
-lang: en
+lang: cn
 ref: "ANSI escape code: Color in the terminal"
 post-toc: true
 ---

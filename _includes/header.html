@@ -1,14 +1,9 @@
 <header class="site-header" role="banner">
   <div class="wrapper">
-    <a class="site-title" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
-    <!-- <div class="site-meta"> -->
-      {% assign pages=site.pages | where:"ref", page.ref | sort: 'lang' %}
-      {% for page in pages %} <a class="site-meta" href="{{ page.url | prepend: site.baseurl }}" class="{{ page.lang }}">{{ page.lang }}</a> {% endfor %}
-      {% assign posts=site.posts | where:"ref", page.ref | sort: 'lang' %}
-      {% for post in posts %} <a class="site-meta" href="{{ post.url | prepend: site.baseurl }}" class="{{ post.lang }}">{{ post.lang }}</a> {% endfor %}
-    <!-- </div> -->
-    <!-- {%- include header/multilingual.html -%} -->
-
+    <div style="float: left">
+      <a class="site-title" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a></br>
+      {%- include header/multilingual.html -%}
+    </div>
     {%- assign default_paths = site.pages | map: "path" -%}
     {%- assign page_paths = site.header_pages | default: default_paths -%}
     {%- if page_paths -%}

@@ -16,7 +16,6 @@
   margin-top: 10px;
   margin-bottom: 0;
   float: left;
-  &,
   &:visited {
     color: $grey-color-dark;
   }
@@ -24,10 +23,11 @@
 
 .site-meta {
   font-size: $small-font-size;
-  color: $grey-color;
   margin-top: 0px;
   float: left;
-  &,
+  &:link {
+    color: $grey-color;
+  }
   &:visited {
     color: $grey-color-dark;
   }

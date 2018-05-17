@@ -5,5 +5,4 @@
 layout: home
 ref: index
 lang: en
-title: asdf
 ---

@@ -2,13 +2,12 @@
 layout: default
 ---
 <article class="post">
-
   <header class="post-header">
-    <h1 class="post-title">{{ page.title | escape }}</h1>
+    <h1 class="post-title p-name">{{ page.title | escape }}</h1>
   </header>
-
   <div class="post-content">
     {{ content }}
+    {% include quotes.html %}
   </div>
-
+  <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
 </article>

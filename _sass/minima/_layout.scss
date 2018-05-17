@@ -12,7 +12,7 @@
 .site-title {
   @include relative-font-size(1.425);
   font-weight: 300;
-  // line-height: $base-line-height * $base-font-size * 2.25;
+  line-height: $base-line-height * $base-font-size * 1.5;
   margin-top: 10px;
   margin-bottom: 0;
   float: left;
@@ -24,12 +24,10 @@
 .site-meta {
   font-size: $small-font-size;
   margin-top: 0px;
-  float: left;
-  &:link {
-    color: $grey-color;
-  }
+  line-height: $base-line-height * $small-font-size;
+  color: $grey-color;
   &:visited {
-    color: $grey-color-dark;
+    color: $grey-color;
   }
 }
 
@@ -265,4 +263,13 @@
       @include relative-font-size(1.125);
     }
   }
+}
+
+.toc-div{
+  float: right;
+  max-width:300px;
+  border: 1px dotted #CCCCCC;
+  background-color: #EFF5FF;
+  margin: 10px;
+  padding:10px 10px 0px 5px;
 }

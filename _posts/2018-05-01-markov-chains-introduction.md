@@ -65,4 +65,4 @@ the process depends **only** on its **current** state.
 > This is a brief study note of Markov Chains. Main reference as listed below:[^1]
 
 ***
-[^1]: {% include bib_single.html idx = "_bib_book__BK_Stewart2009_" %}
+[^1]: {% include ref/bib.html idx = "_bib_book__BK_Stewart2009_" %}

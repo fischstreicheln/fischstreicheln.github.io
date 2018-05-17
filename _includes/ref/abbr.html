@@ -1,0 +1,1 @@
+{%- assign property = include.prop | default: "fulltxt" -%}{{ site.data.abbr[include.txt].[property] }}{%- if site.data.abbr[include.txt].property -%}{{ site.data.abbr[include.txt].property }}{%- else -%}{{ include.txt }}{%- endif -%}

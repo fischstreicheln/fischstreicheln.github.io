@@ -1,19 +1,7 @@
 ---
 layout: default
 ---
-<style>
-  .toc-div{
-    float: right;
-    max-width:300px;
-    border: 1px dotted #CCCCCC;
-    background-color: #EFF5FF;
-    margin: 10px;
-    padding:10px 10px 0px 5px;
-  }
-</style>
-
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
-
   <header class="post-header">
     <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
     <p class="post-meta">
@@ -25,7 +13,6 @@ layout: default
         • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
       {%- endif -%}</p>
   </header>
-
   <div class="post-content e-content" itemprop="articleBody">
     {% if page.post-toc %}
       <div class="toc-div">
@@ -36,10 +23,8 @@ layout: default
     {{ content }}
     {% include quotes.html %}
   </div>
-
   {%- if site.disqus.shortname -%}
     {%- include disqus_comments.html -%}
   {%- endif -%}
-
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
 </article>

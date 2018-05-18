@@ -1,7 +1,9 @@
 en:
   home: "/"
   fulltxt: English
+  title: Home
 
 cn:
   home: "/index-cn"
   fulltxt: 中文
+  title: 首页

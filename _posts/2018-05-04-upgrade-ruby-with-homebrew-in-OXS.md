@@ -1,7 +1,9 @@
 ---
 layout: post
-title:  "Upgrade ruby with homebrew in OXS"
-date:   2018-05-04 09:39:00 +0800
+title: "Upgrade ruby with homebrew in OXS"
+ref: "Upgrade ruby with homebrew in OXS"
+lang: en
+date: 2018-05-04 09:39:00 +0800
 ---
 
 After I installed ruby with homebrew in OXS,

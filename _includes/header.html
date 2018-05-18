@@ -2,7 +2,7 @@
   <div class="wrapper">
     {%- assign lang = page.lang | default: post.lang | default: site.lang | default: "en" -%}
     <div style="float: left">
-      <a class="site-title" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a></br>
+      {%- include header/title.html show_lang = lang -%}</br>
       {%- include header/multilingual.html -%}
     </div>
     {%- assign default_paths = site.pages | map: "path" -%}

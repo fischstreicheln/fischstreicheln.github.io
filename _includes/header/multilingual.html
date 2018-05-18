@@ -1,6 +1,6 @@
 <div class="site-meta">
-  {% assign pages=site.pages | where:"ref", page.ref | sort: 'lang' %}
-  {% for page in pages %} - <a href="{{ page.url | prepend: site.baseurl }}" class="site-meta">{%- include ref/abbr.html txt = page.lang prop = "fulltxt" -%}</a> {% endfor %}
-  {% assign posts=site.posts | where:"ref", page.ref | sort: 'lang' %}
-  {% for post in posts %} - <a href="{{ post.url | prepend: site.baseurl }}" class="site-meta">{%- include ref/abbr.html txt = post.lang prop = "fulltxt" -%}</a> {% endfor %}
+  {%- assign pages=site.pages | where:"ref", page.ref | sort: 'lang' -%}
+  {%- for page in pages -%}&nbsp; - <a href="{{ page.url | relative_url  }}" class="site-meta">{%- include ref/abbr.html txt = page.lang -%}</a> &nbsp;{%- endfor -%}
+  {%- assign posts=site.posts | where:"ref", page.ref | sort: 'lang' -%}
+  {%- for post in posts -%}&nbsp; - <a href="{{ post.url | relative_url  }}" class="site-meta">{%- include ref/abbr.html txt = post.lang -%}</a> &nbsp;{%- endfor -%}
 </div>

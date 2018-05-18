@@ -1,1 +1,4 @@
-{%- assign property = include.prop | default: "fulltxt" -%}{{ site.data.abbr[include.txt].[property] }}{%- if site.data.abbr[include.txt].property -%}{{ site.data.abbr[include.txt].property }}{%- else -%}{{ include.txt }}{%- endif -%}
+{%- assign member = include.property | default: "fulltxt" -%}
+{%- assign show_txt = site.data.abbr[include.txt].[member] | default: include.txt -%}
+{%- assign show_format = include.format | default: "none" -%}
+{%- if show_format == "url" -%}{{ show_txt | relative_url }}{%- else -%}{{ show_txt }}{%- endif -%}

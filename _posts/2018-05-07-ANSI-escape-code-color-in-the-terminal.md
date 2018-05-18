@@ -2,8 +2,8 @@
 layout: post
 title:  "ANSI escape code: Color in the terminal"
 date:   2018-05-07 14:39:00 +0800
-lang: en
 ref: "ANSI escape code: Color in the terminal"
+lang: en
 post-toc: true
 ---
 

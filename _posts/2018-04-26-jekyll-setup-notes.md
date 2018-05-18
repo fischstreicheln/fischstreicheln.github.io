@@ -1,7 +1,9 @@
 ---
 layout: post
-title:  "Jekyll Steup Notes"
-date:   2018-04-26 22:30:00 +0800
+title: "Jekyll Steup Notes"
+ref: "Jekyll Steup Notes"
+lang: en
+date: 2018-04-26 22:30:00 +0800
 ---
 
 # Praperation

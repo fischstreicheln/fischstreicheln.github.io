@@ -1,8 +1,9 @@
 ---
 layout: post
-title:  "Website Effect Test Page"
-date:   2018-04-25 21:30:00 +0800
+title: "Website Effect Test Page"
+ref: "Website Effect Test Page"
 lang: en
+date: 2018-04-25 21:30:00 +0800
 mathjax: true
 mermaid: true
 seq-diagram: true

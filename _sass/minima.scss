@@ -49,3 +49,10 @@ $on-laptop:        800px !default;
   "minima/layout",
   "minima/syntax-highlighting"
 ;
+
+@import
+  "layouts/site-header",
+  "layouts/site-footer",
+  "layouts/page",
+  "layouts/post"
+;

@@ -7,3 +7,8 @@ cn:
   home: "/index-cn"
   fulltxt: 中文
   title: 首页
+
+test:
+  home: "/"
+  fulltxt: Test Page
+  title: Home

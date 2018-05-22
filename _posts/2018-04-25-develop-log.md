@@ -51,7 +51,7 @@ date: 2018-04-25 22:30:00 +0800
 ### Table of Contents
 - [X] Applying ```https://github.com/allejo/jekyll-toc``` directly to ```toc.html```
 - [X] Style editing for wiki-like toc: new css class ```post-toc```
-- [ ] Add show/hide button for toc
+- [ ] Add show/hide button for toc...
 
 ### Bibliography
 - [X] Create bibliography data: ```_data/bib.yml```

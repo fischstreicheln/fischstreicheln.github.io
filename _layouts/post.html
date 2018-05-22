@@ -17,7 +17,10 @@ layout: default
     {% if page.post-toc %}
       <div class="post-toc">
         <p style="text-align:center; font-weight:bold; margin: 0;">Contents
-        <nav class="site-nav">
+        <span class="toc-hide">Hide Me</span>
+        <span class="toc-show">Show Me</span>
+        <p class="toc-list">Some alarming information here</p>
+        <nav class="post-nav">
           <input type="checkbox" id="nav-trigger" class="nav-trigger" />
           <label for="nav-trigger">
             <span class="menu-icon">{%- include svg/menu-icon.html -%}</span>

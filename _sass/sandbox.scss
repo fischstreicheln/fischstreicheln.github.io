@@ -1,0 +1,30 @@
+.post-toc01 {
+  float: right;
+  max-width:320px;
+  border: 1px dotted #CCCCCC;
+  background-color: #EFF5FF;
+  margin: 10px;
+  padding:10px 10px 0px 5px;
+  display: block;
+
+  .toc-trigger {
+    display: none;
+  }
+
+  label[for="show-trigger"] {
+    display: none;
+  }
+
+  label[for="hide-trigger"] {
+    display: block;
+  }
+
+  input#hide-trigger ~ .trigger {
+    clear: both;
+    display: block;
+  }
+
+  input#hide-trigger:checked ~ .trigger {
+    display: none;
+  }
+}

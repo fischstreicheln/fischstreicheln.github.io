@@ -16,6 +16,7 @@
 {% endif %}
 
 {%- assign post-toc-show = page.post-toc | default: true -%}
+{%- if page.post-toc == false -%}{%- assign post-toc-show = false -%}{%- endif -%}
 {% if post-toc-show %}
   <script src="/assets/js/post-toc-trigger.js"></script>
 {% endif %}

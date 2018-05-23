@@ -4,6 +4,7 @@ title: "Develop Log"
 ref: "Develop Log"
 lang: test
 date: 2018-01-01 22:30:00 +0800
+post-toc: false
 ---
 
 ## Fundamental
@@ -15,7 +16,8 @@ date: 2018-01-01 22:30:00 +0800
 ## Layouts Modification
 ### Include folder
 - [X] Dissemble ```head.html``` into files in ```_includes/head/```
-- [X] Dissemble ```header.html``` into files like ```_includes/svg/menu-icon.html``` and ```_includes/header/title.html```
+- [X] Dissemble ```header.html``` into files like ```_includes/svg/menu-icon.html```
+and ```_includes/header/title.html```
 
 ### Sass folder
 - [X] Dissemble ```_sass\minima\_layouts.sass``` into files in ```_sass\layouts\```
@@ -31,8 +33,10 @@ date: 2018-01-01 22:30:00 +0800
 ### Abbreviation
 - [X] Create abbreviation data: ```_data/abbr.yml```
 - [X] Create transformation file: ```_include/ref/abbr.html```
-- [X] Upgrade ```abbr.html```: Return different reference of the abbreviation by passing variable ```txt```
-- [X] Upgrade ```abbr.html```: Return different format of the abbreviation by passing variable ```format```
+- [X] Upgrade ```abbr.html```: Return different reference of the abbreviation by
+passing variable ```txt```
+- [X] Upgrade ```abbr.html```: Return different format of the abbreviation by
+passing variable ```format```
 
 ### Quotes
 - [X] Include ```quotes.html``` to page and post layouts
@@ -51,7 +55,11 @@ date: 2018-01-01 22:30:00 +0800
 ### Table of Contents
 - [X] Applying ```https://github.com/allejo/jekyll-toc``` directly to ```toc.html```
 - [X] Style editing for wiki-like toc: new css class ```post-toc```
-- [ ] Add show/hide button for toc...
+- [X] Add show/hide button for toc using javascript approach: add toc style
+in ```_sass/layouts/_post.scss``` and ```post-toc-trigger.js``` in ```assets/js```
+which included in ```_includes/head/js.html```
+- [X] Set default value for all post that showing toc by default. Manually
+set ```post-toc``` to be ```false``` to have a post without showing toc.
 
 ### Bibliography
 - [X] Create bibliography data: ```_data/bib.yml```

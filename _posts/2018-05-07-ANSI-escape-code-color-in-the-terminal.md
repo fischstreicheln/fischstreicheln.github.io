@@ -4,7 +4,6 @@ title:  "ANSI escape code: Color in the terminal"
 date:   2018-05-07 14:39:00 +0800
 ref: "ANSI escape code: Color in the terminal"
 lang: en
-post-toc: true
 ---
 
 As what we've discussed in the post of [Customizing the terminal prompt](/2018/05/06/customizing-the-terminal-prompt),

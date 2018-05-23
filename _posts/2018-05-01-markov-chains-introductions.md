@@ -6,7 +6,6 @@ lang: en
 date: 2018-05-01 15:04:00 +0800
 mathjax: true
 mermaid: true
-post-toc: true
 ---
 ## Stochastic Process
 ### Definition

@@ -1,5 +1,5 @@
 .post-header {
-  margin-bottom: $spacing-unit;
+  margin-bottom: $spacing-unit / 2;
 }
 
 .post-title {
@@ -40,6 +40,7 @@
   }
 }
 
+//*** Post TOC style setting ***///
 .post-toc {
   float: right;
   max-width:320px;

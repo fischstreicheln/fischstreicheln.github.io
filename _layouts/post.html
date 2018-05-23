@@ -14,21 +14,15 @@ layout: default
       {%- endif -%}</p>
   </header>
   <div class="post-content e-content" itemprop="articleBody">
-    {% if page.post-toc %}
+    {%- assign post-toc-show = page.post-toc | default: true -%}
+    {% if post-toc-show %}
       <div class="post-toc">
         <p style="text-align:center; font-weight:bold; margin: 0;">Contents
-        <span class="toc-hide">Hide Me</span>
-        <span class="toc-show">Show Me</span>
-        <p class="toc-list">Some alarming information here</p>
-        <nav class="post-nav">
-          <input type="checkbox" id="nav-trigger" class="nav-trigger" />
-          <label for="nav-trigger">
-            <span class="menu-icon">{%- include svg/menu-icon.html -%}</span>
-          </label>
-          <div class="trigger">
-            {% include toc.html html=content h_max=4%}
-          </div>
-        </nav>
+        <button class="show-trigger" id="show-trigger" onclick="toc_trigger()"><a>Show</a></button>
+        <button class="hide-trigger" id="hide-trigger" onclick="toc_trigger()"><a>Hide</a></button>
+        <div class="toc-contents" id="toc-contents">
+          {% include toc.html html=content h_max=4%}
+        </div>
       </div>
     {% endif %}
     {{ content }}

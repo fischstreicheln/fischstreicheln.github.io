@@ -15,6 +15,11 @@
   <script src="/assets/js/mermaid.min.js"></script>
 {% endif %}
 
+{%- assign post-toc-show = page.post-toc | default: true -%}
+{% if post-toc-show %}
+  <script src="/assets/js/post-toc-trigger.js"></script>
+{% endif %}
+
 <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
 
 <!--[if lte IE 8]><script src="assets/js/html5shiv.js"></script><![endif]-->

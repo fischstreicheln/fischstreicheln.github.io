@@ -1,19 +1,36 @@
 ---
-layout: default
+layout: page
+title: Sandbox
+permalink: /sandbox/
+ref: sanbox
+lang: test
 ---
-<div class="post-toc01">
+<div class="post-toc">
   <p style="text-align:center; font-weight:bold; margin: 0;">Contents
-  <input type="checkbox" id="show-trigger" class="toc-trigger" />
-  <label for="show-trigger">Show</label>
-  <input type="checkbox" id="hide-trigger" class="toc-trigger" />
-  <label for="hide-trigger">Hide</label>
-  <div class="trigger">
-    341341hfdkhdsak
-    djsflkald
-  </div>
-  <input type="checkbox" id="toc-trigger" class="toc-trigger" />
-  <label for="toc-trigger">Show/Hide</label>
-  <div class="trigger">
-    Contents
+  <button class="show-trigger" id="show-trigger" onclick="toc_trigger()"><a>Show</a></button>
+  <button class="hide-trigger" id="hide-trigger" onclick="toc_trigger()"><a>Hide</a></button>
+  <div class="toc-contents" id="toc-contents">
+    This is my DIV element.
   </div>
 </div>
+
+<script>
+function toc_trigger() {
+    var x = document.getElementById("show-trigger");
+    var y = document.getElementById("hide-trigger");
+    var z = document.getElementById("toc-contents");
+    if (z.style.display === "none") {
+        x.style.display = "none";
+        y.style.display = "inline-block";
+        z.style.display = "block";
+    } else {
+      x.style.display = "inline-block";
+      y.style.display = "none";
+      z.style.display = "none";
+    }
+}
+</script>
+
+<style>
+
+</style>

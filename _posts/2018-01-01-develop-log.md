@@ -3,7 +3,7 @@ layout: post
 title: "Develop Log"
 ref: "Develop Log"
 lang: test
-date: 2018-04-25 22:30:00 +0800
+date: 2018-01-01 22:30:00 +0800
 ---
 
 ## Fundamental

@@ -3,6 +3,8 @@
     <h2>{%- include ref/abbr.html txt = include.show_lang property = "homecatalogue" -%}</h2>
   </header>
   <div class="catalogue-container">
+    {%- assign filelink = "post-list-" | prepend: site.baseurl | append: include.show_lang | append: ".html#" -%}
+    {%- if include.show_lang == "en" -%}{%- assign filelink = "post-list" | prepend: site.baseurl | append: ".html#" -%}{%- endif -%}
     {%- for child in site.data.category[include.show_lang] -%}
       {%- assign section = child[0] -%}
       {%- assign Flag = 0 -%}
@@ -18,9 +20,10 @@
           </div>
           <ul class="category-list">
             {%- for category in site.data.category[include.show_lang].[section] -%}
+              {%- assign ctgid = "-" | prepend: category | append: include.show_lang  -%}
               {%- assign pages=site.pages | where:"lang", include.show_lang | where:"category", category -%}
               {%- assign posts=site.posts | where:"lang", include.show_lang | where:"category", category -%}
-              {%- if pages or posts -%}<li class="category-container"><div class="category-name"><a>{{ category }}</a></div></li>{%- endif -%}
+              {%- if pages or posts -%}<li class="category-container"><div class="category-name"><a href="{{ filelink | append: ctgid }}">{{ category }}</a></div></li>{%- endif -%}
             {%- endfor -%}
           </ul>
         </div>

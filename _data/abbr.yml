@@ -2,13 +2,22 @@ en:
   home: "/"
   fulltxt: English
   title: Home
+  homepost: minute read
+  homecontact: Contact Me
+  homecatalogue: Catalogue
 
 cn:
   home: "/index-cn"
   fulltxt: 中文
   title: 首页
+  homepost: 分钟阅读时间
+  homecontact: 联系我
+  homecatelogue: 分类目录
 
 test:
   home: "/"
-  fulltxt: Test Page
+  fulltxt: Test
   title: Home
+  homepost: minute read
+  homecontact: Contact Me
+  homecatalogue: Catalogue

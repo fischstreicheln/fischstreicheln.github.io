@@ -3,6 +3,7 @@ layout: post
 title: "Upgrade ruby with homebrew in OXS"
 ref: "Upgrade ruby with homebrew in OXS"
 lang: en
+category: linux
 date: 2018-05-04 09:39:00 +0800
 ---
 

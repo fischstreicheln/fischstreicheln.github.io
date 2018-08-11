@@ -1,0 +1,13 @@
+<article class="post-highlight">
+  {%- if post.img -%}
+    <a class="post-highlight-thumbnail" style="background-image: url({{ site.post-image-url | prepend: site.baseurl | append : post.img }})" href="{{ post.url | prepend: site.baseurl }}"></a>
+  {%- else -%}
+    {%- assign img_idx = include.idx | module: site.sample-image-max | plus: 1 -%}
+    <a class="post-highlight-thumbnail" style="background-image: url({{ site.sample-image-url | prepend: site.baseurl | append : img_idx | append: ".jpg" }})" href="{{ post.url | prepend: site.baseurl }}"></a>
+  {%- endif -%}
+  <div class="post-highlight-content">
+    <h2 class="post-highlight-title"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
+    <p>{{ post.content | strip_html | truncatewords: 15 }}</p>
+    <span class="post-highlight-meta">{{ post.date | date: '%Y, %b %d' }}&nbsp;&nbsp;—&nbsp;&nbsp;{%- capture words -%}{{ post.content | number_of_words }}{%- endcapture -%}{%- unless words contains "-" -%}{{ words | plus: 250 | divided_by: 250 }}{%- include ref/abbr.html txt = include.show_lang property = "homepost" -%}{%- endunless -%}</span>
+  </div>
+</article>

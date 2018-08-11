@@ -1,0 +1,17 @@
+en:
+  cs:
+    - linux
+    - jekyll
+  ds:
+    - "Stochastic Process"
+  endn:
+    - adjf
+
+cn:
+  cs:
+    - linux
+
+test:
+  personal:
+    - sandbox
+    - develop

@@ -1,0 +1,30 @@
+<div class="catalogue">
+  <header class="catalogue-title">
+    <h2>{%- include ref/abbr.html txt = include.show_lang property = "homecatalogue" -%}</h2>
+  </header>
+  <div class="catalogue-container">
+    {%- for child in site.data.category[include.show_lang] -%}
+      {%- assign section = child[0] -%}
+      {%- assign Flag = 0 -%}
+      {%- for category in site.data.category[include.show_lang].[section] -%}
+        {%- assign pages=site.pages | where:"lang", include.show_lang | where:"category", category -%}
+        {%- assign posts=site.posts | where:"lang", include.show_lang | where:"category", category -%}
+        {%- if pages.size > 0 or posts.size > 0 -%}{%- assign Flag = 1 -%}{%- break -%}{%- endif -%}
+      {%- endfor -%}
+      {%- if Flag == 1 -%}
+        <div class="catalogue-list">
+          <div class="category-section">
+            <h3>{{ section }}</h3>
+          </div>
+          <ul class="category-list">
+            {%- for category in site.data.category[include.show_lang].[section] -%}
+              {%- assign pages=site.pages | where:"lang", include.show_lang | where:"category", category -%}
+              {%- assign posts=site.posts | where:"lang", include.show_lang | where:"category", category -%}
+              {%- if pages or posts -%}<li class="category-container"><div class="category-name"><a>{{ category }}</a></div></li>{%- endif -%}
+            {%- endfor -%}
+          </ul>
+        </div>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+</div>

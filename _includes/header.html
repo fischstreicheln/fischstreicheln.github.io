@@ -1,7 +1,10 @@
 <header class="site-header" role="banner">
   <div class="wrapper">
     {%- assign lang = page.lang | default: post.lang | default: site.lang | default: "en" -%}
-    {%- include header/title.html show_lang = lang -%}
+    <div class="site-title-wrap">
+      {%- include header/title.html show_lang = lang -%}
+      {%- include header/multilingual.html current_lang = lang -%}
+    </div>
     {%- assign default_paths = site.pages | map: "path" -%}
     {%- assign page_paths = site.header_pages | default: default_paths -%}
     {%- if page_paths -%}
@@ -11,9 +14,7 @@
           <span class="menu-icon">{%- include svg/menu-icon.html -%}</span>
         </label>
         <div class="trigger">
-          {%- include header/multilingual.html -%}
           {%- include header/page_list.html list = page_paths show_lang = lang -%}
-
         </div>
       </nav>
     {%- endif -%}

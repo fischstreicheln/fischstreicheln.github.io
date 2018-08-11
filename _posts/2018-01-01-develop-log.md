@@ -3,6 +3,7 @@ layout: post
 title: "Develop Log"
 ref: "Develop Log"
 lang: test
+category: develop
 date: 2018-01-01 22:30:00 +0800
 post-toc: false
 ---
@@ -20,9 +21,17 @@ post-toc: false
 and ```_includes/header/title.html```
 
 ### Sass folder
-- [X] Dissemble ```_sass\minima\_layouts.sass``` into files in ```_sass\layouts\```
+- [X] Dissemble ```_sass\minima\_layouts.sass``` into files in ```_sass\layouts```
+
 
 ## Site Functions
+### Resolution dependent layouts
+- [ ]
+
+### Header
+- [ ] Fixed header
+- [ ] modified page layout with empty space left for the header
+
 ### Multilingual
 - [X] Define new variables for pages and posts: ```lang``` and ```ref```
 - [X] List out available page/post language

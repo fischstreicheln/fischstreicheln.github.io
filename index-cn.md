@@ -1,8 +1,7 @@
 ---
-# You don't need to edit this file, it's empty on purpose.
-# Edit theme's home layout instead if you wanna make some changes
-# See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 layout: home
 ref: index
 lang: cn
 ---
+## **我是Jason**
+将***未知***变为***已知*** · 在***不确定***中寻找***确定***

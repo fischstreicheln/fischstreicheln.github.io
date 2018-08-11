@@ -8,8 +8,6 @@ dl, dd, ol, ul, figure {
   padding: 0;
 }
 
-
-
 /**
  * Basic styling
  */
@@ -25,9 +23,9 @@ body {
   font-kerning: normal;
   display: flex;
   min-height: 100vh;
+  min-width: $base-min-width;
   flex-direction: column;
 }
-
 
 
 /**
@@ -40,16 +38,12 @@ ul, ol, dl, figure,
   margin-bottom: $spacing-unit / 2;
 }
 
-
-
 /**
  * `main` element
  */
 main {
   display: block; /* Default value of `display` of `main` element is 'inline' in IE 11. */
 }
-
-
 
 /**
  * Images
@@ -58,8 +52,6 @@ img {
   max-width: 100%;
   vertical-align: middle;
 }
-
-
 
 /**
  * Figures
@@ -71,8 +63,6 @@ figure > img {
 figcaption {
   font-size: $small-font-size;
 }
-
-
 
 /**
  * Lists
@@ -88,16 +78,12 @@ li {
   }
 }
 
-
-
 /**
  * Headings
  */
 h1, h2, h3, h4, h5, h6 {
   font-weight: $base-font-weight;
 }
-
-
 
 /**
  * Links
@@ -124,13 +110,12 @@ a {
   }
 }
 
-
 /**
  * Blockquotes
  */
 blockquote {
-  color: $grey-color;
-  border-left: 4px solid $grey-color-light;
+  color: $grey;
+  border-left: 4px solid $grey-light;
   padding-left: $spacing-unit / 2;
   @include relative-font-size(1.125);
   letter-spacing: -1px;
@@ -141,15 +126,13 @@ blockquote {
   }
 }
 
-
-
 /**
  * Code formatting
  */
 pre,
 code {
   @include relative-font-size(0.9375);
-  border: 1px solid $grey-color-light;
+  border: 1px solid $grey-light;
   border-radius: 3px;
   background-color: #eef;
 }
@@ -169,8 +152,6 @@ pre {
   }
 }
 
-
-
 /**
  * Wrapper
  */
@@ -181,6 +162,7 @@ pre {
   margin-left: auto;
   padding-right: $spacing-unit;
   padding-left: $spacing-unit;
+  position: relative;
   @extend %clearfix;
 
   @include media-query($on-laptop) {
@@ -191,8 +173,6 @@ pre {
   }
 }
 
-
-
 /**
  * Clearfix
  */
@@ -202,8 +182,6 @@ pre {
   clear: both;
 }
 
-
-
 /**
  * Icons
  */
@@ -212,7 +190,7 @@ pre {
     width: 16px;
     height: 16px;
     display: inline-block;
-    fill: #{$grey-color};
+    fill: #{$grey};
     padding-right: 5px;
     vertical-align: text-top;
 }
@@ -223,8 +201,6 @@ pre {
   }
 }
 
-
-
 /**
  * Tables
  */
@@ -234,21 +210,21 @@ table {
   text-align: $table-text-align;
   color: lighten($text-color, 18%);
   border-collapse: collapse;
-  border: 1px solid $grey-color-light;
+  border: 1px solid $grey-light;
   tr {
     &:nth-child(even) {
-      background-color: lighten($grey-color-light, 6%);
+      background-color: lighten($grey-light, 6%);
     }
   }
   th, td {
     padding: ($spacing-unit / 3) ($spacing-unit / 2);
   }
   th {
-    background-color: lighten($grey-color-light, 3%);
-    border: 1px solid darken($grey-color-light, 4%);
-    border-bottom-color: darken($grey-color-light, 12%);
+    background-color: lighten($grey-light, 3%);
+    border: 1px solid darken($grey-light, 4%);
+    border-bottom-color: darken($grey-light, 12%);
   }
   td {
-    border: 1px solid $grey-color-light;
+    border: 1px solid $grey-light;
   }
 }

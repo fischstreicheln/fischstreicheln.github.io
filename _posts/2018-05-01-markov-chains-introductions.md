@@ -3,6 +3,7 @@ layout: post
 title: "Markov Chains: Introductions"
 ref: "Markov Chains: Introductions"
 lang: en
+category: "Stochastic Process"
 date: 2018-05-01 15:04:00 +0800
 mathjax: true
 mermaid: true

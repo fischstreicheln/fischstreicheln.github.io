@@ -153,7 +153,6 @@
   border-left: 1px solid $grey-light;
   border-right: 1px solid $grey-light;
   @include media-query($on-palm) {
-    width: calc(100% - $padding-unit*4);
     margin: 0;
     border: 0;
     border-top: 1px solid $grey-light;

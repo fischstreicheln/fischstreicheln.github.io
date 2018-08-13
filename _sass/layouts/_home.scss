@@ -1,14 +1,17 @@
 /* Homepage setting */
 
 .home {
+  display: -webkit-flex;
   display: flex;
+  -webkit-flex-direction: column;
   flex-direction: column;
 }
 
 /* 1. Banner */
 
 .home-banner {
-  flex: none;
+  -webkit-flex: 1;
+  flex: 1;
   order: 1;
   margin-top: $spacing-unit*0.5;
   padding: $spacing-unit*1.5 0 $spacing-unit 0;
@@ -41,7 +44,8 @@
 }
 
 .home-highlight {
-  flex: none;
+  -webkit-flex: 1;
+  flex: 1;
   order: 2;
   display: flex;
   flex-direction: row;
@@ -53,7 +57,7 @@
 /* 2. Highlight - Post */
 
 .post-list-highlight {
-  flex:1;
+  flex: 1;
   margin: $padding-unit;
   margin-left: $padding-unit*2;
   display: flex;
@@ -276,7 +280,8 @@
 /*4. Catalogue */
 
 .catalogue {
-  flex: none;
+  -webkit-flex: 1;
+  flex: 1;
   order: 3;
   display: flex;
   flex-direction: column;
@@ -389,6 +394,7 @@ a.newer-posts:hover {
   transform: translateX(-5px);
 }
 .post-list-normal {
-  flex: none;
+  -webkit-flex: 1;
+  flex: 1;
   order: 4;
 }

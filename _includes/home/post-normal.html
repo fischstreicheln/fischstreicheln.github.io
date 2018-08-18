@@ -1,6 +1,5 @@
 <li>
-  {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-  <span class="post-meta">{{ post.date | date: date_format }}</span>
-  <h3><a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3>
-  {%- if site.show_excerpts -%}{{ post.excerpt }}{%- endif -%}
+  <h3 class="post-title"><a href="{{ include.show_post.url | prepend: site.baseurl }}">{{ include.show_post.title }}</a></h3>
+  <p>{{ include.show_post.content | strip_html | truncatewords: 30 }}</p>
+  <span class="post-meta">{{ include.show_post.date | date: '%Y, %b %d' }}&nbsp;&nbsp;—&nbsp;&nbsp;{%- capture words -%}{{ include.show_post.content | number_of_words }}{%- endcapture -%}{%- unless words contains "-" -%}{{ words | plus: 250 | divided_by: 250 }}{%- include ref/abbr.html show_lang = include.show_lang show_txt = "minute-read" -%}{%- endunless -%}</span>
 </li>

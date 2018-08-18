@@ -1,4 +1,4 @@
 {%- assign pages=site.pages | where:"ref", page.ref | sort: 'lang' -%}
-{%- for page in pages -%}{%- if page.lang != include.current_lang -%}<div class="site-meta">&nbsp; - <a href="{{ page.url | relative_url  }}" class="site-meta">{%- include ref/abbr.html txt = page.lang -%}</a> &nbsp;</div>{%- endif -%}{%- endfor -%}
+{%- for page in pages -%}{%- if page.lang != include.current_lang -%}<div class="site-meta">&nbsp; - <a href="{{ page.url | prepend: site.baseurl }}" class="site-meta">{%- include ref/abbr.html show_lang = page.lang -%}</a> &nbsp;</div>{%- endif -%}{%- endfor -%}
 {%- assign posts=site.posts | where:"ref", page.ref | sort: 'lang' -%}
-{%- for post in posts -%}{%- if post.lang != include.current_lang -%}<div class="site-meta">&nbsp; - <a href="{{ post.url | relative_url  }}" class="site-meta">{%- include ref/abbr.html txt = post.lang -%}</a> &nbsp;</div>{%- endif -%}{%- endfor -%}
+{%- for post in posts -%}{%- if post.lang != include.current_lang -%}<div class="site-meta">&nbsp; - <a href="{{ post.url | prepend: site.baseurl }}" class="site-meta">{%- include ref/abbr.html show_lang = post.lang -%}</a> &nbsp;</div>{%- endif -%}{%- endfor -%}

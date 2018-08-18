@@ -15,9 +15,7 @@
   <script src="/assets/js/mermaid.min.js"></script>
 {% endif %}
 
-{%- assign post-toc-show = page.post-toc | default: true -%}
-{%- if page.post-toc == false -%}{%- assign post-toc-show = false -%}{%- endif -%}
-{% if post-toc-show %}
+{% if page.post-toc != false %}
   <script src="/assets/js/post-toc-trigger.js"></script>
 {% endif %}
 

@@ -11,6 +11,9 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Page settings
 highlight-post-max: 4
+homepage-post-max:  30
+split-txt:          "%#%"
+weighted-txt:       "zzz$"
 
 # Social settings
 social-github: sleepyjason

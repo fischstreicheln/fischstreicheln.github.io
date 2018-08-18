@@ -9,7 +9,7 @@
   </div>
 
   <section class="sidebar-contact">
-    <h3 class="sidebar-contact-title">{%- include ref/abbr.html txt = include.show_lang property = "homecontact" -%}</h3>
+    <h3 class="sidebar-contact-title">{%- include ref/abbr.html show_lang = include.show_lang show_txt = "contact-me" -%}</h3>
     <ul>
       {%- if site.social-twitter -%}
         <li><a href="https://twitter.com/{{ site.social-twitter }}" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>

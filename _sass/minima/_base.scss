@@ -83,6 +83,7 @@ li {
  */
 h1, h2, h3, h4, h5, h6 {
   font-weight: $base-font-weight;
+  font-family: $title-font-family;
 }
 
 /**
@@ -91,6 +92,7 @@ h1, h2, h3, h4, h5, h6 {
 a {
   color: $brand-color;
   text-decoration: none;
+  font-family: $label-font-family;
 
   &:visited {
     color: darken($brand-color, 15%);
@@ -227,4 +229,11 @@ table {
   td {
     border: 1px solid $grey-light;
   }
+}
+
+/**
+ * Labels
+ */
+.category, .tag {
+  font-family: $label-font-family;
 }

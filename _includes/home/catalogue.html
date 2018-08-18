@@ -1,34 +1,51 @@
-<div class="catalogue">
-  <header class="catalogue-title">
-    <h2>{%- include ref/abbr.html txt = include.show_lang property = "homecatalogue" -%}</h2>
+<div class="home-catalogue">
+  <header class="home-catalogue-title">
+    <h2>{%- include ref/abbr.html show_lang = include.show_lang show_txt = "catalogue" -%}</h2>
   </header>
-  <div class="catalogue-container">
+  <div class="tag-container">
+    {%- for tag in site.categories -%}
+      <div class="tag"><a href="">{{ tag[0] | prepend: "#" }}</a></div>
+    {%- endfor -%}
+  </div>
+  <div class="category-container">
     {%- assign my_cat = nil | split: "," -%}
     {%- for category in site.categories -%}
       {%- assign posts = category[1] | where: "lang", include.show_lang -%}
       {%- if posts.size == 0 -%}{%- continue -%}{%- endif -%}
-      {%- assign first_post = posts | first -%}
-      {%- if first_post.categories[1] -%}
-        {%- if first_post.categories[1] == category[0] -%}{%- assign cur_cat = first_post.categories[0]-%}
-        {%- else -%}{%- continue -%}{%- endif -%}
-      {%- else -%}{%- assign cur_cat = "zzz$Others" -%}{%- endif -%}
-      {%- assign cur_cat = cur_cat | append: "%#%" | append: category[0] -%}
-      {%- assign my_cat = my_cat | push: cur_cat -%}
+      {%- assign last_post = posts | last -%}
+      {%- for post in posts -%}
+        {%- if post.categories[1] -%}
+          {%- if post.categories[1] == category[0] -%}
+            {%- assign cur_cat = post.categories[0]-%}
+          {%- else -%}
+            {%- continue -%}
+          {%- endif -%}
+        {%- else -%}
+          {%- assign cur_cat = "Others" | prepend: site.weighted-txt -%}
+        {%- endif -%}
+        {%- assign cur_cat = cur_cat | append: site.split-txt | append: category[0] -%}
+        {%- assign my_cat = my_cat | push: cur_cat -%}
+        {%- if post.categories[1] != last_post.categories[1] -%}
+          {%- continue -%}
+        {%- else -%}
+          {%- break -%}
+        {%- endif -%}
+      {%- endfor -%}
     {%- endfor -%}
-    {%- assign sorted_cat = my_cat | sort -%}
+    {%- assign sorted_cat = my_cat | uniq | sort -%}
     {%- if include.show_lang != "en" -%}{%- assign filelink = "-" | append: include.show_lang -%}{%- endif -%}
-    {%- assign filelink = filelink | prepend: "catelogue" | prepend: site.baseurl | append: ".html#" -%}
+    {%- assign filelink = filelink | prepend: "catalogue" | prepend: site.baseurl | append: ".html#" -%}
     {%- for category in sorted_cat -%}
-      {%- assign cur_cat = category | split: "%#%" -%}
+      {%- assign cur_cat = category | split: site.split-txt -%}
       {%- if cur_cat[0] != last_cat -%}
         {%- if last_cat != nil -%}</ul></div>{%- endif -%}
-        <div class="catalogue-list">
-          <div class="category-section">
-            <h3>{{ cur_cat[0] | remove: "zzz$" }}</h3>
+        <div class="section-list">
+          <div class="section">
+            <h3>{{ cur_cat[0] | remove: site.weighted-txt }}</h3>
           </div>
           <ul class="category-list">
       {%- endif -%}
-      <li class="category-container"><div class="category-name"><a href="{{ filelink | append: cur_cat[0] | append: "-" | append: cur_cat[1] }}">{{ cur_cat[1] }}</a></div></li>
+      <li class="category"><a href="{{ filelink | append: cur_cat[0] | append: "-" | append: cur_cat[1] | remove: site.weighted-txt }}">{{ cur_cat[1] | prepend: "@" }}</a></li>
       {%- assign last_cat = cur_cat[0] -%}
     {%- endfor -%}</ul></div>
   </div>

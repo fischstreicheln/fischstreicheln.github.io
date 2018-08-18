@@ -103,8 +103,9 @@
       margin: 0 $padding-unit*2;
       font-weight: $base-font-weight;
       a {
+        font-family: $title-font-family;
         text-decoration: none;
-        @include relative-font-size(1.5);
+        @include relative-font-size(1.25);
         color: $grey-dark;
       }
     }
@@ -123,7 +124,7 @@
       width: 100%;
       .post-highlight-title {
         a {
-          @include relative-font-size(1.25);
+          @include relative-font-size(1);
         }
       }
     }
@@ -131,7 +132,7 @@
       width: 100%;
       .post-highlight-title {
         a {
-          @include relative-font-size(1.25);
+          @include relative-font-size(1);
         }
       }
     }
@@ -181,7 +182,7 @@
     }
   }
   .sidebar-author-name {
-    font-family: 'PT Serif', serif;
+    font-family: $highlight-font-family;
     margin: 0 0 $padding-unit*2;
     position: relative;
     padding-bottom: $padding-unit*2;
@@ -265,62 +266,83 @@
 
 /*4. Catalogue */
 
-.catalogue {
+.home-catalogue {
   display: flex;
   flex-direction: column;
-  justify-content: stretch;
+  align-items: stretch;
   padding: $padding-unit;
   background-color: $grey-dark;
   box-shadow: 0 0 2px 0 $shadow-color-light;
-  .catalogue-title{
-    margin: $padding-unit auto;
-    padding-bottom: $padding-unit;
-    h2 {
-      margin: 0 auto;
-      @include relative-font-size(2);
-      text-transform: uppercase;
-      color: $grey-light;
-      font-weight: $base-font-weight*1.5;
-    }
-    &::after {
-      content: "";
-      display: block;
-      height: 1px;
-      width: 100%;
-      left: 0;
-      transform: translateY($padding-unit);
-      background-color: $grey;
-    }
+}
+
+.home-catalogue-title{
+  margin: $padding-unit auto;
+  padding-bottom: $padding-unit;
+  h2 {
+    font-family: $highlight-font-family;
+    margin: 0 auto;
+    @include relative-font-size(1.5);
+    text-transform: uppercase;
+    color: $grey-light;
+    font-weight: $base-font-weight*1.5;
+  }
+  &::after {
+    content: "";
+    display: block;
+    height: 1px;
+    width: 100%;
+    left: 0;
+    transform: translateY($padding-unit);
+    background-color: $grey;
   }
 }
 
-.catalogue-container {
+.tag-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 75%;
+  margin: $padding-unit auto;
+  @include media-query( ($on-palm + $on-laptop)/2 ) {
+    width: 80%;
+  }
+  @include media-query($on-palm) {
+    width: 85%;
+  }
+  @include media-query( ($on-palm + $on-min)/2 ) {
+    width: 90%;
+  }
+}
+
+.category-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   align-items: stretch;
   margin: $padding-unit 0;
-  .catalogue-list {
-    width: 23%;
+  .section-list {
+    width: 18%;
     margin: $padding-unit 1%;
-    background: $grey-light; /* fallback color */
-    background: $white-trans;
+    border-radius: $padding-unit/2;
+    background: $label-color-light;
+    @include media-query( ($on-palm + $on-laptop)/2 ) {
+      width: 23%;
+    }
     @include media-query($on-palm) {
-      width: 30%;
-      margin: $padding-unit 1.5%;
+      width: 31%;
     }
-    @include media-query($on-min) {
-      width: 46%;
-      margin: $padding-unit 2%;
+    @include media-query( ($on-palm + $on-min)/2 ) {
+      width: 48%;
     }
-    .category-section{
+    .section{
       margin: 0 $padding-unit*2;
       h3 {
         margin: 0 auto;
-        @include relative-font-size(1.25);
+        @include relative-font-size(1);
         text-transform: uppercase;
-        color: $grey-light;
+        color: $blue;
         font-weight: $base-font-weight;
         text-align: center;
       }
@@ -328,54 +350,86 @@
     .category-list {
       margin: 0 $padding-unit;
       list-style: none;
-      .category-container {
-        margin: $padding-unit auto;
-        background-color: $blue;
-        border-radius: $padding-unit;
-        box-shadow: 0 1px 1px 0 $shadow-color;
-        transition: all $transform-time ease;
-        &:hover {
-          transform: translate(0px, -1px);
-          box-shadow: 0 1px 5px -5px $shadow-color;
-        }
-        .category-name {
-          text-align: center;
-          margin: $padding-unit;
-          a {
-            text-decoration: none;
-            color: $grey-light;
-          }
-        }
-      }
     }
   }
 }
 
-/**/
-
-footer {
-  .copyright {
-    font-size: 14px;
-    text-align: center;
-    margin: 0;
+.tag, .category {
+  margin: $padding-unit;
+  padding: 0 $padding-unit*3;
+  text-align: center;
+  background-color: $label-color;
+  border-radius: $padding-unit*2;
+  box-shadow: 0 1px 1px 0 $shadow-color;
+  transition: all $transform-time ease;
+  &:hover {
+    transform: translate(0px, -1px);
+    box-shadow: 0 1px 5px -5px $shadow-color;
+  }
+  a {
+    @include relative-font-size(0.8);
+    text-decoration: none;
+    color: $label-color-link;
   }
 }
 
 
-a.older-posts, a.newer-posts {
-  font-size: 18px;
-  display: inline-block;
-  color: $body-color;
-  transition: transform .2s;
+/*5.Normal Post*/
+
+.post-list-title{
+  margin: $padding-unit auto;
+  padding-bottom: $padding-unit;
+  h2 {
+    font-family: $highlight-font-family;
+    margin: 0 auto;
+    @include relative-font-size(1.25);
+    text-transform: uppercase;
+    color: $grey-dark;
+    font-weight: $base-font-weight*1.25;
+  }
+  &::after {
+    content: "";
+    display: block;
+    height: 1px;
+    width: 100%;
+    left: 0;
+    transform: translateY($padding-unit);
+    background-color: $grey-light;
+  }
 }
 
-a.older-posts:hover {
-  transform: translateX(5px);
-}
-
-a.newer-posts:hover {
-  transform: translateX(-5px);
-}
-.post-list-normal {
-
+.post-list {
+  width: 80%;
+  margin-left: $spacing-unit;
+  list-style: none;
+  @include media-query($on-palm) {
+    width: 85%;
+  }
+  @include media-query($on-min) {
+    width: 90%;
+  }
+  li {
+    margin-bottom: $spacing-unit;
+  }
+  .post-title {
+    margin: 0 $padding-unit*2;
+    font-weight: $base-font-weight;
+    a {
+      font-family: $title-font-family;
+      text-decoration: none;
+      @include relative-font-size(1);
+      color: $grey-dark;
+    }
+  }
+  .post-meta {
+    margin: 0 $padding-unit*2;
+    @include relative-font-size(0.6);
+    color: $grey;
+  }
+  p {
+    margin: 0 $padding-unit*2;
+    @include relative-font-size(0.8);
+    color: $grey;
+    margin-top: 0;
+  }
 }

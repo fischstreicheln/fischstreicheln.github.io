@@ -7,35 +7,94 @@ layout: default
         {{ content }}
       </div>
   </section>
-
-  {%- assign i = 0 -%}
-  {%- assign HighLightCnt = site.highlight-post-max -%}
   {%- assign lang = page.lang | default: post.lang | default: site.lang | default: "en" -%}
   {%- assign posts = site.posts | where:"lang", lang -%}
+  {%- assign posts_size = posts.size -%}
+{%- comment -%}########## single loop ##########{%- endcomment -%}
   <div class="home-highlight">
-    {%- if site.posts.size > 0 -%}
+  {%- if posts_size > 0 -%}
+    {%- if site.highlight-post-max > 0 -%}
+      {%- assign Flag = -1 -%}
       <div class="post-list-highlight">
-        {%- for post in posts -%}
-          {%- assign i = i | plus:1 -%}
-          {%- if i <= HighLightCnt -%}
-            {%- include home/post-highlight.html show_post = post show_lang = lang idx = i -%}
-          {%- else -%}
-            {%- include home/post-normal.html show_post = post show_lang = lang idx = i -%}
-          {%- endif -%}
-          {%- if i == HighLightCnt -%}
-            </div>
-            {%- include home/sidebar.html show_lang = lang -%}</div>
-            {%- include home/catalogue.html show_lang = lang -%}
-            <div class="post-list-normal">
-            <ul class="post-list">More posts
-          {%- endif -%}
-        {%- endfor -%}
+    {%- else -%}
+      {%- assign Flag = 1 -%}
+      <div class="post-list-normal">
+        <ul class="post-list">
     {%- endif -%}
-  {%- if i < HighLightCnt -%}
-    </div>
-    {%- include home/sidebar.html show_lang = lang -%}</div>
-    {%- include home/catalogue.html show_lang = lang -%}
+    {%- for post in posts limit: site.homepage-post-max -%}
+      {%- if forloop.index <= site.highlight-post-max -%}
+        {%- include home/post-highlight.html show_post = post show_lang = lang idx = forloop.index -%}
+      {%- else -%}
+        {%- include home/post-normal.html show_post = post show_lang = lang -%}
+      {%- endif -%}
+      {%- if forloop.index == site.highlight-post-max -%}
+        {%- assign Flag = 0 -%}
+        </div> <!-- end of post-list-highlight -->
+        {%- include home/sidebar.html show_lang = lang -%}
+        </div> <!-- end of home-highlight -->
+        {%- include home/catalogue.html show_lang = lang -%}
+        {%- if forloop.index != site.homepage-post-max and forloop.index != posts_size -%}
+          {%- assign Flag = 2 -%}
+          <div class="post-list-normal">
+            <div class="post-list-title">
+              <h2>More Post</h2>
+            </div>
+            <ul class="post-list">
+        {%- endif -%}
+      {%- endif -%}
+    {%- endfor -%}
+    {%- if Flag > 0-%}
+      </ul></div>  <!-- end of post-list, post-list-normal -->
+    {%- elsif Flag < 0 -%}
+      </div> <!-- end of post-list-highlight -->
+    {%- endif -%}
+    {%- assign Flag = Flag | abs -%}
+    {%- if Flag == 1 -%}
+      {%- include home/sidebar.html show_lang = lang -%}
+      </div> <!-- end of home-highlight -->
+      {%- include home/catalogue.html show_lang = lang -%}
+    {%- endif -%}
   {%- else -%}
-    </ul></div>
+    {%- include home/sidebar.html show_lang = lang -%}</div> <!-- end of home-highlight -->
   {%- endif -%}
-</div>
+</div> <!-- end of home -->
+
+{% comment %}########## 2 seperated loop ##########
+  <div class="home-highlight">
+  {%- if posts.size > 0 -%}
+    {%- if site.highlight-post-max >= 0 -%}
+      <div class="post-list-highlight">
+        {%- for post in posts limit: site.highlight-post-max -%}
+          {%- include home/post-highlight.html show_post = post show_lang = lang idx = forloop.index -%}
+        {%- endfor -%}
+      </div>
+    {%- else -%}
+      <div class="post-list-normal">
+        <ul class="post-list">
+          {%- for post in posts limit: site.homepage-post-max -%}
+            {%- include home/post-normal.html show_post = post show_lang = lang -%}
+          {%- endfor -%}
+        </ul>
+      </div>
+    {%- endif -%}
+    {%- include home/sidebar.html show_lang = lang -%}</div> <!-- end of home-highlight -->
+    {%- include home/catalogue.html show_lang = lang -%}
+    {%- assign NormalCnt = site.homepage-post-max | minus: site.highlight-post-max -%}
+    {%- assign posts = site.posts | where:"lang", lang -%}
+    {%- if posts.size >= site.homepage-post-max and NormalCnt > 0 and site.highlight-post-max >= 0 -%}
+      <div class="post-list-normal">
+        <div class="post-list-title">
+          <h2>More Post</h2>
+        </div>
+        <ul class="post-list">
+          {%- for post in posts offset: site.highlight-post-max limit: NormalCnt -%}
+            {%- include home/post-normal.html show_post = post show_lang = lang -%}
+          {%- endfor -%}
+        </ul>
+      </div>
+    {%- endif -%}
+  {%- else -%}
+    {%- include home/sidebar.html show_lang = lang -%}</div> <!-- end of home-highlight -->
+  {%- endif -%}
+</div> <!-- end of home -->
+{%- endcomment -%}

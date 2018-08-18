@@ -10,13 +10,9 @@
   vertical-align: top;
   padding-top: $padding-unit;
   min-height: $spacing-unit*1.5;
-  @include media-query($on-palm) {
+  @include media-query(($on-palm + $on-min)/2) {
     min-height: $spacing-unit*2.5;
   }
-  @include media-query($on-min) {
-    min-height: $spacing-unit*3.5;
-  }
-  flex: 1;
 }
 
 .site-title-wrap{
@@ -27,7 +23,14 @@
 }
 
 .site-title {
+  font-family: $title-font-family;
   @include relative-font-size(1.425);
+  @include media-query(($on-palm + $on-min)/2) {
+    @include relative-font-size(1.25);
+  }
+  @include media-query($on-min) {
+    @include relative-font-size(1);
+  }
   font-weight: 300;
   line-height: $base-line-height * $base-font-size * 1.25;
   margin: 0;

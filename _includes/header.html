@@ -1,8 +1,9 @@
 <header class="site-header" role="banner">
   <div class="wrapper">
     {%- assign lang = page.lang | default: post.lang | default: site.lang | default: "en" -%}
-    <div class="site-title-wrap">
+    <div class="site-header-container">
       {%- include header/title.html show_lang = lang -%}
+      {%- include header/contact.html-%}
       {%- include header/multilingual.html current_lang = lang -%}
     </div>
     {%- assign default_paths = site.pages | map: "path" -%}

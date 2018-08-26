@@ -10,7 +10,6 @@ layout: default
   {%- assign lang = page.lang | default: post.lang | default: site.lang | default: "en" -%}
   {%- assign posts = site.posts | where:"lang", lang -%}
   {%- assign posts_size = posts.size -%}
-{%- comment -%}########## single loop ##########{%- endcomment -%}
   <div class="home-highlight">
   {%- if posts_size > 0 -%}
     {%- if site.highlight-post-max > 0 -%}
@@ -32,7 +31,7 @@ layout: default
         </div> <!-- end of post-list-highlight -->
         {%- include home/sidebar.html show_lang = lang -%}
         </div> <!-- end of home-highlight -->
-        {%- include home/catalogue.html show_lang = lang -%}
+        {%- include home/catalog.html show_lang = lang -%}
         {%- if forloop.index != site.homepage-post-max and forloop.index != posts_size -%}
           {%- assign Flag = 2 -%}
           <div class="post-list-normal">
@@ -52,7 +51,7 @@ layout: default
     {%- if Flag == 1 -%}
       {%- include home/sidebar.html show_lang = lang -%}
       </div> <!-- end of home-highlight -->
-      {%- include home/catalogue.html show_lang = lang -%}
+      {%- include home/catalog.html show_lang = lang -%}
     {%- endif -%}
   {%- else -%}
     {%- include home/sidebar.html show_lang = lang -%}</div> <!-- end of home-highlight -->
@@ -78,7 +77,7 @@ layout: default
       </div>
     {%- endif -%}
     {%- include home/sidebar.html show_lang = lang -%}</div> <!-- end of home-highlight -->
-    {%- include home/catalogue.html show_lang = lang -%}
+    {%- include home/catalog.html show_lang = lang -%}
     {%- assign NormalCnt = site.homepage-post-max | minus: site.highlight-post-max -%}
     {%- assign posts = site.posts | where:"lang", lang -%}
     {%- if posts.size >= site.homepage-post-max and NormalCnt > 0 and site.highlight-post-max >= 0 -%}

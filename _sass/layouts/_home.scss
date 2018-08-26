@@ -1,158 +1,126 @@
-/* Homepage setting */
-
-/* 1. Banner */
-
+/* 1. General */
 .home-banner {
   margin-top: $spacing-unit*0.5;
-  padding: $spacing-unit*1.5 0 $spacing-unit 0;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  text-align: center;
+  padding: $spacing-unit * 2 0 $spacing-unit;
   border-bottom: 1px solid $grey-light;
+  @extend %center-image;
   box-shadow: 0 1px 1px 0 $shadow-color-light;
-}
-
-.home-message {
-  position: relative;
-  z-index: 1;
-  h2 {
-    color: $grey-dark;
-    @include relative-font-size(2);
-    margin: 0;
-  }
-  p, a {
-    @include relative-font-size(1);
-    color: $white;
-    text-decoration: none;
-    margin: 0;
-    padding: $padding-unit;
-    display: inline-block;
-    background: $blue; /* fallback color */
-    background: $blue-trans;
- }
+  text-align: center;
 }
 
 .home-highlight {
-  display: flex;
-  flex-direction: row;
+  @extend %flex-row-display;
   @include media-query($on-palm) {
     display: block;
   }
 }
 
-/* 2. Highlight - Post */
+/* 2. Banner */
+.home-message {
+  h2 {
+    margin: 0;
+    @include relative-font-size($title-ratio);
+    @include media-font-size($on-palm, $small-title-ratio);
+    color: $grey-dark;
+  }
+  p, a {
+    display: inline-block;
+    margin: 0;
+    padding: $padding-unit;
+    @include background-fallback($blue-trans, $blue);
+    @include relative-font-size($regular-ratio);
+    @include media-font-size($on-palm, $small-regular-ratio);
+    color: $white;
+    text-decoration: none;
+ }
+}
 
+/* 2. Highlight - Post List */
 .post-list-highlight {
   flex: 1;
-  margin: $padding-unit;
-  margin-left: $padding-unit*2;
-  display: flex;
-  flex-direction: row;
+  @extend %flex-row-display;
   flex-wrap: wrap;
   align-items: stretch;
+  margin: $padding-unit;
+  margin-left: $padding-unit*2;
 }
 
 .post-highlight {
-  display: flex;
-  flex-direction: row;
+  @extend %flex-row-display;
+  @include media-query($on-palm) {flex-direction: column;}
   align-items: stretch;
   overflow: hidden;
-  width: 100%;
+  @include relative-width(100%);
+  @include media-width($on-palm, 48%);
+  @include media-width($on-min, 98%);
   max-width: 100%;
   min-height: $frame-unit*1.5;
   margin: $padding-unit 0;
-  background-color: $white;
+  @include media-query($on-palm) {margin: $padding-unit 1%;}
   border-radius: $padding-unit;
+  background-color: $white;
   box-shadow: 0 1px 1px 0 $shadow-color;
-  transition: all $transform-time ease;
   &:hover {
     transform: translate(0px, -1px);
     box-shadow: 0 5px 10px -5px $shadow-color;
   }
-  @include media-query($on-palm) {
-    width: 48%;
-    margin: $padding-unit 1%;
-    flex-direction: column;
-  }
-  @include media-query($on-min) {
-    width: 98%;
-    margin: $padding-unit 1%;
-    flex-direction: column;
-  }
+  transition: all $transform-time ease;
+}
 
-  .post-highlight-thumbnail {
-    width: 40%;
-    max-width: 100%;
-    min-height: $frame-unit*1.5;
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    @include media-query($on-palm) {
-      width: 100%;
-    }
-    @include media-query($on-min) {
-      width: 100%;
-    }
-  }
+.post-highlight-image {
+  @include relative-width(40%);
+  @include media-width($on-palm, 100%);
+  max-width: 100%;
+  min-height: $frame-unit*1.5;
+  @extend %center-image;
+}
 
-  .post-highlight-content {
-    padding: $padding-unit*2 0;
-    width: 60%;
-    .post-highlight-title {
-      margin: 0 $padding-unit*2;
+.post-highlight-content {
+  @include relative-width(60%);
+  @include media-width($on-palm, 100%);
+  padding: $padding-unit*2 0;
+  .post-highlight-title {
+    @extend %flex-row-display;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin: 0 $padding-unit*2;
+    font-weight: $base-font-weight;
+    a {
+      font-family: $title-font-family;
+      @include relative-font-size($header-ratio);
+      @include media-font-size($on-palm, $small-header-ratio);
       font-weight: $base-font-weight;
-      a {
-        font-family: $title-font-family;
-        text-decoration: none;
-        @include relative-font-size(1.25);
-        color: $grey-dark;
-      }
+      @include visit-color($grey-dark, $grey-dark);
+      text-decoration: none;
     }
-    .post-highlight-meta {
-      margin: 0 $padding-unit*2;
-      @include relative-font-size(0.6);
-      color: $grey;
-    }
-    p {
-      margin: 0 $padding-unit*2;
-      @include relative-font-size(0.8);
-      color: $grey;
-      margin-top: 0;
-    }
-    @include media-query($on-palm) {
-      width: 100%;
-      .post-highlight-title {
-        a {
-          @include relative-font-size(1);
-        }
-      }
-    }
-    @include media-query($on-min) {
-      width: 100%;
-      .post-highlight-title {
-        a {
-          @include relative-font-size(1);
-        }
-      }
-    }
+  }
+  .post-highlight-meta {
+    margin: 0 $padding-unit*2;
+    @include relative-font-size($meta-ratio);
+    @include media-font-size($on-palm, $small-meta-ratio);
+    @include visit-color($grey, $grey);
+  }
+  p {
+    margin: 0 $padding-unit*2;
+    @include relative-font-size($meta-ratio);
+    @include media-font-size($on-palm, $small-meta-ratio);
+    @include visit-color($grey, $grey);
   }
 }
 
 /* 3. Highlight - Sidebar */
-
 .home-sidebar {
   flex:0 0 24%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: $padding-unit*2;
   margin: 0 $padding-unit;
   margin-right: $padding-unit*2;
-  background-color: $white;
+  padding: $padding-unit*2;
   border: 0;
   border-left: 1px solid $grey-light;
   border-right: 1px solid $grey-light;
+  background-color: $white;
   @include media-query($on-palm) {
     margin: 0;
     border: 0;
@@ -165,31 +133,31 @@
   margin: 0 0 $spacing-unit;
   text-align: center;
   .sidebar-author-image {
+    overflow: hidden;
     width: $frame-unit;
     height: $frame-unit;
     margin: 0 auto $padding-unit*2;
     border-radius: 100%;
-    overflow: hidden;
     background-color: $blue-light;
   }
   img {
     width: $frame-unit;
     height: $frame-unit;
     border-radius: 50%;
-    transition: transform $transform-time;
     &:hover {
       transform: scale3d(0.9,0.9,1);
     }
+    transition: transform $transform-time;
   }
   .sidebar-author-name {
-    font-family: $highlight-font-family;
-    margin: 0 0 $padding-unit*2;
     position: relative;
+    margin: 0 0 $padding-unit*2;
     padding-bottom: $padding-unit*2;
-    @include relative-font-size(1.5);
-    text-transform: uppercase;
-    color: $grey-dark;
+    font-family: $highlight-font-family;
+    @include relative-font-size($big-header-ratio);
     font-weight: $base-font-weight*2;
+    @include visit-color($grey-dark, $grey-dark);
+    text-transform: uppercase;
     &::after {
       content: "";
       position: absolute;
@@ -212,33 +180,19 @@
 .sidebar-contact {
   .sidebar-contact-title {
     position: relative;
-    color: $grey-dark;
-    font-weight: $base-font-weight;
-    @include relative-font-size(0.75);
     margin: 0 0 $padding-unit;
-    text-transform: uppercase;
+    @include relative-font-size($meta-ratio);
+    font-weight: $base-font-weight;
+    @include visit-color($grey-dark, $grey-dark);
     text-align: center;
+    text-transform: uppercase;
     &::before {
-      content: "";
-      display: block;
-      height: 1px;
-      width: calc(50% - 48px);
-      transform: translateY(-50%);
-      position: absolute;
-      top: 50%;
+      @extend %half-length-line;
       left: 0;
-      background-color: $grey-light;
     }
     &::after {
-      content: "";
-      display: block;
-      height: 1px;
-      width: calc(50% - 48px);
-      transform: translateY(-50%);
-      position: absolute;
-      top: 50%;
+      @extend %half-length-line;
       right: 0;
-      background-color: $grey-light;
     }
   }
   ul {
@@ -250,164 +204,41 @@
       display: inline-block;
       margin: 0 $padding-unit;
       a {
-        color: $grey;
         display: block;
         padding: $padding-unit;
         font-size: $base-font-size;
+        @include hover-color-scale($grey, $grey-dark, 1.25);
         transition: all $transform-time cubic-bezier(0.13, 0.43, 0.54, 1.82);
-        &:hover {
-          color: $grey-dark;
-          transform: scale(1.25);
-        }
       }
     }
   }
 }
 
-/*4. Catalogue */
-
-.home-catalogue {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  padding: $padding-unit;
-  background-color: $grey-dark;
-  box-shadow: 0 0 2px 0 $shadow-color-light;
-}
-
-.home-catalogue-title{
-  margin: $padding-unit auto;
-  padding-bottom: $padding-unit;
-  h2 {
-    font-family: $highlight-font-family;
-    margin: 0 auto;
-    @include relative-font-size(1.5);
-    text-transform: uppercase;
-    color: $grey-light;
-    font-weight: $base-font-weight*1.5;
-  }
-  &::after {
-    content: "";
-    display: block;
-    height: 1px;
-    width: 100%;
-    left: 0;
-    transform: translateY($padding-unit);
-    background-color: $grey;
-  }
-}
-
-.tag-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  width: 75%;
-  margin: $padding-unit auto;
-  @include media-query( ($on-palm + $on-laptop)/2 ) {
-    width: 80%;
-  }
-  @include media-query($on-palm) {
-    width: 85%;
-  }
-  @include media-query( ($on-palm + $on-min)/2 ) {
-    width: 90%;
-  }
-}
-
-.category-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: stretch;
-  margin: $padding-unit 0;
-  .section-list {
-    width: 18%;
-    margin: $padding-unit 1%;
-    border-radius: $padding-unit/2;
-    background: $label-color-light;
-    @include media-query( ($on-palm + $on-laptop)/2 ) {
-      width: 23%;
-    }
-    @include media-query($on-palm) {
-      width: 31%;
-    }
-    @include media-query( ($on-palm + $on-min)/2 ) {
-      width: 48%;
-    }
-    .section{
-      margin: 0 $padding-unit*2;
-      h3 {
-        margin: 0 auto;
-        @include relative-font-size(1);
-        text-transform: uppercase;
-        color: $blue;
-        font-weight: $base-font-weight;
-        text-align: center;
-      }
-    }
-    .category-list {
-      margin: 0 $padding-unit;
-      list-style: none;
-    }
-  }
-}
-
-.tag, .category {
-  margin: $padding-unit;
-  padding: 0 $padding-unit*3;
-  text-align: center;
-  background-color: $label-color;
-  border-radius: $padding-unit*2;
-  box-shadow: 0 1px 1px 0 $shadow-color;
-  transition: all $transform-time ease;
-  &:hover {
-    transform: translate(0px, -1px);
-    box-shadow: 0 1px 5px -5px $shadow-color;
-  }
-  a {
-    @include relative-font-size(0.8);
-    text-decoration: none;
-    color: $label-color-link;
-  }
-}
-
-
-/*5.Normal Post*/
+/*4.Normal Post List*/
 
 .post-list-title{
   margin: $padding-unit auto;
   padding-bottom: $padding-unit;
   h2 {
-    font-family: $highlight-font-family;
     margin: 0 auto;
-    @include relative-font-size(1.25);
-    text-transform: uppercase;
-    color: $grey-dark;
+    font-family: $highlight-font-family;
+    @include relative-font-size($header-ratio);
     font-weight: $base-font-weight*1.25;
+    @include visit-color($grey-dark, $grey-dark);
+    text-transform: uppercase;
   }
   &::after {
-    content: "";
-    display: block;
-    height: 1px;
-    width: 100%;
-    left: 0;
-    transform: translateY($padding-unit);
+    @extend %full-length-line;
     background-color: $grey-light;
   }
 }
 
 .post-list {
-  width: 80%;
+  @include relative-width(80%);
+  @include media-width($on-palm, 85%);
+  @include media-width($on-min, 90%);
   margin-left: $spacing-unit;
   list-style: none;
-  @include media-query($on-palm) {
-    width: 85%;
-  }
-  @include media-query($on-min) {
-    width: 90%;
-  }
   li {
     margin-bottom: $spacing-unit;
   }
@@ -416,20 +247,20 @@
     font-weight: $base-font-weight;
     a {
       font-family: $title-font-family;
+      @include relative-font-size($header-ratio);
+      font-weight: $base-font-weight;
+      @include visit-color($grey-dark, $grey-dark);
       text-decoration: none;
-      @include relative-font-size(1);
-      color: $grey-dark;
     }
   }
   .post-meta {
     margin: 0 $padding-unit*2;
-    @include relative-font-size(0.6);
-    color: $grey;
+    @include relative-font-size($small-meta-ratio);
+    @include visit-color($grey, $grey);
   }
   p {
     margin: 0 $padding-unit*2;
-    @include relative-font-size(0.8);
-    color: $grey;
-    margin-top: 0;
+    @include relative-font-size($meta-ratio);
+    @include visit-color($grey, $grey);
   }
 }

@@ -3,7 +3,7 @@ en:
   home-url: /
   minute-read: minute read
   contact-me: Contact Me
-  catalogue: Catalogue
+  catalog: Catalog
 
 cn:
   fulltxt: 中文
@@ -11,7 +11,7 @@ cn:
   home-url: /index-cn
   minute-read: 分钟阅读时间
   contact-me: 联系我
-  catalogue: 分类目录
+  catalog: 分类目录
 
 test:
   fulltxt: Test Page

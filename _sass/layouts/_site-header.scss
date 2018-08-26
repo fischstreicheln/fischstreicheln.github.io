@@ -1,129 +1,132 @@
+/* 1. General */
 .site-header {
+  position: fixed;
   top: 0px;
+  z-index: 1000;
   width: 100%;
-  background: #ffffff;
+  padding: $padding-unit 0;
   border-top: $padding-unit solid $grey-dark;
   border-bottom: 1px solid $grey-light;
+//  min-height: $spacing-unit*1.5;
+//  @include media-query($on-half-min-palm) {min-height: $spacing-unit*2.5;}
+  background: $white;
   box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.25);
-  position: fixed;
-  z-index: 1000;
   vertical-align: top;
-  padding-top: $padding-unit;
-  min-height: $spacing-unit*1.5;
-  @include media-query(($on-palm + $on-min)/2) {
-    min-height: $spacing-unit*2.5;
+  .wrapper{
+    @extend %flex-row-display;
+    justify-content: flex-start;
+    align-items: flex-end;
   }
 }
 
-.site-title-wrap{
-  min-width: $base-min-width - $spacing-unit*2;
-  padding: $padding-unit 0;
-  padding-right: $spacing-unit*2;
+.site-header-container {
+  flex: auto;
+  min-width: $content-min-width - $spacing-unit * 2;
+  margin: $padding-unit auto 0 auto;
+  padding-right: $spacing-unit * 2;
   vertical-align: bottom;
 }
 
+.site-nav {
+  flex: none;
+}
+
+/* 2. Info - Always showed: title, contacts, multilingual-list */
 .site-title {
-  font-family: $title-font-family;
-  @include relative-font-size(1.425);
-  @include media-query(($on-palm + $on-min)/2) {
-    @include relative-font-size(1.25);
-  }
-  @include media-query($on-min) {
-    @include relative-font-size(1);
-  }
-  font-weight: 300;
-  line-height: $base-line-height * $base-font-size * 1.25;
-  margin: 0;
   display: inline;
-  color: $grey-dark;
-  &:visited {
-    color: $grey-dark;
+  margin: 0;
+  font-family: $title-font-family;
+  @include relative-font-size($header-ratio);
+  @include media-font-size($on-half-min-palm, $small-header-ratio);
+  font-weight: $base-font-weight;
+  line-height: $base-line-height * $base-font-size * 1.25;
+  @include visit-color($grey-dark, $grey-dark);
+}
+
+.site-contact {
+  display: inline;
+  margin: 0;
+  a {
+    display: inline-block;
+    padding: 0 $padding-unit * 2;
+    @include relative-font-size($regular-ratio);
+    @include media-font-size($on-half-min-palm, $small-regular-ratio);
+    @include hover-color-scale($grey, $grey-dark, 1.25);
+    transition: all $transform-time cubic-bezier(0.13, 0.43, 0.54, 1.82);
   }
 }
 
 .site-meta {
-  font-size: $small-font-size;
+  display: inline-block;
   margin: 0;
+  font-family: $title-font-family;
   white-space: nowrap;
-  display: inline;
-  color: $grey;
-  &:visited {
-    color: $grey;
-  }
+  @include relative-font-size($meta-ratio);
+  @include media-font-size($on-half-min-palm, $small-meta-ratio);
+  @include visit-color($grey, $grey);
 }
 
+/* 3. Navigation - showed on media queires */
 .site-nav {
-  float: right;
-  line-height: $base-line-height * $base-font-size * 2.25;
-
   .nav-trigger {
     display: none;
   }
-
   .menu-icon {
     display: none;
   }
-
-  .page-link {
-    color: $text-color;
-    line-height: $base-line-height;
-
-    // Gaps between nav items, but not on the last one
-    &:not(:last-child) {
-      margin-right: 20px;
-    }
-  }
-
-  @include media-query($on-always) {
+  @include media-query($on-palm) {
     position: absolute;
     top: $padding-unit;
     right: $spacing-unit;
-    background-color: $background-color;
     border: 1px solid $grey-light;
     border-radius: $padding-unit/2;
+    background-color: $background-color;
     text-align: right;
-
     label[for="nav-trigger"] {
       display: block;
       float: right;
+      z-index: 2;
       width: $spacing-unit;
       height: $spacing-unit;
-      z-index: 2;
       cursor: pointer;
     }
-
     .menu-icon {
       display: block;
       float: right;
       width: $spacing-unit;
       height: $spacing-unit - $padding-unit;
-      line-height: 0;
       padding-top: $padding-unit;
+      line-height: 0;
       text-align: center;
-
-      > svg {
-        fill: $grey-dark;
+      svg {
+        fill: $grey;
       }
     }
-
     input ~ .trigger {
       clear: both;
       display: none;
     }
-
     input:checked ~ .trigger {
       display: block;
       padding-bottom: 5px;
     }
+  }
+}
 
-    .page-link {
-      display: block;
-      padding: 5px 10px;
-
-      &:not(:last-child) {
-        margin-right: 0;
-      }
-      margin-left: 20px;
+.page-link {
+  font-family: $title-font-family;
+  white-space: nowrap;
+  @include relative-font-size($meta-ratio);
+  @include visit-color($grey-dark, $grey-dark);
+  &:not(:last-child) {
+    margin-right: 20px;
+  }
+  @include media-query($on-palm) {
+    display: block;
+    padding: 5px 10px;
+    &:not(:last-child) {
+      margin-right: 0;
     }
+    margin-left: 20px;
   }
 }

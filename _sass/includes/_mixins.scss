@@ -1,0 +1,62 @@
+// Media queries
+@mixin media-query($device) {
+  @media screen and (max-width: $device) {
+    @content;
+  }
+}
+
+// Width (with media queries)
+@mixin relative-width($percentage) {
+  width: $percentage;
+}
+
+@mixin media-width($device, $percentage) {
+  @include media-query($device) {
+    @include relative-width($percentage);
+  }
+}
+
+
+// Font size (with media queries)
+@mixin relative-font-size($ratio) {
+  font-size: $base-font-size * $ratio;
+}
+
+@mixin media-font-size($device, $ratio) {
+  @include media-query($device) {
+    @include relative-font-size($ratio);
+  }
+}
+
+
+// Color with fallback setting
+@mixin background-fallback($color, $fallback-color) {
+  background: $fallback-color;
+  background: $color;
+}
+
+
+// Visit: Color before and after visited
+@mixin visit-color($before, $after) {
+  color: $before;
+  &:visited {
+    color: $after;
+  }
+}
+
+
+// Hover: Color (and Scale) before and after hovered
+@mixin hover-color($before, $after) {
+  color: $before;
+  &:hover {
+    color: $after;
+  }
+}
+
+@mixin hover-color-scale($before, $after, $scale-ratio) {
+  color: $before;
+  &:hover {
+    color: $after;
+    transform: scale($scale-ratio);
+  }
+}

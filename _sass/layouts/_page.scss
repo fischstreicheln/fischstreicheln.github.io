@@ -4,12 +4,8 @@
 
 .page-content {
   padding: $spacing-unit*1.5 0;
-  @include media-query($on-palm) {
-    padding: $spacing-unit*2 0 $spacing-unit 0;
-  }
-  @include media-query($on-min) {
-    padding: $spacing-unit*2.5 0 $spacing-unit 0;
-  }
+  @include media-query($on-palm) {padding: $spacing-unit*2 0 $spacing-unit 0;}
+  @include media-query($on-min) {padding: $spacing-unit*2.5 0 $spacing-unit 0;}
   flex: 1;
 }
 

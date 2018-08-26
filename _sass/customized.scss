@@ -1,0 +1,24 @@
+@charset "utf-8";
+
+// Import partials.
+@import
+  "includes/variables",
+  "includes/extend",
+  "includes/mixins";
+
+@import
+  "basic/base",
+  "basic/syntax";
+
+@import
+  "layouts/page",
+  "layouts/post",
+  "layouts/site-header",
+  "layouts/site-footer";
+
+@import
+  "layouts/home",
+  "layouts/catalog";
+
+@import
+  "sandbox";

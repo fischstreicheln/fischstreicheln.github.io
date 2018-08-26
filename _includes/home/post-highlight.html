@@ -5,10 +5,14 @@
     {%- assign img_idx = include.idx | module: site.sample-image-max | plus: 1 -%}
     {%- assign image-url = site.sample-image-url | prepend: site.baseurl | append : img_idx | append: ".jpg" -%}
   {%- endif -%}
-  <a class="post-highlight-thumbnail" style="background-image: url({{ image-url }})" href="{{ include.show_post.url | prepend: site.baseurl }}"></a>
+  <a class="post-highlight-image" style="background-image: url({{ image-url }})" href="{{ include.show_post.url | prepend: site.baseurl }}"></a>
   <div class="post-highlight-content">
     <h2 class="post-highlight-title"><a href="{{ include.show_post.url | prepend: site.baseurl }}">{{ include.show_post.title }}</a></h2>
-    <p>{{ include.show_post.content | strip_html | truncatewords: 15 }}</p>
+    <div class="post-label">
+      {%- for category in include.show_post.categories -%}<div class="category"><p>{{ category | prepend: "@" }}</p></div>{%- endfor-%}
+      {%- for tag in include.show_post.tags -%}<div class="tag"><p>{{ tag | prepend: "#"}}</p></div>{%- endfor-%}
+    </div>
+      <p>{{ include.show_post.content | strip_html | truncatewords: 15 }}</p>
     <span class="post-highlight-meta">{{ include.show_post.date | date: '%Y, %b %d' }}&nbsp;&nbsp;—&nbsp;&nbsp;{%- capture words -%}{{ include.show_post.content | number_of_words }}{%- endcapture -%}{%- unless words contains "-" -%}{{ words | plus: 250 | divided_by: 250 }}{%- include ref/abbr.html show_lang = include.show_lang show_txt = "minute-read" -%}{%- endunless -%}</span>
   </div>
 </article>

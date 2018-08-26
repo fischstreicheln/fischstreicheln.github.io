@@ -1,0 +1,31 @@
+// Background image setting
+%center-image {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+%flex-row-display {
+  display: flex;
+  flex-direction: row;
+}
+
+%full-length-line {
+  content: "";
+  display: block;
+  left: 0;
+  transform: translateY($padding-unit);
+  height: 1px;
+  width: 100%;
+}
+
+%half-length-line {
+  content: "";
+  display: block;
+  height: 1px;
+  width: calc(50% - 48px);
+  transform: translateY(-50%);
+  position: absolute;
+  top: 50%;
+  background-color: $grey-light;
+}

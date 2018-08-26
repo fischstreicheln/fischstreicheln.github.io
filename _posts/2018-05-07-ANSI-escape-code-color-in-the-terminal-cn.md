@@ -4,7 +4,7 @@ title:  "ANSI转义字符：终端中的颜色设置"
 date:   2018-05-07 14:39:00 +0800
 ref: "ANSI escape code: Color in the terminal"
 lang: cn
-category: [personal, linux]
+category: personal, linux
 ---
 
 As what we've discussed in the post of [Customizing the terminal prompt](/2018/05/06/customizing-the-terminal-prompt),

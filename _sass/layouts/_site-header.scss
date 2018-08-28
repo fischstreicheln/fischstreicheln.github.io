@@ -5,6 +5,7 @@
   z-index: 1000;
   width: 100%;
   padding: $padding-unit 0;
+  @include media-query($on-half-min-palm) {padding: 0;}
   border-top: $padding-unit solid $grey-dark;
   border-bottom: 1px solid $grey-light;
 //  min-height: $spacing-unit*1.5;
@@ -23,6 +24,7 @@
   flex: auto;
   min-width: $content-min-width - $spacing-unit * 2;
   margin: $padding-unit auto 0 auto;
+  @include media-query($on-half-palm-laptop) {margin: 0 auto;}
   padding-right: $spacing-unit * 2;
   vertical-align: bottom;
 }

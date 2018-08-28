@@ -17,10 +17,10 @@
     text-decoration: none;
     color: $label-color-link;
   }
-  h2 {
+  h2, h3 {
     text-align: left;
     font-family: $label-font-family;
-    @include relative-font-size($small-header-ratio);
+    @include relative-font-size($header-ratio);
     text-decoration: none;
     color: $label-color-link;
   }
@@ -83,6 +83,7 @@
     @include media-width($on-palm, 31%);
     @include media-width($on-half-min-palm, 48%);
     margin: $padding-unit 1%;
+    padding-bottom: $padding-unit;
     border-radius: $padding-unit;
     background: $label-color-light;
     .section{
@@ -107,7 +108,8 @@
 
 /*3. Categories and Tags */
 .gap {
-  padding: $spacing-unit 0;
-  @include media-query($on-palm) {padding: $spacing-unit*1.25 0;}
-  @include media-query($on-min) {padding: $spacing-unit*1.5 0;}
+  padding: $spacing-unit*2 0 0;
+  @include media-query($on-palm) {padding: $spacing-unit*2.5 0 0;}
+  @include media-query($on-min) {padding: $spacing-unit*3 0 0;}
+  text-transform: uppercase;
 }

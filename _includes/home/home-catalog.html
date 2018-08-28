@@ -4,7 +4,7 @@
   </header>
   {%- if include.show_lang != "en" -%}{%- assign langlabel = "-" | append: include.show_lang -%}{%- endif -%}
   <div class="tag-container">
-    {%- for tag in site.categories -%}
+    {%- for tag in site.tags -%}
       {%- assign filelink = langlabel | prepend: "catalog/tags" | prepend: site.baseurl | append: ".html#" -%}
       {%- assign posts = tag[1] | where: "lang", include.show_lang -%}
       {%- if posts.size == 0 -%}{%- continue -%}{%- endif -%}
@@ -36,16 +36,16 @@
     {%- assign sorted_cat = my_cat | uniq | sort -%}
     {%- assign filelink = langlabel | prepend: "catalog/categories" | prepend: site.baseurl | append: ".html#" -%}
     {%- for category in sorted_cat -%}
-      {%- assign cur_cat = category | split: site.split-txt -%}
+      {%- assign cur_cat = category | remove: site.weighted-txt  | split: site.split-txt -%}
       {%- if cur_cat[0] != last_cat -%}
         {%- if last_cat != nil -%}</ul></div>{%- endif -%}
         <div class="section-list">
           <div class="section">
-            <h3>{{ cur_cat[0] | remove: site.weighted-txt }}</h3>
+            <h3>{{ cur_cat[0] }}</h3>
           </div>
           <ul class="category-list">
       {%- endif -%}
-      <li class="category"><a href="{{ filelink | append: cur_cat[0] | append: "-" | append: cur_cat[1] | remove: site.weighted-txt }}">{{ cur_cat[1] | prepend: "@" }}</a></li>
+      <li class="category"><a href="{{ filelink | append: cur_cat[0] | append: "-" | append: cur_cat[1] }}">{{ cur_cat[1] | prepend: "@" }}</a></li>
       {%- assign last_cat = cur_cat[0] -%}
     {%- endfor -%}</ul></div>
   </div>

@@ -1,4 +1,4 @@
-.post-toc {
+.post-toc1 {
   float: right;
   max-width:320px;
   border: 1px dotted #CCCCCC;
@@ -7,22 +7,22 @@
   padding:10px 5px 0px 5px;
 }
 
-.show-trigger, .hide-trigger, toc-contents {
+.show-trigger1, .hide-trigger1, toc-contents1 {
   background-color: #FFFFFF00;
   border: none;
   margin: 0px;
   padding: 0px;
 }
 
-.show-trigger{
+.show-trigger1{
   display: none;
 }
 
-.hide-trigger {
+.hide-trigger1 {
   display: inline-block;
 }
 
-.toc-contents {
+.toc-contents1 {
   display: block;
 }
 

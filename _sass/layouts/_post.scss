@@ -1,70 +1,110 @@
+/* 1. Post style */
 .post-header {
-  margin: $spacing-unit*2 0 $spacing-unit*0.5;
-}
-
-.post-title {
-  @include relative-font-size(2.625);
-  letter-spacing: -1px;
-  line-height: 1;
-
-  @include media-query($on-laptop) {
-    @include relative-font-size(2.25);
+  width: 90%;
+  margin: $spacing-unit*2 auto $spacing-unit*0.5;
+  text-align: center;
+  .post-title {
+    margin: $padding-unit auto;
+    @include relative-font-size($title-ratio);
+    @include media-font-size($on-palm, $small-title-ratio);
+    @include media-font-size($on-min, $big-header-ratio);
+  }
+  .post-label {
+    margin: $padding-unit auto 0;
+    justify-content: center;
+    p {margin: 0 $padding-unit*2;}
+  }
+  .post-meta {
+    color: $grey;
   }
 }
 
 .post-content {
   margin-bottom: $spacing-unit;
-
+  a {
+    @include relative-font-size($regular-ratio);
+    @include media-font-size($on-half-min-palm, $small-regular-ratio);
+  }
+  code, pre, .highlight {
+    border: none;
+    border-radius: $padding-unit/2;
+    font-family: $label-font-family;
+    @include relative-font-size($small-regular-ratio);
+    @include media-font-size($on-half-min-palm, $meta-ratio);
+    letter-spacing: -0.5px;
+    color: $grey-light;
+    background: $grey-dark;
+  }
+  p，ul, li, strong, i {
+    @include relative-font-size($regular-ratio);
+    @include media-font-size($on-half-min-palm, $small-regular-ratio);
+    color: $grey-dark;
+    font-weight: $base-font-weight/2;
+  }
   h2 {
-    @include relative-font-size(2);
-
-    @include media-query($on-laptop) {
-      @include relative-font-size(1.75);
-    }
+    max-width: 60%;
+    margin: $spacing-unit 0;
+    padding-left: $spacing-unit/2;
+    border-left: 2px $grey-dark solid;
+    @include relative-font-size($big-header-ratio);
+    @include media-font-size($on-half-min-palm, $header-ratio);
   }
-
-  h3 {
-    @include relative-font-size(1.625);
-
-    @include media-query($on-laptop) {
-      @include relative-font-size(1.375);
-    }
-  }
-
-  h4 {
-    @include relative-font-size(1.25);
-
-    @include media-query($on-laptop) {
-      @include relative-font-size(1.125);
-    }
+  h3, h4, h5, h6 {
+    margin: $spacing-unit/2 0;
+    padding-left: $spacing-unit/2;
+    @include relative-font-size($header-ratio);
+    @include media-font-size($on-half-min-palm, $small-header-ratio);
   }
 }
 
-//*** Post TOC style setting ***///
+/* 2. Post TOC */
 .post-toc {
   float: right;
-  max-width:320px;
-  border: 1px dotted #CCCCCC;
-  background-color: #EFF5FF;
-  margin: 10px;
-  padding:10px 5px 0px 5px;
-}
-
-.show-trigger, .hide-trigger, toc-contents {
-  background-color: #FFFFFF00;
-  border: none;
-  margin: 0px;
-  padding: 0px;
-}
-
-.show-trigger{
-  display: none;
-}
-
-.hide-trigger {
-  display: inline-block;
-}
-
-.toc-contents {
-  display: block;
+  max-width: $sidebar-width;
+  margin: $padding-unit*2;
+  @include media-query($on-min) {
+    float: none;
+    width: 90%;
+    max-width: none;
+    margin: $padding-unit*2 auto;
+  }
+  padding:$padding-unit*2;
+  padding-bottom: 0;
+  border: 1px solid $grey-light;
+  border-radius: $padding-unit/2;
+  background-color: $grey-light;
+  .toc-title {
+    margin: 0;
+    text-align: center;
+    font-weight: bold;
+    @include relative-font-size($regular-ratio);
+    @include media-font-size($on-half-min-palm, $small-regular-ratio);
+  }
+  a {
+    font-family: $base-font-family;
+    @include relative-font-size($meta-ratio);
+    @include media-font-size($on-half-min-palm, $small-meta-ratio);
+  }
+  button, .button {
+    float: right;
+    padding: $padding-unit;
+    padding-right: 0;
+    @include relative-font-size($meta-ratio);
+    @include media-font-size($on-half-min-palm, $small-meta-ratio);
+  }
+  .show-trigger, .hide-trigger, toc-contents {
+    background-color: #FFFFFF00;
+    border: none;
+    margin: 0px;
+    padding: 0px;
+  }
+  .show-trigger{
+    display: none;
+  }
+  .hide-trigger {
+    display: inline-block;
+  }
+  .toc-contents {
+    display: block;
+  }
 }

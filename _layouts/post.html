@@ -1,24 +1,26 @@
 ---
 layout: default
 ---
-<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+<article class="post">
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
-    <p class="post-meta">
-      <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-        {{ page.date | date: date_format }}
-      </time>
-      {%- if page.author -%}
-        • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
-      {%- endif -%}</p>
+    <h1 class="post-title">{{ page.title | escape }}</h1>
+    <div class="post-label">
+      {%- for category in page.categories -%}<div class="category"><p>{{ category | prepend: "@" }}</p></div>{%- endfor -%}
+      {%- for tag in page.tags -%}<div class="tag"><p>{{ tag | prepend: "#"}}</p></div>{%- endfor-%}
+    </div>
+    <p class="post-meta"><em>
+      Written{%- if page.author -%}&nbsp;by <span>{{ page.author | prepend: "@" }}</span>{%- endif -%}
+      {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+      &nbsp;on <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: date_format }}</time>.
+    </em></p>
   </header>
-  <div class="post-content e-content" itemprop="articleBody">
+  <div class="post-content">
     {% if page.post-toc != false %}
       <div class="post-toc" id="post-toc">
-        <p style="text-align:center; font-weight:bold; margin: 0;">Contents
-        <button class="show-trigger" id="show-trigger" onclick="toc_trigger()"><a>Show</a></button>
-        <button class="hide-trigger" id="hide-trigger" onclick="toc_trigger()"><a>Hide</a></button>
+        <p class="toc-title">Contents
+        <button class="show-trigger" id="show-trigger" onclick="toc_trigger()"><a class="button">Show</a></button>
+        <button class="hide-trigger" id="hide-trigger" onclick="toc_trigger()"><a class="button">Hide</a></button>
+        </p>
         <div class="toc-contents" id="toc-contents">
           {% include ref/toc.html html=content h_max=4%}
         </div>

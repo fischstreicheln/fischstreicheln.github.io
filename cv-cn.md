@@ -1,8 +1,7 @@
 ---
 layout: page
 title: About
-permalink: /about-cn/
-ref: about
+ref: cv
 lang: cn
 ---
 

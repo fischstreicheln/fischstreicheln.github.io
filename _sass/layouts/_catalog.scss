@@ -55,7 +55,7 @@
     text-transform: uppercase;
   }
   &::after {
-    @extend %full-length-line;
+    @include horizontal-line(100%, 0, $padding-unit);
     background-color: $grey;
   }
 }

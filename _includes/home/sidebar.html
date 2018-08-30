@@ -1,7 +1,9 @@
 <aside class="home-sidebar">
   <div class="sidebar-about">
     <div class="sidebar-author-image">
-      <a href="/cv"><img src="{{ site.image-url}}{{ site.home-author-image }}" alt="{{ site.author }}"></a>
+      {%- assign cv-link = "cv" | prepend: site.baseurl -%}
+      {%- if include.show_lang != "en" -%}{%- assign cv-link = cv-link | append: "-" | append: include.show_lang -%}{%- endif -%}
+      <a href="{{ cv-link }}"><img src="{{ site.image-url}}{{ site.home-author-image }}" alt="{{ site.author }}"></a>
     </div>
     <div class="sidebar-author-name">{{ site.author }}</div>
     {%- assign member = include.show_lang | default: "en" -%}

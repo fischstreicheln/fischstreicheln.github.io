@@ -1,8 +1,7 @@
 ---
 layout: page
 title: About
-permalink: /about/
-ref: about
+ref: cv
 lang: en
 ---
 

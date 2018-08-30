@@ -5,6 +5,7 @@ date:   2018-05-07 14:39:00 +0800
 ref: "ANSI escape code: Color in the terminal"
 lang: en
 category: personal, linux
+img: 001.png
 ---
 
 As what we've discussed in the post of [Customizing the terminal prompt](/2018/05/06/customizing-the-terminal-prompt),

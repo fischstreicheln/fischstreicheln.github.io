@@ -1,6 +1,6 @@
 <article class="post-highlight">
   {%- if include.show_post.img -%}
-    {%- assign image-url = site.post-image-url | prepend: site.baseurl | append : include,show_post.img -%}
+    {%- assign image-url = site.post-image-url | prepend: site.baseurl | append : include.show_post.img -%}
   {%- else -%}
     {%- assign img_idx = include.idx | module: site.sample-image-max | plus: 1 -%}
     {%- assign image-url = site.sample-image-url | prepend: site.baseurl | append : img_idx | append: ".jpg" -%}

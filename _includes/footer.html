@@ -1,0 +1,12 @@
+<footer class="site-footer">
+  <div class="wrapper">
+    {%- assign lang = page.lang | default: post.lang | default: site.lang | default: "en" -%}
+    {%- include header/title.html show_lang = lang -%}
+    {%- if site.description -%}
+      <div class="site-meta"><p>{{ site.description | escape }}</p></div>
+    {%- endif -%}
+    {%- if site.colophon -%} 
+    <div class="site-copyright"><p>{{ site.colophon }}</p></div>
+    {%- endif -%}
+  </div>
+</footer>

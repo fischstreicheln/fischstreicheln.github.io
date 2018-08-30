@@ -1,64 +1,32 @@
 .site-footer {
   border-top: 1px solid $grey-light;
-  padding: $spacing-unit 0;
-}
-
-.footer-heading {
-  @include relative-font-size(1.125);
-  margin-bottom: $spacing-unit / 2;
-}
-
-.contact-list,
-.social-media-list {
-  list-style: none;
-  margin-left: 0;
-}
-
-.footer-col-wrapper {
-  @include relative-font-size(0.9375);
-  color: $grey;
-  margin-left: -$spacing-unit / 2;
-  @extend %clearfix;
-}
-
-.footer-col {
-  float: left;
-  margin-bottom: $spacing-unit / 2;
-  padding-left: $spacing-unit / 2;
-}
-
-.footer-col-1 {
-  width: -webkit-calc(35% - (#{$spacing-unit} / 2));
-  width:         calc(35% - (#{$spacing-unit} / 2));
-}
-
-.footer-col-2 {
-  width: -webkit-calc(20% - (#{$spacing-unit} / 2));
-  width:         calc(20% - (#{$spacing-unit} / 2));
-}
-
-.footer-col-3 {
-  width: -webkit-calc(45% - (#{$spacing-unit} / 2));
-  width:         calc(45% - (#{$spacing-unit} / 2));
-}
-
-@include media-query($on-laptop) {
-  .footer-col-1,
-  .footer-col-2 {
-    width: -webkit-calc(50% - (#{$spacing-unit} / 2));
-    width:         calc(50% - (#{$spacing-unit} / 2));
+  border-bottom: $padding-unit solid $grey-dark;
+  padding: $padding-unit 0;
+  background: $white;
+  .site-title {
+    display: block;
+    @include relative-font-size($small-header-ratio);
+    @include media-font-size($on-half-min-palm, $small-regular-ratio);
+    @include visit-color($grey, $grey);
   }
-
-  .footer-col-3 {
-    width: -webkit-calc(100% - (#{$spacing-unit} / 2));
-    width:         calc(100% - (#{$spacing-unit} / 2));
+  p {
+    white-space: normal;
   }
-}
-
-@include media-query($on-palm) {
-  .footer-col {
-    float: none;
-    width: -webkit-calc(100% - (#{$spacing-unit} / 2));
-    width:         calc(100% - (#{$spacing-unit} / 2));
+  .site-copyright {
+    @include relative-width(60%);
+    @include media-width($on-palm, 80%);
+    @include media-width($on-min, 90%);
+    margin: $padding-unit auto 0;
+    text-align: center;
+    a, p {
+      font-family: $title-font-family;
+      margin-bottom: 0;
+    }
+    @include relative-font-size($meta-ratio);
+    @include media-font-size($on-half-min-palm, $small-meta-ratio);
+    @include visit-color($grey, $grey);
+    &::before {
+      @include horizontal-line(75%, 16.7%, -1 * $padding-unit);
+    }
   }
 }

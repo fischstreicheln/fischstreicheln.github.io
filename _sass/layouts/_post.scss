@@ -1,7 +1,19 @@
 /* 1. Post style */
+.post-title-image{
+  text-align: center;
+  img {
+    margin: 0;
+    max-height: $title-image-height;
+  }
+}
+
+.post-title-gap{
+  padding: $spacing-unit/2 auto;
+}
+
 .post-header {
   width: 90%;
-  margin: $spacing-unit*2 auto $spacing-unit*0.5;
+  margin: $spacing-unit auto;
   text-align: center;
   .post-title {
     margin: $padding-unit auto;

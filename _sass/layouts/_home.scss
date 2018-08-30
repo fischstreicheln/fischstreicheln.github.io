@@ -123,6 +123,7 @@
   border-right: 1px solid $grey-light;
   background-color: $white;
   @include media-query($on-palm) {
+    max-width: none;
     margin: 0;
     border: 0;
     border-top: 1px solid $grey-light;
@@ -188,11 +189,15 @@
     text-align: center;
     text-transform: uppercase;
     &::before {
-      @extend %half-length-line;
+      @include horizontal-line(calc(50% - 48px), 0, 0);
+      position: absolute;
+      top: 50%;
       left: 0;
     }
     &::after {
-      @extend %half-length-line;
+      @include horizontal-line(calc(50% - 48px), 0, 0);
+      position: absolute;
+      top: 50%;
       right: 0;
     }
   }
@@ -229,8 +234,8 @@
     text-transform: uppercase;
   }
   &::after {
-    @extend %full-length-line;
-    background-color: $grey-light;
+    @include horizontal-line(100%, 0, 0);
+    transform: translateY($padding-unit);
   }
 }
 

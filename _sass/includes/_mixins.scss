@@ -60,3 +60,22 @@
     transform: scale($scale-ratio);
   }
 }
+
+// Decoration line
+@mixin horizontal-line($length, $transX, $transY) {
+  content: "";
+  display: block;
+  width: $length;
+  height: 1px;
+  transform: translate($transX, $transY);
+  background-color: $grey-light;
+}
+
+@mixin vertical-line($length, $transX, $transY) {
+  content: "";
+  display: block;
+  width: 1px;
+  height: $length;
+  transform: translate($transX, $transY);
+  background-color: $grey-light;
+}

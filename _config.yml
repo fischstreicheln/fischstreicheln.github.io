@@ -4,9 +4,12 @@ author-about:
   en: Statisticsian
   cn: 统计师
 title: Have you tried turning it off and on again?
-description: ""
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
+description: "This is a blog about probabilities, statistics and some others themes. Not necessarily in that order."
+biography: ""
+colophon: "Content available under <a href='http://creativecommons.org/licenses/by-nc-sa/4.0/'>Creative Commons (BY-NC-SA)</a> unless otherwise noted.<br>This site is hosted at <a href='https://pages.github.com/'>Github Pages</a> and created with <a href='http://jekyllrb.com/'>Jekyll</a>."
+
 
 # Page settings
 highlight-post-max: 4

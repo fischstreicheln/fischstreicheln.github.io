@@ -67,13 +67,19 @@ $brand-color:       #2a7ae2;
 
 $white:             #ffffff;
 $white-trans:       rgba(255, 255, 255, 0.5);
+
 $grey:              #828282;
 $grey-light:        lighten($grey, 40%);
 $grey-dark:         darken($grey, 25%);
+
 $blue:              rgb(72, 61, 139);
 $blue-trans:        rgba(72, 61, 139, 0.5);
 $blue-light:        lighten($blue, 50%);
 $blue-dark:         darken($blue, 25%);
+
+$green:             #4CAC9D;
+$green-light:        lighten($green, 33%);
+$green-dark:         darken($green, 20%);
 
 $label-color:       #dfdfdf;
 $label-color-light: #efefef;

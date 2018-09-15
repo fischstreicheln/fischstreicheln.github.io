@@ -1,0 +1,204 @@
+/* 1. General */
+#cv-container {
+  display: flex;
+  flex-direction: row-reverse;
+  @include media-query($on-half-min-palm) {
+    display: block;
+  }
+}
+
+#wide {
+  display: block;
+  @include media-query($on-half-min-palm) {
+    display: none;
+  }
+}
+
+#narrow {
+  display: none;
+  @include media-query($on-half-min-palm) {
+    display: block;
+  }
+}
+
+.cv-sidebar {
+  flex:0 0 40%;
+  max-width: $sidebar-width;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 0 $padding-unit;
+  padding: $spacing-unit $padding-unit*2;
+  color: $grey-light;
+  background-color: $green;
+  @include media-query($on-half-min-palm) {
+    max-width: none;
+    margin: 0;
+  }
+  .sidebar-author-name,
+  .sidebar-contact-title,
+  .site-meta {
+    padding-left: 0;
+    color: $grey-light;
+  }
+  .sidebar-author-image {
+    background-color: $green-light;
+  }
+  .sidebar-contact {
+    margin-bottom: $spacing-unit;
+    text-align: left;
+    .site-contact{
+      display: block;
+      margin-left: $padding-unit;
+    }
+    &::after {
+      @include horizontal-line(100%, 0%, $padding-unit);
+    }
+  }
+}
+
+/* 2. Sidebar Details */
+.sidebar-details {
+  color: $green-dark;
+  padding: $padding-unit;
+  background-color: $green-light;
+  a, p {
+    margin: 0;
+    padding-left: $spacing-unit/2;
+    @include relative-font-size($small-meta-ratio);
+    @include media-font-size($on-half-min-palm, $meta-ratio);
+    @include visit-color($green-dark, $green-dark);
+  }
+  .cv-section-heading {
+    @extend %flex-row-display;
+    justify-content: space-between;
+    align-items: baseline;
+    .cv-item-meta {
+      flex-shrink: 0;
+    }
+  }
+  .cv-section-title {
+    margin: $padding-unit * 2 0 $padding-unit;
+    border-left: none;
+    font-weight: $base-font-weight * 2;
+    color: $grey-dark;
+    @include relative-font-size($small-header-ratio);
+    @include media-font-size($on-half-min-palm, $header-ratio);
+    i {
+      margin-right: $padding-unit;
+    }
+  }
+  .cv-item-title {
+    margin: $padding-unit 0 $padding-unit/2;
+    border-left: 2px $green-dark solid;
+    font-weight: $base-font-weight * 1.5;
+    color: $grey-dark;
+    @include relative-font-size($small-regular-ratio);
+    @include media-font-size($on-half-min-palm, $regular-ratio);
+    a {
+      padding-left: 0;
+      font-family: $title-font-family;
+      color: $grey-dark;
+      @include relative-font-size($small-regular-ratio);
+      @include media-font-size($on-half-min-palm, $regular-ratio);
+    }
+  }
+  .cv-item-highlight {
+    display: block;
+    font-family: $title-font-family;
+    font-weight: $base-font-weight * 1.5;
+  }
+}
+
+/* 3. Main Details */
+.cv-details {
+  flex: 1;
+  margin: 0 $padding-unit;
+  color: $green-dark;
+  a, p {
+    margin: 0;
+    padding-left: $spacing-unit/2;
+    @include visit-color($green-dark, $green-dark);
+  }
+  .cv-section-title {
+    margin: $padding-unit * 2 0 $padding-unit;
+    padding-left: 0;
+    border-left: none;
+    font-weight: $base-font-weight * 2;
+    color: $grey-dark;
+    i {
+      margin-right: $padding-unit;
+    }
+  }
+  .cv-item {
+    padding-left: $padding-unit;
+    }
+  .cv-item-heading {
+    @extend %flex-row-display;
+    justify-content: space-between;
+    align-items: baseline;
+    .cv-item-meta {
+      flex-shrink: 0;
+    }
+  }
+  .cv-item-title {
+    margin: $padding-unit 0 0;
+    border-left: 2px $green-dark solid;
+    font-weight: $base-font-weight * 1.5;
+    color: $grey-dark;
+    a {
+      padding-left: 0;
+      font-family: $title-font-family;
+      color: $grey-dark;
+      @include relative-font-size($header-ratio);
+      @include media-font-size($on-half-min-palm, $small-header-ratio);
+    }
+  }
+  .cv-item-highlight {
+    display: block;
+    border-left: 2px $green-dark solid;
+    font-family: $title-font-family;
+  }
+  .cv-item-details {
+    margin: $padding-unit 0 $padding-unit*2;
+    padding-left: 2px;
+    @include relative-font-size($small-regular-ratio);
+    @include media-font-size($on-half-min-palm, $meta-ratio);
+  }
+}
+
+/* 4. Bar Chart*/
+.cv-item-chart {
+  width: 100%;
+  height: $spacing-unit;
+  @extend %flex-row-display;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: baseline;
+}
+
+.cv-item-bar {
+  fill: $green-dark;
+  height: $spacing-unit - $padding-unit;
+  transition: fill $transform-time ease;
+  cursor: pointer;
+  text {
+    fill: $green-dark;
+  }
+}
+
+.chart:hover,
+.chart:focus {
+  .bar {
+    fill: #aaa;
+  }
+}
+
+.bar:hover,
+.bar:focus {
+  fill: red !important;
+
+  text {
+    fill: red;
+  }
+}

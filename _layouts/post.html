@@ -17,8 +17,8 @@ layout: default
     </div>
     <p class="post-meta"><em>
       Written{%- if page.author -%}&nbsp;by <span>{{ page.author | prepend: "@" }}</span>{%- endif -%}
-      {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-      &nbsp;on <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: date_format }}</time>.
+      &nbsp;on <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>
+      {%- if page.last-update -%}<small>&nbsp;with last update on <time class="dt-published" datetime="{{ page.last-update | date_to_xmlschema }}" itemprop="dateUpdated">{{ page.last-update | date: "%b %-d, %Y" }}</time></small>{%- endif -%}.
     </em></p>
   </header>
   <div class="post-content">

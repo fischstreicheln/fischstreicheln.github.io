@@ -1,0 +1,16 @@
+<aside class="home-sidebar">
+  <div class="sidebar-about">
+    <div class="sidebar-author-image">
+      {%- assign cv-link = "info/cv" | prepend: site.baseurl -%}
+      {%- if include.show_lang != "en" -%}{%- assign cv-link = cv-link | append: "-" | append: include.show_lang -%}{%- endif -%}
+      <a href="{{ cv-link }}"><img src="{{ site.image-url}}{{ site.home-author-image }}" alt="{{ site.author.[include.show_lang] | default: site.author.en | default: site.author }}"></a>
+    </div>
+    <div class="sidebar-author-name">{{ site.author.[include.show_lang] | default: site.author.en | default: site.author }}</div>
+    <p>{{ site.author-about.[include.show_lang] | default: site.author-about.en | default: site.author-about }}</p>
+  </div>
+
+  <section class="sidebar-contact">
+    <h3 class="sidebar-contact-title">{%- include ref/abbr.html show_lang = include.show_lang show_txt = "contact-me" -%}</h3>
+    {%- include header/contact.html-%}
+  </section>
+</aside>

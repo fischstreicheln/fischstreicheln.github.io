@@ -1,0 +1,127 @@
+career:
+  - title: HR Supervisor
+    rank: 2000
+    time: 2009 - Present
+    type: fulltime
+    organization: Guangdong Science Center
+    link: www.gdsc.cn
+    details: "Describe your role here lorem ipsum dolor sit amet, consectetuer adipiscing
+              elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et
+              magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
+              pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo.
+              <br> <br>
+              Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+              laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+              architecto beatae vitae dicta sunt explicabo."
+  - title: HR Intern
+    rank: 2000
+    time: "2009"
+    type: internship
+    organization: Guangdong Science Center(temp)
+    link: www.gdsc.cn
+    details: "Describe your role here lorem ipsum dolor sit amet, consectetuer adipiscing
+              elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et
+              magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
+              pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo.
+              <br> <br>
+              Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+              laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+              architecto beatae vitae dicta sunt explicabo."
+
+
+projects:
+  - title: HR Supervisor
+    rank: 2000
+    time: 2009 - Present
+    type: fulltime
+    organization: Guangdong Science Center
+    link: www.gdsc.cn
+    details: "Describe your role here lorem ipsum dolor sit amet, consectetuer adipiscing
+              elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et
+              magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
+              pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo.
+              <br> <br>
+              Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+              laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+              architecto beatae vitae dicta sunt explicabo."
+  - title: HR Intern
+    rank: 2000
+    time: "2009"
+    type: internship
+    organization: Guangdong Science Center(temp)
+    link: www.gdsc.cn
+    details: "Describe your role here lorem ipsum dolor sit amet, consectetuer adipiscing
+              elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et
+              magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
+              pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo.
+              <br> <br>
+              Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+              laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+              architecto beatae vitae dicta sunt explicabo."
+
+
+
+educations:
+  - title:
+      en: BSc in Geophysics
+      cn: 理学学士，地球物理专业
+    rank: 2000
+    time: 2005 - 2009
+    type: degree
+    organization: University of Science and Technology of China
+    link: www.ustc.edu.cn
+    details: "Describe your study here lorem ipsum dolor sit amet, consectetuer adipiscing"
+  - title:
+    rank: 100
+    time: "2017"
+    type: MOOC
+    organization: Coursera1
+    link:
+    details: "Describe your study here lorem ipsum dolor sit amet, consectetuer adipiscingum quis, sem."
+  - title:
+    rank: 500
+    time: "2018"
+    type: MOOC
+    organization: Coursera2
+    link:
+    details: "Describe your study here lorem ipsum dolor sit amet, consectetuer adipiscingum quis, sem."
+  - title: Graduate Diploma in Statistics
+    rank: 1000
+    time: 2016 - 2017
+    type: certificate
+    organization: Hong Kong Staticstical Sociaty
+    link: ""
+    details: "Describe your study here lorem ipsum dolor sit amet, consectetuer adipiscing elllentesque eu, pretium quis, sem."
+
+
+publications:
+  - title:
+      en: BSc in Geophysics
+      cn: 理学学士，地球物理专业
+    rank: 2000
+    time: 2005 - 2009
+    type: degree
+    organization: University of Science and Technology of China
+    link: www.ustc.edu.cn
+    details: "Describe your study here lorem ipsum dolor sit amet, consectetuer adipiscing"
+  - title:
+    rank: 100
+    time: "2017"
+    type: MOOC
+    organization: Coursera1
+    link:
+    details: "Describe your study here lorem ipsum dolor sit amet, consectetuer adipiscingum quis, sem."
+  - title:
+    rank: 500
+    time: "2018"
+    type: MOOC
+    organization: Coursera2
+    link:
+    details: "Describe your study here lorem ipsum dolor sit amet, consectetuer adipiscingum quis, sem."
+  - title: Graduate Diploma in Statistics
+    rank: 1000
+    time: 2016 - 2017
+    type: certificate
+    organization: Hong Kong Staticstical Sociaty
+    link: ""
+    details: "Describe your study here lorem ipsum dolor sit amet, consectetuer adipiscing elllentesque eu, pretium quis, sem."

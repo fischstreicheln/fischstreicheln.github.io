@@ -5,6 +5,7 @@ ref: "Customizing the terminal prompt"
 lang: en
 category: linux
 date: 2018-05-06 01:39:00 +0800
+rank: 9
 ---
 
 By default, the terminal prompt set to ```username@hostname:directory$ ``` in

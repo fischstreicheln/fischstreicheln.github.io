@@ -1,0 +1,37 @@
+<section class="{%- if include.detail == "show" -%}{{ include.heading | prepend: "cv-detail-" | downcase }}{%- else -%}{{ include.heading | prepend: "cv-sidebar-" | downcase }}{%- endif -%}">
+  <div class="cv-section-heading">
+    <h2 class="cv-section-title">
+      <i class="fa fa-{%- include ref/abbr.html show_txt = include.heading show_lang = "logo" -%}"></i>
+      {%- include ref/abbr.html show_txt = include.heading show_lang = include.show_lang -%}
+    </h2>
+    {%- if include.detail != "show" -%}
+      <a href="#{{ include.heading | downcase }}" class="cv-item-meta">Details</a>
+    {%- endif -%}
+  </div>
+  {%- if include.detail == "show" -%}
+    {%- assign experiences = include.experience_list | sort: "time" | sort: "rank" | reverse -%}
+  {%- else -%}
+    {%- assign experiences = include.experience_list | where_exp: "item", "item.rank >= site.cv-sidebar-min-rank" | sort: "time" | sort: "rank" | reverse -%}
+  {%- endif -%}
+  {%- for experience in experiences -%}
+    <div class="cv-item">
+      <div class="cv-item-heading">
+        <h3 class="cv-item-title">{{ experience.title.[include.show_lang] | default: experience.title.en | default: experience.title | default: experience.type.[include.show_lang] | default: experience.type.en | default: experience.type | default: include.heading }}</h3>
+        {%- if include.detail == "show" -%}<div class="cv-item-meta">{{ experience.time }}</div>{%- endif-%}
+      </div>
+      {%- assign href-link = experience.link.[include.show_lang] | default: experience.link.en | default: experience.link | remove: "http://" | remove: "https://" | prepend: "https://" -%}
+      {%- if href-link != "https://" -%}
+        <a class="cv-item-highlight" href="{{ href-link }}" target="_blank">{{ experience.organization.[include.show_lang] | default: experience.organization.en | default: experience.organization }}</a>
+      {%- else -%}
+        <p class="cv-item-highlight">{{ experience.organization.[include.show_lang] | default: experience.organization.en | default: experience.organization }}</p>
+      {%- endif -%}
+      {%- if include.detail == "show" -%}
+        <div class="cv-item-details">
+          <p>{{ experience.details.[include.show_lang] | default: experience.details.en | default: experience.details }}</p>
+        </div>
+      {%- else -%}
+        <p class="cv-item-meta">{{ experience.time }}</p>
+      {%- endif -%}
+    </div>
+  {% endfor %}
+</section>

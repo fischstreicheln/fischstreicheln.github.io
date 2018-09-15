@@ -1,13 +1,13 @@
 # General
+title: Have you tried turning it off and on again?
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
 author: Jason Ho
 author-about:
   en: Statisticsian
   cn: 统计师
-title: Have you tried turning it off and on again?
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-description: "This is a blog about probabilities, statistics and some others themes. Not necessarily in that order."
 biography: ""
+description: "This is a blog about probabilities, statistics and some others themes. Not necessarily in that order."
 colophon: "Content available under <a href='http://creativecommons.org/licenses/by-nc-sa/4.0/'>Creative Commons (BY-NC-SA)</a> unless otherwise noted.<br>This site is hosted at <a href='https://pages.github.com/'>Github Pages</a> and created with <a href='http://jekyllrb.com/'>Jekyll</a>."
 
 
@@ -16,6 +16,14 @@ highlight-post-max: 4
 homepage-post-max:  30
 split-txt:          "%#%"
 weighted-txt:       "zzz$"
+hidden-lang-label:  personal
+# header_pages:
+#   - cv.md
+#   - cv-cn.md
+#   - catalog/categories.md
+#   - catalog/categories-cn.md
+#   - catalog/tags.md
+#   - catalog/tags-cn.md
 
 # Social settings
 social-github: sleepyjason
@@ -31,6 +39,9 @@ post-image-url: "assets/img/post/"
 sample-image-max: 6
 home-banner-image: "home-banner.png"
 home-author-image: "jasonho.jpg"
+
+# CV settings
+cv-sidebar-min-rank: 500
 
 # Build settings
 markdown: kramdown

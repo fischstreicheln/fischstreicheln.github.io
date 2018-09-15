@@ -5,6 +5,7 @@ ref: "Upgrade ruby with homebrew in OXS"
 lang: en
 category: [personal, linux]
 date: 2018-05-04 09:39:00 +0800
+rank: 9
 ---
 
 After I installed ruby with homebrew in OXS,

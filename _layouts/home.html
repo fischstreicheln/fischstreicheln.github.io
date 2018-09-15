@@ -8,7 +8,7 @@ layout: default
       </div>
   </section>
   {%- assign lang = page.lang | default: post.lang | default: site.lang | default: "en" -%}
-  {%- assign posts = site.posts | where:"lang", lang -%}
+  {%- assign posts = site.posts | where:"lang", lang | sort: "date" | sort: "rank" | reverse -%}
   {%- assign posts_size = posts.size -%}
   <div class="home-highlight">
   {%- if posts_size > 0 -%}
@@ -29,7 +29,7 @@ layout: default
       {%- if forloop.index == site.highlight-post-max -%}
         {%- assign Flag = 0 -%}
         </div> <!-- end of post-list-highlight -->
-        {%- include home/sidebar.html show_lang = lang -%}
+        {%- include home/home-sidebar.html show_lang = lang -%}
         </div> <!-- end of home-highlight -->
         {%- include home/home-catalog.html show_lang = lang -%}
         {%- if forloop.index != site.homepage-post-max and forloop.index != posts_size -%}
@@ -49,51 +49,11 @@ layout: default
     {%- endif -%}
     {%- assign Flag = Flag | abs -%}
     {%- if Flag == 1 -%}
-      {%- include home/sidebar.html show_lang = lang -%}
+      {%- include home/home-sidebar.html show_lang = lang -%}
       </div> <!-- end of home-highlight -->
       {%- include home/home-catalog.html show_lang = lang -%}
     {%- endif -%}
   {%- else -%}
-    {%- include home/sidebar.html show_lang = lang -%}</div> <!-- end of home-highlight -->
+    {%- include home/home-sidebar.html show_lang = lang -%}</div> <!-- end of home-highlight -->
   {%- endif -%}
 </div> <!-- end of home -->
-
-{% comment %}########## 2 seperated loop ##########
-  <div class="home-highlight">
-  {%- if posts.size > 0 -%}
-    {%- if site.highlight-post-max >= 0 -%}
-      <div class="post-list-highlight">
-        {%- for post in posts limit: site.highlight-post-max -%}
-          {%- include home/post-highlight.html show_post = post show_lang = lang idx = forloop.index -%}
-        {%- endfor -%}
-      </div>
-    {%- else -%}
-      <div class="post-list-normal">
-        <ul class="post-list">
-          {%- for post in posts limit: site.homepage-post-max -%}
-            {%- include home/post-normal.html show_post = post show_lang = lang -%}
-          {%- endfor -%}
-        </ul>
-      </div>
-    {%- endif -%}
-    {%- include home/sidebar.html show_lang = lang -%}</div> <!-- end of home-highlight -->
-    {%- include home/home-catalog.html show_lang = lang -%}
-    {%- assign NormalCnt = site.homepage-post-max | minus: site.highlight-post-max -%}
-    {%- assign posts = site.posts | where:"lang", lang -%}
-    {%- if posts.size >= site.homepage-post-max and NormalCnt > 0 and site.highlight-post-max >= 0 -%}
-      <div class="post-list-normal">
-        <div class="post-list-title">
-          <h2>More Post</h2>
-        </div>
-        <ul class="post-list">
-          {%- for post in posts offset: site.highlight-post-max limit: NormalCnt -%}
-            {%- include home/post-normal.html show_post = post show_lang = lang -%}
-          {%- endfor -%}
-        </ul>
-      </div>
-    {%- endif -%}
-  {%- else -%}
-    {%- include home/sidebar.html show_lang = lang -%}</div> <!-- end of home-highlight -->
-  {%- endif -%}
-</div> <!-- end of home -->
-{%- endcomment -%}

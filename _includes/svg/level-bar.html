@@ -1,0 +1,7 @@
+<svg class="level-bar-chart" role="img">
+  <g class="bar">
+    <rect width="{{ include.percentage }}" height="20px"></rect>
+    {%- assign text-pos = include.percentage | plus: 5px -%}
+    <text x="{{ text-pos }}" y="9.5" dy=".35em">{{ include.percentage }}</text>
+  </g>
+</svg>

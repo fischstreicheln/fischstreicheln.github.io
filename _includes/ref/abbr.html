@@ -1,5 +1,5 @@
 {%- assign show_lang = include.show_lang | default: "en" -%}
-{%- assign show_member = include.show_txt | default: "fulltxt" -%}
-{%- assign show_txt = site.data.abbr[show_lang].[show_member] | default: site.data.abbr["en"].[show_member] | default: include.show_txt -%}
+{%- assign show_member = include.show_txt | default: "lang" -%}
+{%- assign show_txt = site.data.abbr.[show_member].[show_lang] | default: site.data.abbr.[show_member].en | default: site.data.abbr.[show_member] | default: include.show_txt -%}
 {%- assign show_format = include.show_format | default: "none" -%}
 {%- if show_format == "url" -%}{{ show_txt | prepend: site.baseurl }}{%- else -%}{{ show_txt }}{%- endif -%}

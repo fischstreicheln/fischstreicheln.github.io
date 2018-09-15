@@ -1,0 +1,42 @@
+<section class="{%- if include.detail == "show" -%}{{ include.heading | prepend: "cv-detail-" | downcase }}{%- else -%}{{ include.heading | prepend: "cv-sidebar-" | downcase }}{%- endif -%}">
+  <h2 class="cv-section-title">
+    <i class="fa fa-{%- include ref/abbr.html show_txt = include.heading show_lang = "logo" -%}"></i>
+    {%- include ref/abbr.html show_txt = include.heading show_lang = include.show_lang -%}
+  </h2>
+  {%- if include.detail == "show" -%}
+    {%- assign skills = include.skill_list | sort: "rank" | reverse -%}
+  {%- else -%}
+    {%- assign skills = include.skill_list | where_exp: "item", "item.rank >= site.cv-sidebar-min-rank" | sort: "rank" | reverse -%}
+  {%- endif -%}
+  {%- for skill in skills -%}
+    <div class="cv-item">
+      <div class="cv-item-heading">
+        {%- assign href-link = skill.link.[include.show_lang] | default: skill.link.en | default: skill.link | remove: "http://" | remove: "https://" | prepend: "https://" -%}
+        {%- if href-link != "https://" -%}
+          <h3 class="cv-item-title"><a href="{{ href-link }}" target="_blank">{{ skill.item.[include.show_lang] | default: skill.item.en | default: skill.item }}</a></h3>
+        {%- else -%}
+          <h3 class="cv-item-title">{{ skill.item.[include.show_lang] | default: skill.item.en | default: skill.item }}</h3>
+        {%- endif -%}
+      </div>
+      {%- assign level = site.data.abbr.level-percentage.[skill.level] | default: 0 | round -%}
+      {%- if level == 0 -%}
+        {%- assign level = skill.level | plus: 0 -%}
+        {%- if level <= 0 -%}{%- assign level = 0 |round -%}
+        {%- elsif level <= 1 -%}{%- assign level = level | times: 100 | round -%}
+        {%- elsif level >100 -%}{%- assign level = 100 | round -%}
+        {%- else -%}{%- assign level = level | round -%}{%- endif -%}
+      {%- endif -%}
+      <div class="cv-item-chart">
+        <div class="cv-item-bar" style="width: {{ level | append: "%;" }}">&nbsp;</div>
+        <div class="cv-item-{%- if include.detail == "show" -%}highlight{%- else -%}meta{%- endif -%}">
+          {%- if level == 0 -%}{{ skill.level }}{%- else -%}{{ level | append: "%" }}{%- endif -%}
+        </div>
+      </div>
+      {%- if include.detail == "show" -%}
+        <div class="cv-item-details">
+          <p>{{ skill.details.[include.show_lang] | default: skill.details.en | default: skill.details }}</p>
+        </div>
+      {%- endif -%}
+    </div>
+  {% endfor %}
+</section>

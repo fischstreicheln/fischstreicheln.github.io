@@ -1,18 +1,53 @@
-en:
-  fulltxt: English
-  home-url: /
-  minute-read: minute read
-  contact-me: Contact Me
-  catalog: Catalog
+lang:
+  en: English
+  cn: 中文
+  test: Test Page
 
-cn:
-  fulltxt: 中文
-  home: 首页
-  home-url: /index-cn
-  minute-read: 分钟阅读时间
-  contact-me: 联系我
-  catalog: 分类目录
+catalog:
+  en: Catelog
+  cn: 分类目录
+contact-me:
+  en: Contact Me
+  cn: 联系我
+home:
+  en: Home
+  cn: 首页
+home-url:
+  en: /
+  cn: /index-cn
+  test: /index-test
+minute-read:
+  en: minute read
+  cn: 分钟阅读时间
 
-test:
-  fulltxt: Test Page
-  home-url: /index-test
+# CV Info
+educations:
+  en: Educations
+  cn: 教育经历
+  logo: graduation-cap
+publications:
+  en: Publications
+  cn: 论文著作
+  logo: file-text
+career:
+  en: Career
+  cn: 工作经历
+  logo: briefcase
+projects:
+  en: Projects
+  cn: 项目经历
+  logo: archive
+skills:
+  en: Skills
+  cn: 技能特长
+  logo: rocket
+language:
+  en: Language
+  cn: 语言能力
+  logo:
+interest:
+  en: Interest
+  cn: 兴趣爱好
+  logo:
+level-percentage:
+  native: 100

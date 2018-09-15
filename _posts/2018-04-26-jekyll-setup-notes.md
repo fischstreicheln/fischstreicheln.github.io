@@ -5,6 +5,7 @@ ref: "Jekyll Steup Notes"
 lang: en
 category: jekyll
 date: 2018-04-26 22:30:00 +0800
+rank: 11
 ---
 
 # Praperation

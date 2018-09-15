@@ -180,6 +180,7 @@
 }
 
 .sidebar-contact {
+  text-align: center;
   .sidebar-contact-title {
     position: relative;
     margin: 0 0 $padding-unit;
@@ -199,23 +200,6 @@
       position: absolute;
       top: 50%;
       right: 0;
-    }
-  }
-  ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    text-align: center;
-    li {
-      display: inline-block;
-      margin: 0 $padding-unit;
-      a {
-        display: block;
-        padding: $padding-unit;
-        font-size: $base-font-size;
-        @include hover-color-scale($grey, $grey-dark, 1.25);
-        transition: all $transform-time cubic-bezier(0.13, 0.43, 0.54, 1.82);
-      }
     }
   }
 }

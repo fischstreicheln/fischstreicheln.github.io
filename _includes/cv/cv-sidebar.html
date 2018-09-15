@@ -1,0 +1,32 @@
+<aside class="cv-sidebar">
+  <div class="sidebar-about">
+    <div class="sidebar-author-image">
+      <img src="{{ site.image-url}}{{ site.home-author-image }}" alt="{{ site.author.[include.show_lang] | default: site.author.en | default: site.author }}">
+    </div>
+    <div class="sidebar-author-name">{{ site.author.[include.show_lang] | default: site.author.en |default: site.author }}</div>
+    <p>{{ site.author-about.[include.show_lang] | default: site.author-about.en |default: site.author-about }}</p>
+  </div>
+  <section class="sidebar-contact">
+    <h3 class="sidebar-contact-title">{%- include ref/abbr.html show_lang = include.show_lang show_txt = "contact-me" -%}</h3>
+    {%- include header/contact.html detail = "show" -%}
+  </section>
+  {%- if site.data.cv-experience -%}
+    <section class="sidebar-details">
+      {%- include cv/experience.html experience_list = site.data.cv-experience.educations heading = "educations" show_lang = include.show_lang -%}
+      {%- include cv/experience.html experience_list = site.data.cv-experience.publications heading = "publications" show_lang = include.show_lang -%}
+    </section>
+  {%- endif -%}
+  {%- if site.data.cv-experience -%}
+    <section class="sidebar-details" id="narrow">
+      {%- include cv/experience.html experience_list = site.data.cv-experience.career heading = "career" show_lang = include.show_lang -%}
+      {%- include cv/experience.html experience_list = site.data.cv-experience.projects heading = "projects" show_lang = include.show_lang -%}
+    </section>
+  {%- endif -%}
+  {%- if site.data.cv-skills -%}
+    <section class="sidebar-details" id="wide">
+      {%- include cv/skills.html skill_list = site.data.cv-skills.language heading = "language" show_lang = include.show_lang -%}
+      {%- include cv/skills.html skill_list = site.data.cv-skills.skills heading = "skills" show_lang = include.show_lang -%}
+      {%- include cv/skills.html skill_list = site.data.cv-skills.interest heading = "interest" show_lang = include.show_lang -%}
+    </section>
+  {%- endif -%}
+</aside>

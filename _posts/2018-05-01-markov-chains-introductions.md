@@ -7,6 +7,7 @@ category: "Stochastic Process"
 date: 2018-05-01 15:04:00 +0800
 mathjax: true
 mermaid: true
+rank: 5
 ---
 ## Stochastic Process
 ### Definition

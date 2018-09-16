@@ -113,8 +113,14 @@
 /* 3. Main Details */
 .cv-details {
   flex: 1;
-  margin: 0 $padding-unit;
+  margin: 0 $padding-unit*3 0  $padding-unit;
+  @include media-query($on-half-min-palm) {
+    margin-right: $padding-unit;
+  }
   color: $green-dark;
+  .gap {
+    padding: 0;
+  }
   a, p {
     margin: 0;
     padding-left: $spacing-unit/2;
@@ -132,7 +138,7 @@
   }
   .cv-item {
     padding-left: $padding-unit;
-    }
+  }
   .cv-item-heading {
     @extend %flex-row-display;
     justify-content: space-between;
@@ -170,35 +176,13 @@
 /* 4. Bar Chart*/
 .cv-item-chart {
   width: 100%;
-  height: $spacing-unit;
   @extend %flex-row-display;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   justify-content: flex-start;
-  align-items: baseline;
-}
-
-.cv-item-bar {
-  fill: $green-dark;
-  height: $spacing-unit - $padding-unit;
-  transition: fill $transform-time ease;
-  cursor: pointer;
-  text {
-    fill: $green-dark;
-  }
-}
-
-.chart:hover,
-.chart:focus {
-  .bar {
-    fill: #aaa;
-  }
-}
-
-.bar:hover,
-.bar:focus {
-  fill: red !important;
-
-  text {
-    fill: red;
+  align-items: center;
+  .cv-item-bar {
+    flex: none;
+    background-color: $green;
+    height: $padding-unit * 2;
   }
 }

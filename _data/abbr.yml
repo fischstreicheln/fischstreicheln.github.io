@@ -44,10 +44,10 @@ skills:
 language:
   en: Language
   cn: 语言能力
-  logo:
+  logo: comments-o
 interest:
   en: Interest
   cn: 兴趣爱好
-  logo:
+  logo: bicycle
 level-percentage:
-  native: 100
+  native: 95

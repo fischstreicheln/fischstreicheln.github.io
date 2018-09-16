@@ -1,3 +1,4 @@
+{%- if include.detail == "show" -%}<div class="gap"  id="{{ include.heading | downcase }}">&nbsp;</div>{%- endif  -%}
 <section class="{%- if include.detail == "show" -%}{{ include.heading | prepend: "cv-detail-" | downcase }}{%- else -%}{{ include.heading | prepend: "cv-sidebar-" | downcase }}{%- endif -%}">
   <div class="cv-section-heading">
     <h2 class="cv-section-title">

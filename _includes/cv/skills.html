@@ -1,3 +1,4 @@
+{%- if include.detail == "show" -%}<div class="gap"  id="{{ include.heading | downcase }}">&nbsp;</div>{%- endif  -%}
 <section class="{%- if include.detail == "show" -%}{{ include.heading | prepend: "cv-detail-" | downcase }}{%- else -%}{{ include.heading | prepend: "cv-sidebar-" | downcase }}{%- endif -%}">
   <h2 class="cv-section-title">
     <i class="fa fa-{%- include ref/abbr.html show_txt = include.heading show_lang = "logo" -%}"></i>
@@ -18,19 +19,20 @@
           <h3 class="cv-item-title">{{ skill.item.[include.show_lang] | default: skill.item.en | default: skill.item }}</h3>
         {%- endif -%}
       </div>
-      {%- assign level = site.data.abbr.level-percentage.[skill.level] | default: 0 | round -%}
+      {%- assign level = site.data.abbr.level-percentage.[skill.level] | default: 0 -%}
       {%- if level == 0 -%}
         {%- assign level = skill.level | plus: 0 -%}
-        {%- if level <= 0 -%}{%- assign level = 0 |round -%}
-        {%- elsif level <= 1 -%}{%- assign level = level | times: 100 | round -%}
-        {%- elsif level >100 -%}{%- assign level = 100 | round -%}
-        {%- else -%}{%- assign level = level | round -%}{%- endif -%}
+        {%- if level <= 0 -%}{%- assign level = 0 -%}
+        {%- elsif level <= 1 -%}{%- assign level = level | times: 100 -%}
+        {%- elsif level >100 -%}{%- assign level = 100 -%}{%- endif -%}
+        {%- assign level_show = level | round -%}
+      {%- else -%}
+        {%- assign level_show = 0 -%}
       {%- endif -%}
+      {%- assign level_bar_width = level | times: 0.8 -%}
       <div class="cv-item-chart">
-        <div class="cv-item-bar" style="width: {{ level | append: "%;" }}">&nbsp;</div>
-        <div class="cv-item-{%- if include.detail == "show" -%}highlight{%- else -%}meta{%- endif -%}">
-          {%- if level == 0 -%}{{ skill.level }}{%- else -%}{{ level | append: "%" }}{%- endif -%}
-        </div>
+        <div class="cv-item-bar" style="width: {{ level_bar_width | append: "%;" }}">&nbsp;</div>
+        <p class="cv-item-meta">{%- if level_show == 0  -%}{{ skill.level }}{%- else -%}{{level_show}}%{%- endif -%}</p>
       </div>
       {%- if include.detail == "show" -%}
         <div class="cv-item-details">

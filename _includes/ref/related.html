@@ -1,0 +1,44 @@
+<div class="related-posts">
+  {%- assign maxRelated = site.maxRelated | at_least: 0 | at_most: 100 | default: 4 -%}
+  {%- assign minCommon =  site.minCommon | at_least: 1 | default: 1 -%}
+  {%- assign lang = page.lang | default: post.lang | default: site.lang | default: "en" -%}
+  {%- assign my_related = nil | split:"," -%}
+  {%- for category in page.categories -%}
+    {%- assign posts = site.categories[category] -%}
+    {%- for post in posts -%}
+      {%- assign my_related = my_related | push: post | where_exp: "item", "item.ref != page.ref" -%}
+    {%- endfor -%}
+  {%- endfor -%}
+  {%- for tag in page.tags -%}
+    {%- assign posts = site.tags[tag] | where:"lang", lang | where_exp: "item", "item.ref != page.ref" -%}
+    {%- for post in posts -%}
+      {%- assign my_related = my_related | push: post -%}
+    {%- endfor -%}
+  {%- endfor -%}
+  {%- assign related_idx = 0 -%}
+  {%- assign my_related = my_related | unique | sort: "date" | reverse -%}
+  {%- for post in my_related -%}
+    {%- assign common_cnt = 0 -%}
+    {%- for category in page.categories -%}
+      {%- if post.categories contains category -%}
+        {%- assign common_cnt = common_cnt | plus: 1 -%}
+      {%- endif -%}
+    {%- endfor -%}
+    {%- for tag in page.tags -%}
+      {%- if post.tags contains tag -%}
+        {%- assign common_cnt = common_cnt | plus: 1 -%}
+      {%- endif -%}
+    {%- endfor -%}
+    {%- if common_cnt >= minCommon -%}
+      {%- assign related_idx = related_idx | plus: 1 -%}
+      {%- if related_idx == 1 -%}
+        <h2>You May Also Enjoy</h2>
+        <div class="post-list-normal">
+          <ul class="post-list">
+      {%- endif -%}
+      {%- include ref/post-normal.html show_post = post show_lang = lang -%}
+    {%- endif -%}
+    {% if related_idx >= maxRelated %}{% break %}{% endif %}
+  {%- endfor -%}
+  {%- if related_idx >= 1 -%}</ul></div>{%- endif -%}
+</div>

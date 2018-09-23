@@ -22,9 +22,9 @@ layout: default
     {%- endif -%}
     {%- for post in posts limit: site.homepage-post-max -%}
       {%- if forloop.index <= site.highlight-post-max -%}
-        {%- include home/post-highlight.html show_post = post show_lang = lang idx = forloop.index -%}
+        {%- include ref/post-highlight.html show_post = post show_lang = lang idx = forloop.index -%}
       {%- else -%}
-        {%- include home/post-normal.html show_post = post show_lang = lang -%}
+        {%- include ref/post-normal.html show_post = post show_lang = lang -%}
       {%- endif -%}
       {%- if forloop.index == site.highlight-post-max -%}
         {%- assign Flag = 0 -%}

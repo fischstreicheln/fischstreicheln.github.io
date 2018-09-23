@@ -2,39 +2,22 @@
 layout: default
 ---
 <article class="post">
-  {%- if page.img -%}
-    <div class="post-title-image">
-      <img src="{{ site.post-image-url | prepend: site.baseurl | append : page.img | absolute_url }}" alt="{{ page.title | escape }}">
-    </div>
-  {%- else -%}
-    <div class = "post-title-gap">&nbsp;</div>
-  {%- endif -%}
-  <header class="post-header">
-    <h1 class="post-title">{{ page.title | escape }}</h1>
-    <div class="post-label">
-      {%- for category in page.categories -%}<div class="category"><p>{{ category | prepend: "@" }}</p></div>{%- endfor -%}
-      {%- for tag in page.tags -%}<div class="tag"><p>{{ tag | prepend: "#"}}</p></div>{%- endfor-%}
-    </div>
-    <p class="post-meta"><em>
-      Written{%- if page.author -%}&nbsp;by <span>{{ page.author | prepend: "@" }}</span>{%- endif -%}
-      &nbsp;on <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>
-      {%- if page.last-update -%}<small>&nbsp;with last update on <time class="dt-published" datetime="{{ page.last-update | date_to_xmlschema }}" itemprop="dateUpdated">{{ page.last-update | date: "%b %-d, %Y" }}</time></small>{%- endif -%}.
-    </em></p>
-  </header>
+  {%- include heading.html -%}
   <div class="post-content">
-    {% if page.post-toc != false %}
+    {%- if page.post-toc != false -%}
       <div class="post-toc" id="post-toc">
         <p class="toc-title">Contents
         <button class="show-trigger" id="show-trigger" onclick="toc_trigger()"><a class="button">Show</a></button>
         <button class="hide-trigger" id="hide-trigger" onclick="toc_trigger()"><a class="button">Hide</a></button>
         </p>
         <div class="toc-contents" id="toc-contents">
-          {% include ref/toc.html html=content h_max=4%}
+          {%- include ref/toc.html html=content h_max=4 -%}
         </div>
       </div>
-    {% endif %}
+    {%- endif -%}
     {{ content }}
-    {% include ref/quotes.html %}
+    {%- include ref/related.html -%}
+    {%- include ref/quotes.html -%}
   </div>
   {%- if site.disqus.shortname -%}
     {%- include disqus_comments.html -%}

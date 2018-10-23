@@ -4,9 +4,9 @@
   {%- assign lang = page.lang | default: post.lang | default: site.lang | default: "en" -%}
   {%- assign my_related = nil | split:"," -%}
   {%- for category in page.categories -%}
-    {%- assign posts = site.categories[category] -%}
+    {%- assign posts = site.categories[category] | where:"lang", lang | where_exp: "item", "item.ref != page.ref" -%}
     {%- for post in posts -%}
-      {%- assign my_related = my_related | push: post | where_exp: "item", "item.ref != page.ref" -%}
+      {%- assign my_related = my_related | push: post -%}
     {%- endfor -%}
   {%- endfor -%}
   {%- for tag in page.tags -%}

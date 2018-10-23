@@ -11,14 +11,15 @@ layout: default
         <button class="hide-trigger" id="hide-trigger" onclick="toc_trigger()"><a class="button">Hide</a></button>
         </p>
         <div class="toc-contents" id="toc-contents">
-          {%- include ref/toc.html html=content h_max=4 -%}
+          {%- if page.post-toc == false -%}{%- assign toc-ordered = false -%}{%- else -%}{%- assign toc-ordered = true -%}{%- endif -%}
+          {%- include ref/toc.html html = content h_max = 4 ordered = toc-ordered -%}
         </div>
       </div>
     {%- endif -%}
     {{ content }}
-    {%- include ref/related.html -%}
-    {%- include ref/quotes.html -%}
   </div>
+  {%- include ref/related.html -%}
+  {%- include ref/quotes.html -%}
   {%- if site.disqus.shortname -%}
     {%- include disqus_comments.html -%}
   {%- endif -%}

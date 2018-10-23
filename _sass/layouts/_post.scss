@@ -1,4 +1,14 @@
 /* 1. Post style */
+h2 {
+  max-width: 60%;
+  margin: $spacing-unit 0;
+  padding-left: $spacing-unit/2;
+  border-left: $padding-unit*2 $grey-dark solid;
+  font-weight: $base-font-weight * 1.5;
+  @include relative-font-size($big-header-ratio);
+  @include media-font-size($on-half-min-palm, $header-ratio);
+}
+
 .post-title-image{
   text-align: center;
   img {
@@ -32,6 +42,7 @@
 }
 
 .post-content {
+  counter-reset: level2;
   margin-bottom: $spacing-unit;
   a {
     @include relative-font-size($regular-ratio);
@@ -53,19 +64,57 @@
     color: $grey-dark;
     font-weight: $base-font-weight/2;
   }
-  h2 {
+  h1, h2 {
     max-width: 60%;
     margin: $spacing-unit 0;
     padding-left: $spacing-unit/2;
-    border-left: 2px $grey-dark solid;
     @include relative-font-size($big-header-ratio);
     @include media-font-size($on-half-min-palm, $header-ratio);
+  }
+  h1 {
+    border-left: $padding-unit*2 $grey-dark solid;
+    font-weight: $base-font-weight * 1.5;
+    counter-reset: level2;
+  }
+  h2 {
+    border-left: 2px $grey-dark solid;
+    font-weight: $base-font-weight * 1.25;
+    counter-reset: level3;
+    &::before {
+      counter-increment: level2;
+      content: counter(level2, upper-roman) ".  ";
+    }
   }
   h3, h4, h5, h6 {
     margin: $spacing-unit/2 0;
     padding-left: $spacing-unit/2;
     @include relative-font-size($header-ratio);
     @include media-font-size($on-half-min-palm, $small-header-ratio);
+  }
+  h3 {
+    counter-reset: level4;
+    &::before {
+      counter-increment: level3;
+      content: counter(level2, upper-roman) "-" counter(level3) ".  ";
+    }
+  }
+  h4 {
+    counter-reset: level5;
+    &::before {
+      counter-increment: level4;
+      content: counter(level2, upper-roman) "-" counter(level3) "." counter(level4) ".  ";
+    }
+  }
+  h5 {
+    counter-reset: level6;
+    &::before {
+      counter-increment: level5;
+      content: counter(level2, upper-roman) "-" counter(level3) "." counter(level4) "." counter(level5) ".  ";
+    }
+  }
+  h6:before {
+    counter-increment: level6;
+    content: counter(level2, upper-roman) "-" counter(level3) "." counter(level4) "." counter(level5) "." counter(level6) ".  ";
   }
 }
 
@@ -80,13 +129,13 @@
     max-width: none;
     margin: $padding-unit*2 auto;
   }
-  padding:$padding-unit*2;
-  padding-bottom: 0;
+  padding:$padding-unit*2 $padding-unit*2 0 0;
   border: 1px solid $grey-light;
   border-radius: $padding-unit/2;
   background-color: $grey-light;
   .toc-title {
     margin: 0;
+    margin-left: $padding-unit * 2;
     text-align: center;
     font-weight: bold;
     @include relative-font-size($regular-ratio);
@@ -118,5 +167,15 @@
   }
   .toc-contents {
     display: block;
+    ol {
+      counter-reset: section;
+      list-style-type: none;
+      margin-left: $spacing-unit / 2;
+    }
+    li:before {
+      @include relative-font-size($small-meta-ratio);
+      counter-increment: section;
+      content: counters(section, ".") ".  ";
+    }
   }
 }

@@ -48,3 +48,6 @@ markdown: kramdown
 theme: minima
 plugins:
   - jekyll-feed
+
+# Post settings
+disqus_name: sleepyjason

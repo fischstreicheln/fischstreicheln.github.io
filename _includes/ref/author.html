@@ -1,0 +1,4 @@
+{%- assign show_lang = include.show_lang | default: "en" -%}
+{%- assign show_name = include.author_name | default: "Jason" -%}
+{%- assign link = site.data.author.[show_name].[show_lang] | default: site.data.author.[show_name].en | "none" -%}
+{%- if link == "none" -%}{{ show_name | prepend: "@" }}{%- else -%}<a href="{{ link }}" class="post-meta">{{ show_name | prepend: "@" }}</a>{%- endif -%}

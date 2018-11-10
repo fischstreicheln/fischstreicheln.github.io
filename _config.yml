@@ -1,5 +1,7 @@
 # General
-title: Have you tried turning it off and on again?
+title:
+  en: Have you tried turning it off and on again?
+  cn: 你试过关机再重启没有？
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 author: Jason Ho
@@ -7,9 +9,18 @@ author-about:
   en: Statisticsian
   cn: 统计师
 biography: ""
-description: "This is a blog about probabilities, statistics and some others themes. Not necessarily in that order."
-colophon: "Content available under <a href='http://creativecommons.org/licenses/by-nc-sa/4.0/'>Creative Commons (BY-NC-SA)</a> unless otherwise noted.<br>This site is hosted at <a href='https://pages.github.com/'>Github Pages</a> and created with <a href='http://jekyllrb.com/'>Jekyll</a>."
-
+description:
+  en: This is a blog about probabilities, statistics and some others themes.
+      And some random things (that I don't know what would those be~
+  cn: 此网站内容主要涵盖概率论、统计以及其他的一些内容。以及一些随机内容（我也不知道都有些啥～
+colophon:
+  en: Content available under <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/'>Creative
+      Commons(BY-NC-SA)</a> unless otherwise noted.<br>This site is hosted at
+      <a href='https://pages.github.com/'>Github Pages</a> and created with
+      <a href='http://jekyllrb.com/'>Jekyll</a>.
+  cn: 如无其他说明，本网站内容采用<a href='https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh'>
+      知识共享许可协议(BY-NC-SA)</a>进行许可。<br>本网站由<a href='http://jekyllrb.com/'>Jekyll</a>生成并
+      由<a href='https://pages.github.com/'>Github Pages</a>托管。
 
 # Page settings
 highlight-post-max: 4

@@ -48,11 +48,14 @@
     color: $grey-light;
     background: $grey-dark;
   }
-  p，ul, li, strong, i {
+  ul, li, strong, i, p {
     @include relative-font-size($regular-ratio);
     @include media-font-size($on-half-min-palm, $small-regular-ratio);
     color: $grey-dark;
     font-weight: $base-font-weight/2;
+  }
+  strong {
+    font-weight: $base-font-weight * 1.5;
   }
   h1, h2 {
     max-width: 60%;

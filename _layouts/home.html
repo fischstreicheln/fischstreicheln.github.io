@@ -8,7 +8,7 @@ layout: default
       </div>
   </section>
   {%- assign lang = page.lang | default: post.lang | default: site.lang | default: "en" -%}
-  {%- assign posts = site.posts | where:"lang", lang | sort: "date" | sort: "rank" | reverse -%}
+  {%- assign posts = site.posts | where:"lang", lang -%}
   {%- assign posts_size = posts.size -%}
   <div class="home-highlight">
   {%- if posts_size > 0 -%}

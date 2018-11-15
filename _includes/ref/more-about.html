@@ -1,0 +1,4 @@
+{%- assign show_lang = include.lang | default: "en" -%}
+{%- assign show_ref = include.ref | default: page.ref -%}
+{%- assign post = site.posts | where:"ref", show_ref | where:"lang", show_lang | first -%}
+{%- if post -%}  Further reading in [{{ post.title }}]({{ post.url | prepend: site.baseurl }}).{%- endif -%}

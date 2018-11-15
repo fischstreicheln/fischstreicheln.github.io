@@ -16,7 +16,7 @@
     {%- endfor -%}
   {%- endfor -%}
   {%- assign related_idx = 0 -%}
-  {%- assign my_related = my_related | unique | sort: "date" | reverse -%}
+  {%- assign my_related = my_related | uniq | sort: "date" | reverse -%}
   {%- for post in my_related -%}
     {%- assign common_cnt = 0 -%}
     {%- for category in page.categories -%}

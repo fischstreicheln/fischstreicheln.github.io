@@ -5,5 +5,5 @@
     {%- for tag in include.show_post.tags -%}<div class="tag"><p>{{ tag | prepend: "#"}}</p></div>{%- endfor-%}
   </div>
   <p>{{ include.show_post.content | strip_html | truncatewords: 30 }}</p>
-  <span class="post-meta">{{ include.show_post.date | date: '%Y, %b %d' }}&nbsp;&nbsp;—&nbsp;&nbsp;{%- capture words -%}{{ include.show_post.content | number_of_words }}{%- endcapture -%}{%- unless words contains "-" -%}{{ words | plus: 250 | divided_by: 250 }}{%- include ref/abbr.html show_lang = include.show_lang show_txt = "minute-read" -%}{%- endunless -%}</span>
+  <span class="post-meta">{{ include.show_post.date | date: '%Y, %b %d' }}&nbsp;&nbsp;—&nbsp;&nbsp;{%- capture words -%}{{ include.show_post.content | number_of_words }}{%- endcapture -%}{%- unless words contains "-" -%}{{ words | plus: 250 | divided_by: 100 | append: " " }}{%- include ref/abbr.html show_lang = include.show_lang show_txt = "minute-read" -%}{%- endunless -%}</span>
 </li>

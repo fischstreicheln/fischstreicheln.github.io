@@ -1,12 +1,11 @@
 ---
 layout: post
-title: "Introduction to Stochastic Process"
-ref: "Introduction to Stochastic Process"
+title: "DTMC: Discrete Time Markov Chains"
+ref: "DTMC: Discrete Time Markov Chains"
 lang: en
 category: [Probability, Stochastic Process]
 author: Jason
-date: 2018-10-30
-last-update: 2018-11-15
+date: 2018-11-15
 img: random-walk.png
 mathjax: true
 mermaid: true
@@ -109,7 +108,7 @@ graph LR;
 ### Markov Chain
 Markov Chain is a stochastic process with discrete state space and Markov property.
 
-> {% include ref/more-about.html ref = "DTMC: Discrete Time Markov Chains" lang = page.lang %}
+{% include ref/more-about.html ref = "DTMC: Discrete Time Markov Chains" lang = page.lang %}
 
 ## Reference
 There are some books I read while I was writing this post.[^1]

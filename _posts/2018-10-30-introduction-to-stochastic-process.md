@@ -44,7 +44,7 @@ graph LR;
     C-->G(continuous parameters);
 </div>
 * For instance, we could deal with the stochastic process of **discrete state space** where states
-are usually identified with a subset of the set of natural numbers $$\{0,1,2,...\}$$. This stochastic
+are usually identified with a subset of the set of natural numbers $$\{0,1,2,\ldots\}$$. This stochastic
 process is also referred to as a **Chain**.  
 * If the stochastic process is of **discrete parameter space**, we could call it **discrete parameter**
 stochastic process or **discrete-time** stochastic process.
@@ -63,11 +63,11 @@ graph LR;
     C--not-depending-->G(homogeneous);
 </div>
 * A **stationary** stochastic process is invariant under an arbitrary shift of time origin, i.e.
-mathematically $$\forall \alpha, \forall n, t_i, x_i$$(with $$i = 1,2,...,n$$),
+mathematically $$\forall \alpha, \forall n, t_i, x_i$$(with $$i = 1,2,\ldots ,n$$),
 
 $$
-P(X(t_1)<x_1,X(t_2)<x_2,...,X(t_n)<x_n) \\
-= P(X(t_1+\alpha )<x_1,X(t_2+\alpha )<x_2,...,X(t_n+\alpha )<x_n)
+\mathbf{Pr}(X(t_1)<x_1,X(t_2)<x_2,\ldots ,X(t_n)<x_n) \\
+= \mathbf{Pr}(X(t_1+\alpha )<x_1,X(t_2+\alpha )<x_2,\ldots ,X(t_n+\alpha )<x_n)
 $$
 
 * The transitions of a **homogeneous** stochastic process is not depending on the elapsed time from

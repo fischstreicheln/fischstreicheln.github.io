@@ -4,6 +4,7 @@ title: "Introduction to Stochastic Process"
 ref: "Introduction to Stochastic Process"
 lang: en
 category: [Probability, Stochastic Process]
+tags: Markov
 author: Jason
 date: 2018-10-30
 last-update: 2018-11-15
@@ -26,11 +27,10 @@ and which state the system occupy in different time stamp throughout the whole l
 system. Mathematically,
 * **Stochastic Process** can be defined as a family of random variables $$\{X(t), t\in T\}$$,
 each $$r.v. X(t)$$ is defined on some **probability space**.
-* $$T$$ is called **parameter space** on which the parameter $$t$$ is defined. When the parameter $$t$$
-is discrete, $$T$$ is also called **index set**.
-Parameter $$t$$ usually represent time.
-* The values of $$r.v. X(t)$$ are called **states**. The set of all possible states forms the **state
-space** of the stochastic process.
+* $$T$$ is called **parameter space** on which the parameter $$t$$ is defined. When the parameter
+$$t$$ is discrete, $$T$$ is also called **index set**. Parameter $$t$$ usually represent time.
+* The values of $$r.v. X(t)$$ are called **states**. The set of all possible states forms the
+**state space** of the stochastic process.
 
 ### Classification
 #### Parameter space and State space
@@ -44,10 +44,10 @@ graph LR;
     C-->G(continuous parameters);
 </div>
 * For instance, we could deal with the stochastic process of **discrete state space** where states
-are usually identified with a subset of the set of natural numbers $$\{0,1,2,\ldots\}$$. This stochastic
-process is also referred to as a **Chain**.  
-* If the stochastic process is of **discrete parameter space**, we could call it **discrete parameter**
-stochastic process or **discrete-time** stochastic process.
+are usually identified with a subset of the set of natural numbers $$\{0,1,2,\ldots\}$$. This
+stochastic process is also referred to as a **Chain**.  
+* If the stochastic process is of **discrete parameter space**, we could call it **discrete
+parameter** stochastic process or **discrete-time** stochastic process.
 * **Markov Process** is a special type of stochastic process. If the state space of a Markov Process
 is discrete, then this process is a **Markov Chain**. Also, there are discrete-time Markov Chain and
 continuous-time Markov Chain with regards to different type of parameter space.
@@ -87,7 +87,7 @@ graph LR;
 ### Markov Property
 * **Markov Process** is a type of stochastic process with **Markov Property**.
 * **Markov Property**, i.e. **Memoryless** property, states that the future evolution of the process
-depends **ONLY** on its **current** state, not depending on the passed transitions of the process.
+depends *ONLY* on its *current* state, not depending on the passed transitions of the process.
 
 ### Classification
 Applying the classification rules of stochastic process, we also have the following types of Markov Process.

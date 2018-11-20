@@ -1,18 +1,20 @@
 ---
 layout: post
-title: "DTMC: Discrete Time Markov Chains"
-ref: "DTMC: Discrete Time Markov Chains"
+title: "Markov Chain Example: Ehrenfest Model"
+ref: "Markov Chain Example: Ehrenfest Model"
 lang: en
 category: [Probability, Stochastic Process]
-tags: Markov DTMC
+tags: Markov DTMC Ehrenfest
 author: Jason
-date: 2018-11-15
-last-update: 2018-11-18
+date: 2018-11-19
 img: random-walk.png
 mathjax: true
 mermaid: true
 ---
 
+{% include ref/post-progress.html lang = page.lang%}
+
+{% comment %}
 ## Markov Chain
 * **Markov Process** is a type of stochastic process with **Markov Property**.
 * **Markov Chain** is a type of Markov process with discrete state space.
@@ -106,14 +108,11 @@ the other one.
 * Let $$r.v. X_n$$ be the number of balls in the urn \#1 after $$n^{th}$$ selection, or $$n$$ time
 steps.
 
-Since the number of balls in urn \#1 at time sbvtep $$n+1$$ depends only on the number of balls in
+Since the number of balls in urn \#1 at time step $$n+1$$ depends only on the number of balls in
 urn \#1 at time step $$n$$, the stochastic process $$\{X_n, n=1,2,\ldots\}$$ is a Markov chain.
 
 > {% include ref/more-about.html ref = "Markov Chain Example: Ehrenfest Model" lang = page.lang %}
 
-## Non-Markovian Situation
-
-## Time Dependence of DTMC
 
 
 > {% include ref/more-about.html ref = "Time Dependence of DTMC" lang = page.lang %}
@@ -123,3 +122,5 @@ There are some books I read while I was writing this post.[^1]
 
 ***
 [^1]: {% include ref/bib.html idx = "_bib_book__BK_Stewart2009_" %}
+
+{% endcomment %}

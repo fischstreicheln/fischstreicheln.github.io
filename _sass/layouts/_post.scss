@@ -185,3 +185,24 @@
     }
   }
 }
+
+/* 3. Post Progress */
+.post-progress {
+  min-height: 5 * $spacing-unit;
+  padding: $spacing-unit;
+  padding-left: 6 * $spacing-unit;
+  @extend %left-image;
+  border: $padding-unit solid $black;
+  background-color: $black;
+  text-align: left;
+}
+
+.post-progress-info {
+  margin: 0;
+  padding: $padding-unit;
+  @include relative-font-size($big-header-ratio);
+  @include media-font-size($on-palm, $header-ratio);
+  @include media-font-size($on-min, $small-header-ratio);
+  color: $grey-light;
+  text-decoration: none;
+}

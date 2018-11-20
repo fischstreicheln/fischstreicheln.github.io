@@ -5,6 +5,12 @@
   background-repeat: no-repeat;
 }
 
+%left-image {
+  background-size: auto 100%;
+  background-position: center left;
+  background-repeat: no-repeat;
+}
+
 %flex-row-display {
   display: flex;
   flex-direction: row;

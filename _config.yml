@@ -28,6 +28,8 @@ homepage-post-max:  30
 split-txt:          "%#%"
 weighted-txt:       "zzz$"
 hidden-lang-label:  personal
+maxRelated:         4
+minCommon:          2
 # header_pages:
 #   - cv.md
 #   - cv-cn.md

@@ -187,7 +187,18 @@
 }
 
 /* 3. Latex Image Code */
+.latex-image {
+  @extend %flex-row-display;
+  @include media-query($on-palm) {flex-direction: column;}
+  img {
+    align-self: flex-start;
+    padding: $padding-unit;
+  }
+}
+
 .latex-image-code {
+  align-self: flex-end;
+  @include media-query($on-palm) {align-self: flex-start;}
   p, a, strong {
     font-family: $base-font-family;
     color: $grey;

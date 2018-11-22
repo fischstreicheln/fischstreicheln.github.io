@@ -123,8 +123,6 @@ course, **with some cost**.
 When the future evolution of a chain depends on more than its current state, but also $$k-1$$ step(s)
 forward, this chain can be made into a Markov chain, at the cost of *increasing the number of states*.
 
-![Sample State Diagram]({{ "DTMC_sunny_01.png" | prepend: site.post-image-url | prepend: site.baseurl | absolute_url }}){:width="400px"}
-
 {% capture my_code %}
 \documentclass{standalone}
 \usepackage{tikz}
@@ -142,9 +140,8 @@ forward, this chain can be made into a Markov chain, at the cost of *increasing 
             (n) edge[loop above] node {0.5} (n);
     \end{tikzpicture}
 \end{document}{% endcapture %}
-{% include ref/latex-image.html lang = page.lang content = my_code %}
+{% include ref/latex-image.html lang = page.lang content = my_code img = "DTMC_sunny_01.png" width = "300px" %}
 
-![Sample State Diagram]({{ "DTMC_sunny_02.png" | prepend: site.post-image-url | prepend: site.baseurl | absolute_url }}){:width="400px"}
 {% capture my_code %}
 \documentclass{standalone}
 \usepackage{tikz}
@@ -169,7 +166,7 @@ forward, this chain can be made into a Markov chain, at the cost of *increasing 
     \end{tikzpicture}
 \end{document}
 {% endcapture %}
-{% include ref/latex-image.html lang = page.lang content = my_code %}
+{% include ref/latex-image.html lang = page.lang content = my_code img = "DTMC_sunny_02.png" width = "400px" %}
 
 ## Time Dependence of DTMC
 

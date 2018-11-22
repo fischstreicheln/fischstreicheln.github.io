@@ -186,7 +186,28 @@
   }
 }
 
-/* 3. Post Progress */
+/* 3. Latex Image Code */
+.latex-image-code {
+  p, a, strong {
+    font-family: $base-font-family;
+    color: $grey;
+    @include relative-font-size($meta-ratio);
+    @include media-font-size($on-half-min-palm, $small-meta-ratio);
+  }
+  button, .button {
+    background-color: #FFFFFF00;
+    border: none;
+    margin: 0px;
+    padding: 0px;
+    @include relative-font-size($meta-ratio);
+    @include media-font-size($on-half-min-palm, $small-meta-ratio);
+  }
+  .show-trigger {display: inline-block;}
+  .hide-trigger {display: none;}
+  .code-contents {display: none;}
+}
+
+/* 4. Post Progress */
 .post-progress {
   min-height: 5 * $spacing-unit;
   padding: $spacing-unit;

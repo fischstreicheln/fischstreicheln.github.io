@@ -1,0 +1,6 @@
+.mjx-chtml {
+  font-size: 105% !important;
+  @include media-query($on-half-min-palm) {
+    font-size: 95%;
+  }
+}

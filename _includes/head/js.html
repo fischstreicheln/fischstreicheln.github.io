@@ -1,7 +1,17 @@
+{% if page.post-toc != false %}
+  <script src="/assets/js/post-toc-trigger.js"></script>
+{% endif %}
+
+<script src="/assets/js/post-code-trigger.js"></script>
+
 {% if page.mathjax %}
   <script type="text/javascript" async
     src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
   </script>
+{% endif %}
+
+{% if page.mermaid %}
+  <script src="/assets/js/mermaid.min.js"></script>
 {% endif %}
 
 {% if page.seq-diagram %}
@@ -9,14 +19,6 @@
   <script src="{{ site.baseurl }}/assets/js/snap.svg-min.js"></script>
   <script src="{{ site.baseurl }}/assets/js/underscore-min.js"></script>
   <script src="{{ site.baseurl }}/assets/js/sequence-diagram-min.js"></script>
-{% endif %}
-
-{% if page.mermaid %}
-  <script src="/assets/js/mermaid.min.js"></script>
-{% endif %}
-
-{% if page.post-toc != false %}
-  <script src="/assets/js/post-toc-trigger.js"></script>
 {% endif %}
 
 <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>

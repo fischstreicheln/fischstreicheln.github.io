@@ -188,6 +188,7 @@
 
 /* 3. Latex Image Code */
 .latex-image {
+  margin: $padding-unit 0;
   @extend %flex-row-display;
   @include media-query($on-palm) {flex-direction: column;}
   img {

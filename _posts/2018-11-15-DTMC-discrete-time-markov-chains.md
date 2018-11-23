@@ -142,6 +142,27 @@ forward, this chain can be made into a Markov chain, at the cost of *increasing 
 \end{document}{% endcapture %}
 {% include ref/latex-image.html lang = page.lang content = my_code img = "DTMC_sunny_01.png" width = "300px" %}
 
+This is a state diagram of a simple city weather model, categorizing the city weather into **sunny**
+and **not-sunny** states, supposing the weather of the next day depends only on the weather of the
+observing day. Obviously, the model is a Markov Chain.
+
+Now consider a complicated model. The city weather is categorized into **sunny** and **not-sunny**
+states, and the weather of the next day depends on the weather of both the observing day *and the
+day before the observing day*. Clearly, it’s a non-Markovian situation.
+
+However, it is possible the converting this chain into a Markov chain by *increasing the number of
+states*:
+* In the original model, observation at time step $$n+1$$ depends on the state at both time step
+$$n$$ and $$n-1$$.
+* Now consider *the combination of the observation at time step $$n+1$$ and the state at time step
+$$n$$ as the **new defined observation at time step $$n+1$$***, that depends *ONLY* on *a **new defined
+state at time step $$n$$** which is the combination of states at time step $$n$$ and $$n-1$$*. Other
+settings of the original model remain the same.
+* In this modified model, the observation at time step $$n+1$$, i.e. the consecutive weather status
+of the day $$n$$ and $$n+1$$, depends *ONLY* on the state at time step $$n$$, i.e. the consecutive
+weather status of day $$n-1$$ and $$n$$.
+By applying this technique, the new model is a Markov chain
+
 {% capture my_code %}
 \documentclass{standalone}
 \usepackage{tikz}

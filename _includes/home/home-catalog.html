@@ -14,7 +14,7 @@
   <div class="category-container">
     {%- assign my_cat = nil | split: "," -%}
     {%- for category in site.categories -%}
-      {%- assign grouped_posts = category[1] | where: "lang", include.show_lang | group_by: "categories" -%}
+      {%- assign grouped_posts = category[1] | where: "lang", include.show_lang | group_by_exp: "item", "item.categories | join: site.split_txt | prepend: site.split_txt | prepend: item.division" -%}
       {%- if grouped_posts.size == 0 -%}{%- continue -%}{%- endif -%}
       {%- for group in grouped_posts -%}
         {%- assign first_post = group.items | first -%}
@@ -30,13 +30,18 @@
         {%- else -%}
           {%- assign cur_cat = "Others" | prepend: site.weighted-txt | append: site.split-txt | append: category[0] -%}
         {%- endif -%}
+        {%- if first_post.division -%}
+          {%- assign cur_cat = cur_cat | prepend: site.split-txt2 | prepend: first_post.division -%}
+        {%- else -%}
+          {%- assign cur_cat = cur_cat | prepend: site.weighted-txt -%}
+        {%- endif -%}
         {%- assign my_cat = my_cat | push: cur_cat -%}
       {%- endfor -%}
     {%- endfor -%}
     {%- assign sorted_cat = my_cat | uniq | sort -%}
     {%- assign filelink = langlabel | prepend: "catalog/categories" | prepend: site.baseurl | append: ".html#" -%}
     {%- for category in sorted_cat -%}
-      {%- assign cur_cat = category | remove: site.weighted-txt  | split: site.split-txt -%}
+      {%- assign cur_cat = category | remove: site.weighted-txt  | replace_first: site.split-txt2, " - " | split: site.split-txt -%}
       {%- if cur_cat[0] != last_cat -%}
         {%- if last_cat != nil -%}</ul></div>{%- endif -%}
         <div class="section-list">
@@ -45,7 +50,7 @@
           </div>
           <ul class="category-list">
       {%- endif -%}
-      <li class="category"><a href="{{ filelink | append: cur_cat[0] | append: "-" | append: cur_cat[1] }}">{{ cur_cat[1] | prepend: "@" }}</a></li>
+      <li class="category"><a href="{{ filelink | append: cur_cat[0] | append: "-" | append: cur_cat[1] | remove: " " }}">{{ cur_cat[1] | prepend: "@" }}</a></li>
       {%- assign last_cat = cur_cat[0] -%}
     {%- endfor -%}</ul></div>
   </div>

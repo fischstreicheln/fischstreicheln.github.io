@@ -1,5 +1,5 @@
 /*1. General */
-.tag, .category {
+.tag, .category, .division {
   margin: $padding-unit;
   padding: 0 $padding-unit*3;
   text-align: center;
@@ -102,6 +102,12 @@
     .category-list {
       margin: 0 $padding-unit;
       list-style: none;
+      a, p {
+        font-family: $label-font-family;
+        @include relative-font-size($meta-ratio);
+        text-decoration: none;
+        color: $label-color-link;
+      }
     }
   }
 }

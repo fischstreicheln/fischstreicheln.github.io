@@ -3,7 +3,8 @@ layout: post
 title: "Introduction to Stochastic Process"
 ref: "Introduction to Stochastic Process"
 lang: en
-category: [Probability, Stochastic Process]
+division: Mathematics
+category: [Probability, Stochastic Process ]
 tags: Markov
 author: Jason
 date: 2018-10-30
@@ -112,7 +113,7 @@ Markov Chain is a stochastic process with discrete state space and Markov proper
 > {% include ref/more-about.html ref = "DTMC: Discrete Time Markov Chains" lang = page.lang %}
 
 ## Reference
-There are some books I read while I was writing this post.[^1]
+There are some books and articles I read while I was writing this post.[^1]
 
 ***
 [^1]: {% include ref/bib.html idx = "_bib_book__BK_Stewart2009_" %}

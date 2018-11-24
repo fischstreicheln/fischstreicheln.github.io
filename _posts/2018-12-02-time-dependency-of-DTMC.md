@@ -1,18 +1,20 @@
 ---
 layout: post
-title: "Markov Chain Example: Ehrenfest Model"
-ref: "Markov Chain Example: Ehrenfest Model"
+title: "Time Dependency of DTMC"
+ref: "Time Dependency of DTMC"
 lang: en
-category: [Probability, Stochastic Process]
-tags: Markov DTMC Ehrenfest
+division: Mathematics
+category: [Probability, Stochastic Process ]
+tags: Markov DTMC Stationary Homogeneous
 author: Jason
-date: 2018-11-19
+date: 2018-12-02
+last-update: 2018-12-02
 img: random-walk.png
 mathjax: true
 mermaid: true
 ---
 
-{% include ref/post-progress.html lang = page.lang%}
+{% include ref/post-progress.html lang = page.lang %}
 
 {% comment %}
 ## Markov Chain
@@ -118,7 +120,7 @@ urn \#1 at time step $$n$$, the stochastic process $$\{X_n, n=1,2,\ldots\}$$ is 
 > {% include ref/more-about.html ref = "Time Dependence of DTMC" lang = page.lang %}
 
 ## Reference
-There are some books I read while I was writing this post.[^1]
+There are some books and articles I read while I was writing this post.[^1]
 
 ***
 [^1]: {% include ref/bib.html idx = "_bib_book__BK_Stewart2009_" %}

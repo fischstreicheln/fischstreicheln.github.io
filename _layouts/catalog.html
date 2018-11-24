@@ -12,7 +12,7 @@ layout: default
     {%- if page.ref == "categories" -%}
       {%- assign my_cat = nil | split: "," -%}
       {%- for category in site.categories -%}
-        {%- assign grouped_posts = category[1] | where: "lang", lang | group_by: "categories" -%}
+        {%- assign grouped_posts = category[1] | where: "lang", lang |  group_by_exp: "item", "item.categories | join: site.split_txt | prepend: site.split_txt | prepend: item.division"  -%}
         {%- if grouped_posts.size == 0 -%}{%- continue -%}{%- endif -%}
         {%- for group in grouped_posts -%}
           {%- assign first_post = group.items | first -%}
@@ -28,22 +28,33 @@ layout: default
           {%- else -%}
             {%- assign cur_cat = "Others" | prepend: site.weighted-txt | append: site.split-txt | append: category[0] -%}
           {%- endif -%}
+          {%- if first_post.division -%}
+            {%- assign cur_cat = cur_cat | prepend: site.split-txt2 | prepend: first_post.division -%}
+          {%- else -%}
+            {%- assign cur_cat = cur_cat | prepend: site.weighted-txt -%}
+          {%- endif -%}
           {%- assign my_cat = my_cat | push: cur_cat -%}
         {%- endfor -%}
       {%- endfor -%}
       {%- assign sorted_cat = my_cat | uniq | sort -%}
       {%- for category in sorted_cat -%}
-        {%- assign cur_cat = category | remove: site.weighted-txt | split: site.split-txt -%}
+        {%- assign cur_division = category | remove: site.weighted-txt | split: site.split-txt | first -%}
+        {%- if cur_division contains site.split-txt2 -%}
+          {%- assign cur_division = cur_division | split: site.split-txt2 | first -%}
+        {%- else -%}
+          {%- assign cur_division = nil -%}
+        {% endif %}
+        {%- assign cur_cat = category | remove: site.weighted-txt | replace_first: site.split-txt2, " - " | split: site.split-txt -%}
         {%- if cur_cat[0] != last_section -%}
           {%- if last_section != nil -%}</ul>{%- endif -%}
-          <h2 class = "gap" id="{{ cur_cat[0] | append: "-" | append: cur_cat[1] }}">{{ cur_cat[0] }}</h2>
+          <h2 class = "gap" id="{{ cur_cat[0] | append: "-" | append: cur_cat[1] | remove: " " }}">{{ cur_cat[0] }}</h2>
           {%- assign last_section = cur_cat[0] -%}
           <div class="category"><h3>{{ cur_cat[1] | prepend: "@" }}</h3></div>
           <ul class="post-list">
           {%- assign last_category = cur_cat[1] -%}
         {%- elsif cur_cat[1] != last_category -%}
           </ul>
-          <div class="gap" id="{{ cur_cat[0] | append: "-" | append: cur_cat[1] }}">&nbsp;</div>
+          <div class="gap" id="{{ cur_cat[0] | append: "-" | append: cur_cat[1] | remove: " " }}">&nbsp;</div>
           <div class="category"><h3>{{ cur_cat[1] | prepend: "@" }}</h3></div>
           <ul class="post-list">
           {%- assign last_category = cur_cat[1] -%}
@@ -54,7 +65,12 @@ layout: default
           {%- assign posts = site.categories[cat_pointer] | where:"lang", lang -%}
         {%- else -%}
           {%- assign cat_pointer = cur_cat[1] -%}
-          {%- assign posts = site.categories[cat_pointer] | where:"lang", lang | where_exp:"item", "item.categories[0] == cur_cat[0]" -%}
+          {%- if cur_division != nil -%}
+            {%- assign temp_cat = cur_cat[0] | remove_first: cur_division | remove_first: " - " -%}
+            {%- assign posts = site.categories[cat_pointer] | where:"lang", lang | where_exp:"item", "item.categories[0] == temp_cat" | where:"division", cur_division -%}
+          {%- else -%}
+            {%- assign posts = site.categories[cat_pointer] | where:"lang", lang | where_exp:"item", "item.categories[0] == cur_cat[0]" -%}
+          {%- endif -%}
         {%- endif -%}
         {%- for post in posts -%}
           {%- include ref/post-normal.html show_post = post show_lang = lang -%}

@@ -1,29 +1,32 @@
 ---
 layout: post
-title: "DTMC: Discrete Time Markov Chains"
-ref: "DTMC: Discrete Time Markov Chains"
+title: "Markov Chain Example: Ehrenfest Model"
+ref: "Markov Chain Example: Ehrenfest Model"
 lang: en
 division: Mathematics
 category: [Probability, Stochastic Process ]
-tags: Markov DTMC
+tags: Markov DTMC Ehrenfest
 author: Jason
-date: 2018-11-15
-last-update: 2018-11-24
-img: DTMC_sunny_01.png
+date: 2018-12-01
+last-update: 2018-12-01
+img: random-walk.png
 mathjax: true
 mermaid: true
 ---
 
+{% include ref/post-progress.html lang = page.lang %}
+
+{% comment %}
 ## Markov Chain
 * **Markov Process** is a type of stochastic process with **Markov Property**.
-* **Markov Chain** is a type of Markov process with *discrete state space*.
+* **Markov Chain** is a type of Markov process with discrete state space.
 
 ### Markov Property
 **Markov Property**, i.e. **Memoryless** property, states that the future evolution of the process
 depends *ONLY* on its *current* state, not depending on the passed transitions of the process.
 
 ### Discrete Time Markov Chain
-* **Discrete Time Markov Chain(DTMC)** is a type of Markov Chain with *discrete parameter space*.
+* **Discrete Time Markov Chain(DTMC)** is a type of Markov Chain with discrete parameter space.
 <div class="mermaid">
 graph LR;
     A(Stochastic Process)--Markov Property-->B(Markov Process);
@@ -56,7 +59,7 @@ instead of $$x_i, x_j, x_k, \ldots$$.
 
 ### (Single-step) Transition Probability
 The **single-step transition probability**, or just the **transition probability**, of the Markov
-Chain is given by the *conditional probability* of making transition from state $$x_n=i$$ to state
+Chain is given by the conditional probability of making transition from state $$x_n=i$$ to state
 $$x_{n+1}=j$$ when the time parameter increases from $$n$$ to $$n+1$$, denoted as
 $$p_{ij}(n)=\mathbf{Pr}(X_{n+1}=j\mid X_n=i)$$.
 
@@ -84,32 +87,9 @@ elements of which satisfy $$\forall i,j$$ $$0\leq p_{ij}(n)\leq 1$$ and $$\sum_{
 
 ### State Diagram
 The behavior of the Markov chain is usually illustrated with **state diagram**, where
-* *Circles* are used to represent states,
-* *Directed arrows* with values are used to represent single-step transition from states to states,
-* *Values of arrows* are used to represent single-step transition probabilities respectively.
-
-{% capture my_code %}
-\documentclass{standalone}
-\usepackage{tikz}
-\usetikzlibrary{automata, positioning}
-\begin{document}
-    \begin{tikzpicture}
-        \tikzset{state style/.style={state, minimum width=2cm}}
-        \node[state style] (s) {Sunny};
-        \node[state style, right=2 of s] (n) {Not Sunny};
-
-        \draw[every loop]
-            (s) edge[bend right, auto=left] node {0.3} (n)
-            (n) edge[bend right, auto=right] node {0.5} (s)
-            (s) edge[loop above] node {0.7} (s)
-            (n) edge[loop above] node {0.5} (n);
-    \end{tikzpicture}
-\end{document}{% endcapture %}
-{% include ref/latex-image.html lang = page.lang content = my_code img = "DTMC_sunny_01.png" width = "300px" %}
-
-This is a state diagram of a simple city weather model, categorizing the city weather into **sunny**
-and **not-sunny** states, supposing the weather of the next day depends only on the weather of the
-observing day. Obviously, the model is a Markov Chain.
+* Circles are used to represent states, and
+* Directed arrows with values are used to represent single-step transition from states to states, whose
+* Values are used to represent single-step transition probabilities respectively.
 
 <div class="mermaid">
 graph LR;
@@ -121,9 +101,8 @@ graph LR;
     B--1/3-->A;
 </div>
 
-This is a state diagram of **Ehrenfest Model** with $$N=3$$, which is a simple, discrete model of
-the exchange of heat or gas molecules between two isolated bodies, by formulated as simple ball
-and urn model.
+This is a state diagram of **Ehrenfest Model** with $$N=3$$, which is a simple model of the exchange
+of heat or gas molecules between two isolated bodies, by formulated as simple ball and urn models.
 * The balls correspond to the molecules, and there are $$N=3$$ balls in the system in this case.
 * The urns correspond to the two isolated bodies, and the urns are labeled with 1 and 2.
 * At each time instant, a ball in the system is chosen at random and moved from the current urn to
@@ -136,30 +115,14 @@ urn \#1 at time step $$n$$, the stochastic process $$\{X_n, n=1,2,\ldots\}$$ is 
 
 > {% include ref/more-about.html ref = "Markov Chain Example: Ehrenfest Model" lang = page.lang %}
 
-## Non-Markovian Situation
-Markov property states that the future evolution of the stochastic process depends only on its
-current state, not depending on the passed transitions of the process. Otherwise, it is not Markovian.
 
-However, in some cases, there is a way to transform a non-Markovian chain into a Markov chain, of
-course, **with some cost**.
 
-> {% include ref/more-about.html ref = "k-denpendent Markov Chains" lang = page.lang %}
-
-## Time Dependency of DTMC
-With any DTMC, we may study the time dependency of the system behavior through studying the
-relationship between the process evolution and the initial time or the elapsed time:
-* If DTMC is invariant under an arbitrary shift of time origin, it leads to the **stationary**
-property.
-* If the future evolution of DTMC is not depending on the elapsed time from initiation, it leads to
-the **homogeneous** property.
-* Note that the definition of DTMC states that the future evolution depending ONLY on its current
-state, not depending on the passed transitions of the process. *However it doesn't mean that the
-future evolution doesn't depend on the elapsed time from initiation for certain*.
-
-> {% include ref/more-about.html ref = "Time Dependency of DTMC" lang = page.lang %}
+> {% include ref/more-about.html ref = "Time Dependence of DTMC" lang = page.lang %}
 
 ## Reference
 There are some books and articles I read while I was writing this post.[^1]
 
 ***
 [^1]: {% include ref/bib.html idx = "_bib_book__BK_Stewart2009_" %}
+
+{% endcomment %}

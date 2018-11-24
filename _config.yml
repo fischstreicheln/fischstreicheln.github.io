@@ -26,6 +26,7 @@ colophon:
 highlight-post-max: 4
 homepage-post-max:  30
 split-txt:          "%#%"
+split-txt2:         "%###%"
 weighted-txt:       "zzz$"
 hidden-lang-label:  personal
 maxRelated:         4

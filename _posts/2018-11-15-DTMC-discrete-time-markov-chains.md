@@ -122,8 +122,8 @@ graph LR;
 </div>
 
 This is a state diagram of **Ehrenfest Model** with $$N=3$$, which is a simple, discrete model of
-the exchange of heat or gas molecules between two isolated bodies, by formulated as simple ball
-and urn model.
+the exchange of heat or gas molecules between two isolated bodies, by formulated as simple **ball
+and urn model**.
 * The balls correspond to the molecules, and there are $$N=3$$ balls in the system in this case.
 * The urns correspond to the two isolated bodies, and the urns are labeled with 1 and 2.
 * At each time instant, a ball in the system is chosen at random and moved from the current urn to
@@ -131,8 +131,9 @@ the other one.
 * Let $$r.v. X_n$$ be the number of balls in the urn \#1 after $$n^{th}$$ selection, or $$n$$ time
 steps.
 
-Since the number of balls in urn \#1 at time step $$n+1$$ depends only on the number of balls in
-urn \#1 at time step $$n$$, the stochastic process $$\{X_n, n=1,2,\ldots\}$$ is a Markov chain.
+Since the probability of different number of balls in urn \#1 at time step $$n+1$$ depends only on
+the number of balls in urn \#1 at time step $$n$$, the stochastic process $$\{X_n, n=1,2,\ldots\}$$
+is a Markov chain.
 
 > {% include ref/more-about.html ref = "Markov Chain Example: Ehrenfest Model" lang = page.lang %}
 
@@ -147,7 +148,7 @@ course, **with some cost**.
 
 ## Time Dependency of DTMC
 With any DTMC, we may study the time dependency of the system behavior through studying the
-relationship between the process evolution and the initial time or the elapsed time:
+relationship between the evolution of the system and the initial time or the elapsed time:
 * If DTMC is invariant under an arbitrary shift of time origin, it leads to the **stationary**
 property.
 * If the future evolution of DTMC is not depending on the elapsed time from initiation, it leads to

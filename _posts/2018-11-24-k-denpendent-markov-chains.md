@@ -24,7 +24,7 @@ course, **with some cost**.
 When the future evolution of a chain depends on more than its current state, but also $$k-1$$ step(s)
 forward, this chain can be made into a Markov chain, at the cost of *increasing the number of states*.
 
-### City weather model
+### Example: city weather model
 {% capture my_code %}
 \documentclass{standalone}
 \usepackage{tikz}
@@ -96,6 +96,9 @@ Here is a sample state diagram of the modified model.
 \end{document}
 {% endcapture %}
 {% include ref/latex-image.html lang = page.lang content = my_code img = "DTMC_sunny_02.png" width = "400px" %}
+
+### Generalized Technique
+
 
 ## Reference
 There are some books and articles I read while I was writing this post.[^1]

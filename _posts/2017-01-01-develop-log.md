@@ -4,7 +4,7 @@ title: "Develop Log"
 ref: "Develop Log"
 lang: test
 category: develop
-date: 2018-01-01 22:30:00 +0800
+date: 2017-01-01
 post-toc: false
 ---
 

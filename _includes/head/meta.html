@@ -12,11 +12,11 @@
 <meta name="twitter:title" content="{{ page.title | default: site.title.[lang] | default: site.title.en | default: site.title }}">
 <meta content="article" property="og:type">
 
-<meta content="{{ page.description | default: site.description[lang] | default: site.descriptionen| default: site.description }}" property="og:description">
-<meta name="twitter:description" content="{{ page.description | default: site.description[lang] | default: site.descriptionen | default: site.description }}">
-<meta name="description" content="{{ page.description | default: site.description[lang] | default: site.descriptionen | default: site.description }}">
+<meta content="{{ page.description | default: site.description[lang] | default: site.description.en| default: site.description }}" property="og:description">
+<meta name="twitter:description" content="{{ page.description | default: site.description[lang] | default: site.description.en | default: site.description }}">
+<meta name="description" content="{{ page.description | default: site.description[lang] | default: site.description.en | default: site.description }}">
 
-<meta name="keywords" content="{{ page.keywords | default: site.keywords[lang] |default: site.keywordsen | default: site.keywords }}">
+<meta name="keywords" content="{{ page.keywords | default: site.keywords[lang] |default: site.keywords.en | default: site.keywords }}">
 
 {% if page.url %}
   <meta name="twitter:url" content="{{ site.url }}{{ page.url }}">

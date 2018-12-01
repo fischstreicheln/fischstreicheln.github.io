@@ -114,8 +114,8 @@ gantt
     dateFormat YYYY-MM-DD
 
     section Machine Learning and Practice in Pyhton
-    Introduction  :active,  2018-12-01, 1d
-    Basics        :         1d
+    Introduction  :done,    2018-12-01, 1d
+    Basics        :active,  1d
     Advanced      :         2d
     Practice      :         3d
 </div>

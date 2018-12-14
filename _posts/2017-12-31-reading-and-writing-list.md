@@ -4,7 +4,7 @@ title: "Reading and Writing List"
 ref: "Reading adn Writing List"
 lang: test
 category: [Personal, Schedule]
-tags: Reading, Writing
+tags: Reading Writing
 date: 2017-12-31
 last-update: 2018-12-01
 post-toc: true
@@ -15,9 +15,10 @@ mermaid: true
 ### Calculus
 ### Linear Algebra
 ### Probability
-Here is the [Probability Reading Schedule(Dec, 2018)](#201812-Prob).
+#### READ
+Here is the [Probability Reading Schedule(Dec, 2018)](#201812-Prob-R).
 
-#### READ: Probability, Markov Chain, Queuing and Simulation(Part II and III)
+##### Probability, Markov Chain, Queuing and Simulation(Part II and III)
 1. Markov Process and Markov Chains
 1. Discrete-Time Markov Chains: Definition
 1. The Chapman-Kolmogorov Equations
@@ -31,12 +32,16 @@ Here is the [Probability Reading Schedule(Dec, 2018)](#201812-Prob).
 1. Multiserver System
 1. *To be cont.*(Queuing Theory)
 
-#### READ: Stochastic Process
+
+##### Stochastic Process
 1. Introduction
 1. Markov Processes
 1. *To be cont.*
 
-#### WRITE: Stochastic Process
+
+#### WRITE
+Here is the [Probability Writing Schedule(Dec, 2018)](#201812-Prob-W).
+##### Stochastic Process
 1. Introduction to Stochastic Process
 1. DTMC: Discrete Time Markov Chains
 1. k-denpendent Markov Chains
@@ -44,22 +49,24 @@ Here is the [Probability Reading Schedule(Dec, 2018)](#201812-Prob).
 1. Time Dependency of DTMC
 1. *To be cont.*
 
+
 ### Statistics
 ## Basic Analytic Tools
 ### Excel
 ### SPSS
 ### SQL
 ### Python
-Here is the [Python Reading Schedule(Dec, 2018)](#201812-Python).
+#### READ
+Here is the [Python Reading Schedule(Dec, 2018)](#201812-Python-R).
 
-#### Python Data Analysis
+##### Python Data Analysis
 1. Getting Started with Python Libraries
 1. Numpy Arrays
 1. Statistics and Linear Algebra
 1. *To be cont.*
 
 
-#### Think Bayes: Statistical Modeling in Python
+##### Think Bayes: Statistical Modeling in Python
 1. Bayes's Theorem
 1. Computational Statistics
 1. Estimation
@@ -73,9 +80,10 @@ Here is the [Python Reading Schedule(Dec, 2018)](#201812-Python).
 
 
 ### R
-Here is the [R Reading Schedule(Dec, 2018)](#201812-R).
+#### READ
+Here is the [R Reading Schedule(Dec, 2018)](#201812-R-R).
 
-#### R Data Analysis: Methods and Application
+##### R Data Analysis: Methods and Application
 1. Introduction to R
 1. Data Structure and Basic Operation
 1. Function and Optimization
@@ -85,7 +93,7 @@ Here is the [R Reading Schedule(Dec, 2018)](#201812-R).
 1. *To be cont.*
 
 
-#### Introductory Statistics with R
+##### Introductory Statistics with R
 1. Basics
 1. R Environment
 1. Probability Distribution
@@ -95,9 +103,10 @@ Here is the [R Reading Schedule(Dec, 2018)](#201812-R).
 
 ## Advance Analytic Technology
 ### Machine Learning
-Here is the [Machine Learning Reading Schedule(Dec, 2018)](#201812-ML).
+#### READ
+Here is the [Machine Learning Reading Schedule(Dec, 2018)](#201812-ML-R).
 
-#### Machine Learning and Practice in Pyhton
+##### Machine Learning and Practice in Pyhton
 1. Introduction
 1. Basics
 1. Advanced
@@ -108,7 +117,7 @@ Here is the [Machine Learning Reading Schedule(Dec, 2018)](#201812-ML).
 ## Industry Insight
 
 ## Reading and Writing Schedule
-<div class="mermaid" id="201812-ML">
+<div class="mermaid" id="201812-ML-R">
 gantt
     title Machine Learning Reading Schedule(Dec, 2018)
     dateFormat YYYY-MM-DD
@@ -119,7 +128,7 @@ gantt
     Advanced      :         2d
     Practice      :         3d
 </div>
-<div class="mermaid" id="201812-Python">
+<div class="mermaid" id="201812-Python-R">
 gantt
     title Python Reading Schedule(Dec, 2018)
     dateFormat YYYY-MM-DD
@@ -142,7 +151,7 @@ gantt
     Two Dimensions            :         1d
     To be cont.               :done,    24d
 </div>
-<div class="mermaid" id="201812-R">
+<div class="mermaid schedule" id="201812-R-R">
 gantt
     title R Reading Schedule(Dec, 2018)
     dateFormat YYYY-MM-DD
@@ -163,9 +172,9 @@ gantt
     Descriptives Statistics and Diagrams  :           3d
     To be cont.                           :done,      24d
 </div>
-<div class="mermaid" id="201812-Prob">
+<div class="mermaid schedule" id="201812-Prob-R">
 gantt
-    title Probability Reading and Writing Schedule(Dec, 2018)
+    title Probability Reading Schedule(Dec, 2018)
     dateFormat YYYY-MM-DD
 
     section Probability, Markov Chain, Queuing and Simulation(Part II and III)
@@ -186,8 +195,13 @@ gantt
     Introduction              :active,  2018-12-01, 2d
     Markov Processes          :         5d
     To be cont.               :done,    24d
+</div>
+<div class="mermaid schedule" id="201812-Prob-W">
+gantt
+    title Probability Writing Schedule(Dec, 2018)
+    dateFormat YYYY-MM-DD
 
-    section [[WRITE]] Stochastic Process
+    section Stochastic Process
     Introduction to Stochastic Process        :done,    2018-12-01, 5d
     DTMC - Discrete Time Markov Chains        :done,    2018-12-01, 5d
     k-denpendent Markov Chains                :active,  2018-12-01, 1d

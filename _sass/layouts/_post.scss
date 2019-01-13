@@ -1,9 +1,13 @@
 /* 1. Post style */
 .post-title-image{
+  display: flex;
+  align-items: center;
   text-align: center;
+  max-height: $title-image-height;
+  overflow: hidden;
   img {
     margin: 0;
-    max-height: $title-image-height;
+    width: 100%;
   }
 }
 

@@ -1,4 +1,14 @@
 {%- assign show_lang = include.lang | default: "en" -%}
 {%- assign show_ref = include.ref | default: page.ref -%}
 {%- assign post = site.posts | where:"ref", show_ref | where:"lang", show_lang | first -%}
-{%- if post -%}  Further reading in [{{ post.title }}]({{ post.url | prepend: site.baseurl }}).{%- endif -%}
+{%- unless post -%}
+  {%- assign post = site.posts | where:"ref", show_ref | where:"lang", "en" | first -%}
+  {%- assign show_lang = "en" -%}
+{%- endunless -%}
+{%- if post -%}
+  {%- assign show_direction = include.direction | default: "next" | prepend: "read-" -%}
+  {%- unless show_direction == "read-last" or show_direction == "read-next" -%}
+    {%- assign show_direction = "read-next" -%}
+  {%- endunless -%}
+  {%- include ref/abbr.html show_lang = include.show_lang show_txt = show_direction -%}&nbsp;[{{ post.title }}]({{ post.url | prepend: site.baseurl }}).
+{%- endif -%}

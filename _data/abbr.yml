@@ -19,6 +19,10 @@ home-url:
 minute-read:
   en: minute read
   cn: 分钟阅读时间
+read-last:
+  en: Last time we talked about
+read-next:
+  en: Further more in
 
 # CV Info
 educations:

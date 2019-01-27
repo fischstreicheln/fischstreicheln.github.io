@@ -42,15 +42,17 @@
     @include relative-font-size($regular-ratio);
     @include media-font-size($on-half-min-palm, $small-regular-ratio);
   }
-  code, pre, .highlight {
-    border: none;
-    border-radius: $padding-unit/2;
-    font-family: $label-font-family;
-    @include relative-font-size($small-regular-ratio);
-    @include media-font-size($on-half-min-palm, $meta-ratio);
-    letter-spacing: -0.5px;
-    color: $grey-light;
-    background: $grey-dark;
+  .highlight {
+    code, pre {
+      border: none;
+      border-radius: $padding-unit/2;
+      font-family: $label-font-family;
+      @include relative-font-size($small-regular-ratio);
+      @include media-font-size($on-half-min-palm, $meta-ratio);
+      letter-spacing: -0.5px;
+      color: $grey-light;
+      background: $grey-dark;
+    }
   }
   ul, li, strong, i, p {
     @include relative-font-size($regular-ratio);

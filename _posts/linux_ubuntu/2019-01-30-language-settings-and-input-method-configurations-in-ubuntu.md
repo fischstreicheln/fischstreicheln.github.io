@@ -1,18 +1,48 @@
 ---
 layout: post
-title: "Things to do right after Ubuntu installation"
-ref: "Things to do right after Ubuntu installation"
+title: "Language Settings and Input Method Configurations in Ubuntu"
+ref: "Language Settings and Input Method Configurations in Ubuntu"
 lang: en
 division: Linux
 category: [Ubuntu, Operating System]
 tags: installation setting
 author: Jason
-date: 2019-01-19
+date: 2019-01-30
 last-update: 2019-01-30
 img: warty-final-ubuntu.png
 ---
 
-> {% include ref/more-about.html ref = "(Re-)install Ubuntu dual-booting with Windows 10" lang = page.lang direction = "last" %}
+> {% include ref/more-about.html ref = "Things to do right after Ubuntu installation" lang = page.lang direction = "last" %}
+
+Some general settings have already been configured, yet there might still be some
+special needs to cover. For me, a **Chinese** language user, **language support**
+and **input method** would be
+
+## Language Support
+
+## Input Method
+
+
+In **Settings** -> **Region and Language** tab, click the **Manage Installed Language** button
+System show which packages are needed for language support but lack of installation, apply changes to install
+Chinese - Pinyin Input Method
+In **Settings** -> **Region and Language** tab, click the **Manage Installed Language** button to show **Language Support** panel
+Choose **iBus**(for *iBus Pinyin* user)/**fcitx**(for *Sogou/Google Pinyin* user) from the options of **Keyboard input method system**
+(Optional) If **iBus**/**fcitx** is not an option, it means ibus/fcitx needed to be installed
+In Terminal, excute the following command
+iBus system with ```sudo apt-get install ibus ibus-clutter ibus-gtk ibus-gtk3 ibusqt-4``` and ```im-config -s ibus```
+fcitx system with ```sudo apt install fcitx-bin fcitx-table```
+reboot the system
+Install pinyin input method
+iBus pinyin with ```sudo apt-get install ibus-pinyin```
+Sogou pinyin with deb package downloaded from https://pinyin.sogou.com/linux/ and double clicking to install from Ubuntu Software Panel
+Google pinyin with ```sudo apt install fcitx-googlepinyin```
+Open setup panel by clicking the *keyboard* icon on the navigation bar -> **Configure current input method** to show **Input Method Preferences**
+In **Input Method** tab, click *add* to add corresponding input method: iBus - **Intelligent Pinyin**, **Sogou Pinyin** or **Google Pinyin**
+(One more step for **iBus** system) Back to the **Settings** -> **Region and Language** tab, add **Chinese (Intelligent Pinyin)** as an input source
+​
+
+
 
 After the installation, there are several settings and customization need to be
 configured for better experience of using Ubuntu.
@@ -139,4 +169,4 @@ purges them by leaving all of the configuration files in place.
 configuration files.
 
 ## Configure Language Setting and Input Method
-> {% include ref/more-about.html ref = "Language Settings and Input Method Configurations in Ubuntu" lang = page.lang %}
+> {% include ref/more-about.html ref = "Language Setting and Input Method Configuration in Ubuntu" lang = page.lang %}

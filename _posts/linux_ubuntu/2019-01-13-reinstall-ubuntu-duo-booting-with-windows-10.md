@@ -56,7 +56,7 @@ format those in advanced, this could be carried out in the installation section.
   1. Right clock the selected partition and choose **Shrink Volumn**,
   1. Follow the instruction to make unallocated space.
 
-### Disable **Fast Startup**
+### Disable Fast Startup
 The feature **Fast Startup** of Windows need to be disabled.
 - In **Windows**, hit **Win** and **X** keys at the same time,
 - Choose **Power Option** - **Choose what power button does?**,

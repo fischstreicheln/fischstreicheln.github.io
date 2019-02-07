@@ -1,26 +1,24 @@
 @charset "utf-8";
 
-// Import partials.
+// Main settings configuration
+$header_fix: false;
+
+// Import
 @import
   "includes/variables",
   "includes/extend",
-  "includes/mixins";
+  "includes/mixins",
+  "includes/syntax",
+  "includes/js_style";
 
 @import
-  "basic/base",
-  "basic/syntax";
-
-@import
-  "layouts/page",
+  "layouts/default",
   "layouts/post",
   "layouts/site-header",
-  "layouts/site-footer";
-
-@import
+  "layouts/site-footer",
   "layouts/home",
   "layouts/catalog",
   "layouts/cv";
 
 @import
-  "sandbox",
-  "js_style";
+  "sandbox";

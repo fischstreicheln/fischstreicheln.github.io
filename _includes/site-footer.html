@@ -1,7 +1,7 @@
 <footer class="site-footer">
   <div class="wrapper">
     {%- assign lang = page.lang | default: post.lang | default: site.lang | default: "en" -%}
-    {%- include header/title.html show_lang = lang -%}
+    {%- include site/title.html show_lang = lang -%}
     <div class="site-meta"><p>{{ site.description.[lang] | default: site.description.en | default: site.description | escape }}</p></div>
     <div class="site-copyright"><p>{{ site.colophon.[lang] | default: site.colophon.en | default: site.colophon }}</p></div>
   </div>

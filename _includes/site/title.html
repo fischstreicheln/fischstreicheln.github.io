@@ -1,0 +1,2 @@
+{%- assign lang = page.lang | default: post.lang | default: site.lang | default: "en" -%}
+<a class="site-title" rel="author" href="{%- include ref/abbr.html show_lang = lang show_txt = "home-url" show_format = "url" -%}" title="{%- include ref/abbr.html show_lang = lang show_txt = "home" -%}">{{ site.title.[lang] | default: site.title.en | default: site.title }}&nbsp;&nbsp;</a>

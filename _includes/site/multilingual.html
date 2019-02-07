@@ -1,0 +1,5 @@
+{%- assign lang = page.lang | default: post.lang | default: site.lang | default: "en" -%}
+{%- assign items = site.pages | where:"ref", page.ref | reverse | sort: 'rank' | reverse -%}
+{%- for item in items -%}{%- if item.lang != lang and item.lang != site.hidden-lang-label -%}<div class="site-meta">&nbsp; - <a href="{{ item.url | prepend: site.baseurl }}" class="site-meta">{%- include ref/abbr.html show_lang = item.lang -%}</a> &nbsp;</div>{%- endif -%}{%- endfor -%}
+{%- assign items = site.posts | where:"ref", page.ref | reverse | sort: 'rank' | reverse -%}
+{%- for item in items -%}{%- if item.lang != lang and item.lang != site.hidden-lang-label -%}<div class="site-meta">&nbsp; - <a href="{{ item.url | prepend: site.baseurl }}" class="site-meta">{%- include ref/abbr.html show_lang = item.lang -%}</a> &nbsp;</div>{%- endif -%}{%- endfor -%}

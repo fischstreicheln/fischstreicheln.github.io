@@ -1,15 +1,15 @@
 /* 1. General */
 .site-header {
-  position: fixed;
-  top: 0px;
-  z-index: 1000;
+  @if $header_fix == true {
+    position: fixed;
+    top: 0px;
+    z-index: 1000;
+  } // end of @if $header_fix is true
   width: 100%;
   padding: $padding-unit 0;
   @include media-query($on-half-min-palm) {padding: 0;}
   border-top: $padding-unit solid $grey-dark;
   border-bottom: 1px solid $grey-light;
-//  min-height: $spacing-unit*1.5;
-//  @include media-query($on-half-min-palm) {min-height: $spacing-unit*2.5;}
   background: $white;
   box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.25);
   vertical-align: top;
@@ -17,23 +17,21 @@
     @extend %flex-row-display;
     justify-content: flex-start;
     align-items: flex-end;
-  }
-}
+  } // end of .wrapper
+  .site-heading {
+    flex: auto;
+    min-width: $content-min-width - $spacing-unit * 2;
+    margin: $padding-unit auto 0 auto;
+    @include media-query($on-half-palm-laptop) {margin: 0 auto;}
+    padding-right: $spacing-unit * 2;
+    vertical-align: bottom;
+  } // end of .site-heading
+  .site-nav {
+    flex: none;
+  } // end of .site-nav
+} //.end of .site-header
 
-.site-header-container {
-  flex: auto;
-  min-width: $content-min-width - $spacing-unit * 2;
-  margin: $padding-unit auto 0 auto;
-  @include media-query($on-half-palm-laptop) {margin: 0 auto;}
-  padding-right: $spacing-unit * 2;
-  vertical-align: bottom;
-}
-
-.site-nav {
-  flex: none;
-}
-
-/* 2. Info - Always showed: title, contacts, multilingual-list */
+/* 2. Heading - Always showed: title, contacts, multilingual-list */
 .site-title {
   display: inline;
   margin: 0;
@@ -43,39 +41,41 @@
   font-weight: $base-font-weight;
   line-height: $base-line-height * $base-font-size * 1.25;
   @include visit-color($grey-dark, $grey-dark);
-}
+} // end of .site-title
 
-.site-contact {
-  display: inline;
-  margin: 0;
-  a {
-    display: inline-block;
-    padding: 0 $padding-unit * 2;
-    @include relative-font-size($regular-ratio);
-    @include media-font-size($on-half-min-palm, $small-regular-ratio);
-    @include hover-color-scale($grey, $grey-dark, 1.25);
-    transition: all $transform-time cubic-bezier(0.13, 0.43, 0.54, 1.82);
-  }
-}
-
-.site-meta {
+.site-info {
   display: inline-block;
-  margin: 0;
-  font-family: $title-font-family;
-  white-space: nowrap;
-  @include relative-font-size($meta-ratio);
-  @include media-font-size($on-half-min-palm, $small-meta-ratio);
-  @include visit-color($grey, $grey);
-}
+  .site-contact {
+    display: inline;
+    margin: 0;
+    a {
+      display: inline-block;
+      padding: 0 $padding-unit * 2;
+      @include relative-font-size($regular-ratio);
+      @include media-font-size($on-half-min-palm, $small-regular-ratio);
+      @include hover-color-scale($grey, $grey-dark, 1.25);
+      transition: all $transform-time cubic-bezier(0.13, 0.43, 0.54, 1.82);
+    } // end of a inside .site-contact
+  } // end of .site-contact
+  .site-meta {
+    display: inline-block;
+    margin: 0;
+    font-family: $title-font-family;
+    white-space: nowrap;
+    @include relative-font-size($meta-ratio);
+    @include media-font-size($on-half-min-palm, $small-meta-ratio);
+    @include visit-color($grey, $grey);
+  } // end of .site-meta
+} // end of .site-info
 
 /* 3. Navigation - showed on media queires */
 .site-nav {
   .nav-trigger {
     display: none;
-  }
+  } // end of .nav-trigger, a input-checkbox
   .menu-icon {
     display: none;
-  }
+  } // end of .menu-icon
   @include media-query($on-palm) {
     position: absolute;
     top: $padding-unit;
@@ -91,7 +91,7 @@
       width: $spacing-unit;
       height: $spacing-unit;
       cursor: pointer;
-    }
+    } // end of label for input-checkbox with id of .nav-trigger
     .menu-icon {
       display: block;
       float: right;
@@ -103,17 +103,17 @@
       svg {
         fill: $grey;
       }
-    }
+    } // end of .menu-icon
     input ~ .trigger {
       clear: both;
       display: none;
-    }
+    } // end of input-checkbox with unchecked status, affecting .trigger
     input:checked ~ .trigger {
       display: block;
       padding-bottom: 5px;
-    }
-  }
-}
+    } // end of input-checkbox with checked status, affecting .trigger
+  } // end of media query $on-palm or smaller
+} // end of .site-nav
 
 .page-link {
   font-family: $title-font-family;
@@ -130,5 +130,5 @@
       margin-right: 0;
     }
     margin-left: 20px;
-  }
-}
+  } // end of media query $on-palm or smaller
+} // end of .page-link inside .trigger

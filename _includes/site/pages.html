@@ -1,0 +1,9 @@
+{%- assign lang = page.lang | default: post.lang | default: site.lang | default: "en" -%}
+{%- assign default_paths = site.pages | where: "lang", lang | sort: "date" | sort: "rank" | reverse | map: "path" -%}
+{%- assign page_paths = site.header_pages | default: default_paths -%}
+{%- for path in page_paths -%}
+  {%- assign item = site.pages | where: "path", path | where: "lang", lang | first -%}
+  {%- if item.title and item.path != page.path and item.ref != "index" -%}
+  <a class="page-link" href="{{ item.url | prepend: baseurl }}">{{ item.title | escape }}</a>
+  {%- endif -%}
+{%- endfor -%}

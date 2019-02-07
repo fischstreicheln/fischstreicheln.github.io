@@ -1,4 +1,0 @@
-{%- assign pages=site.pages | where:"ref", page.ref | reverse | sort: 'rank' | reverse -%}
-{%- for page in pages -%}{%- if page.lang != include.current_lang and page.lang != site.hidden-lang-label -%}<div class="site-meta">&nbsp; - <a href="{{ page.url | prepend: site.baseurl }}" class="site-meta">{%- include ref/abbr.html show_lang = page.lang -%}</a> &nbsp;</div>{%- endif -%}{%- endfor -%}
-{%- assign posts=site.posts | where:"ref", page.ref | reverse | sort: 'rank' | reverse -%}
-{%- for post in posts -%}{%- if post.lang != include.current_lang and page.lang != site.hidden-lang-label -%}<div class="site-meta">&nbsp; - <a href="{{ post.url | prepend: site.baseurl }}" class="site-meta">{%- include ref/abbr.html show_lang = post.lang -%}</a> &nbsp;</div>{%- endif -%}{%- endfor -%}

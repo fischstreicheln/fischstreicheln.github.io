@@ -1,9 +1,5 @@
-@charset "utf-8";
+@import "config";
 
-// Main settings configuration
-$header_fix: false;
-
-// Import
 @import
   "includes/variables",
   "includes/extend",
@@ -11,8 +7,9 @@ $header_fix: false;
   "includes/syntax",
   "includes/js_style";
 
+@import "default";
+
 @import
-  "layouts/default",
   "layouts/post",
   "layouts/site-header",
   "layouts/site-footer",
@@ -20,5 +17,4 @@ $header_fix: false;
   "layouts/catalog",
   "layouts/cv";
 
-@import
-  "sandbox";
+@import "sandbox"; // For testing use

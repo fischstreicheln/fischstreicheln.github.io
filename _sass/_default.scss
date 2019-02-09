@@ -1,11 +1,11 @@
+/************/
 /* 1. Basic */
 body, h1, h2, h3, h4, h5, h6, p, blockquote, pre, hr, dl, dd, ol, ul, figure {
   margin: 0;
   padding: 0;
 } // General margin and padding settings
 
-h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, figure,
-%vertical-rhythm {
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, figure, %vertical-rhythm {
   margin-bottom: $spacing-unit / 2;
 } // Set `margin-bottom` to maintain vertical rhythm
 
@@ -45,6 +45,8 @@ blockquote {
   }
 } // end of blockquote
 
+
+/****************/
 /* 2. Framework */
 body {
   font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
@@ -119,6 +121,7 @@ table {
 } // end of table
 
 
+/***************************************/
 /* 3. Images, Figures Labels and Icons */
 img {
   max-width: 100%;
@@ -130,12 +133,12 @@ figure > img {display: block;}
 figcaption {font-size: $small-font-size;}
 
 .svg-icon {
-    width: 16px;
-    height: 16px;
-    display: inline-block;
-    fill: #{$grey};
-    padding-right: 5px;
-    vertical-align: text-top;
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  fill: #{$grey};
+  padding-right: 5px;
+  vertical-align: text-top;
 }
 
 .social-media-list {
@@ -147,6 +150,7 @@ figcaption {font-size: $small-font-size;}
 }
 
 
+/**********************/
 /* 4. Code Formatting */
 pre, code {
   @include relative-font-size(0.9375);

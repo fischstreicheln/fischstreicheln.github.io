@@ -1,21 +1,16 @@
-/* 1. General */
+/*************/
+/* 1. Banner */
 .home-banner {
-  margin-top: $spacing-unit*0.5;
+  @if $header_fix == true {
+    margin-top: $spacing-unit*0.5;
+  } // end of @if $header_fix is true
   padding: $spacing-unit * 2 0 $spacing-unit;
   border-bottom: 1px solid $grey-light;
   @extend %center-image;
   box-shadow: 0 1px 1px 0 $shadow-color-light;
   text-align: center;
-}
+} // end of .home-banner
 
-.home-highlight {
-  @extend %flex-row-display;
-  @include media-query($on-palm) {
-    display: block;
-  }
-}
-
-/* 2. Banner */
 .home-message {
   h2 {
     margin: 0;
@@ -33,9 +28,21 @@
     color: $white;
     text-decoration: none;
  }
-}
+} // end of .home-message inside .home-banner
 
-/* 2. Highlight - Post List */
+
+/**************/
+/* 2. Highlight */
+.home-highlight {
+  @extend %flex-row-display;
+  @include media-query($on-palm) {
+    display: block;
+  }
+} // end of .home-highlight
+
+
+/****************************/
+/* 2-1. Highlight - Post List */
 .post-list-highlight {
   flex: 1;
   @extend %flex-row-display;
@@ -43,7 +50,7 @@
   align-items: stretch;
   margin: $padding-unit;
   margin-left: $padding-unit*2;
-}
+} // end of .post-list-highlight, the highlighted post list container inside .home-highlight
 
 .post-highlight {
   @extend %flex-row-display;
@@ -65,7 +72,7 @@
     box-shadow: 0 5px 10px -5px $shadow-color;
   }
   transition: all $transform-time ease;
-}
+} // end of .post-highlight, the single highlighted post item inside .post-list-highlight
 
 .post-highlight-image {
   @include relative-width(40%);
@@ -73,7 +80,7 @@
   max-width: 100%;
   min-height: $frame-unit*1.5;
   @extend %center-image;
-}
+} // end of .post-highlight-image, image shown inside .post-highlight
 
 .post-highlight-content {
   @include relative-width(60%);
@@ -93,22 +100,24 @@
       @include visit-color($grey-dark, $grey-dark);
       text-decoration: none;
     }
-  }
+  } // end of .post-highlight-title
   .post-highlight-meta {
     margin: 0 $padding-unit*2;
     @include relative-font-size($meta-ratio);
     @include media-font-size($on-palm, $small-meta-ratio);
     @include visit-color($grey, $grey);
-  }
+  } // end of .post-highlight-meta
   p {
     margin: 0 $padding-unit*2;
     @include relative-font-size($meta-ratio);
     @include media-font-size($on-palm, $small-meta-ratio);
     @include visit-color($grey, $grey);
   }
-}
+} // end of .post-highlight-content, text content shown inside .post-highlight
 
-/* 3. Highlight - Sidebar */
+
+/**************************/
+/* 2-2. Highlight - Sidebar */
 .home-sidebar {
   flex:0 0 24%;
   max-width: $sidebar-width;
@@ -129,7 +138,7 @@
     border-top: 1px solid $grey-light;
     border-bottom: 1px solid $grey-light;
   }
-}
+} // end of .home-sidebar, the sidebar container inside .home-highlight
 
 .sidebar-about {
   margin: 0 0 $spacing-unit;
@@ -141,7 +150,7 @@
     margin: 0 auto $padding-unit*2;
     border-radius: 100%;
     background-color: $blue-light;
-  }
+  } // end of .sidebar-author-image
   img {
     width: $frame-unit;
     height: $frame-unit;
@@ -172,12 +181,12 @@
       border-radius: 50%;
       background-color: $grey-dark;
     }
-  }
+  } // end of .sidebar-author-name
   p {
     font-size: $base-font-size;
     margin: 0 0 $padding-unit*2;
   }
-}
+} // end of .sidebar-about, the info container about the site inside .home-sidebar
 
 .sidebar-contact {
   text-align: center;
@@ -202,10 +211,97 @@
       right: 0;
     }
   }
-}
+} // end of .sidebar-contact, the contact info container inside .home-sidebar
+  // The contact info applied with .site-contact in layouts/_site-header.scss
 
-/*4.Normal Post List*/
 
+/**************/
+/* 3. Catalog */
+.home-catalog {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: $padding-unit;
+  background-color: $grey-dark;
+  box-shadow: 0 0 2px 0 $shadow-color-light;
+} // end of .home-catalog
+
+.home-catalog-title{
+  margin: $padding-unit auto;
+  padding-bottom: $padding-unit;
+  text-align: center;
+  h2 {
+    margin: 0 auto;
+    font-family: $highlight-font-family;
+    @include relative-font-size($big-header-ratio);
+    font-weight: $base-font-weight*2;
+    @include visit-color($grey-light, $grey-light);
+    text-transform: uppercase;
+  }
+  &::after {
+    @include horizontal-line(100%, 0, $padding-unit);
+    background-color: $grey;
+  }
+} // end of .home-catalog-title inside .home-catalog
+
+.home-tag-list {
+  @extend %flex-row-display;
+  flex-wrap: wrap;
+  justify-content: center;
+  @include relative-width(75%);
+  @include media-width($on-half-palm-laptop, 80%);
+  @include media-width($on-palm, 85%);
+  @include media-width($on-half-min-palm, 90%);
+  margin: $padding-unit auto;
+} // end of .home-tag-list inside .home-catalog
+  // tag label style is applied from layouts/catalog.scss
+
+.home-category-list {
+  @extend %flex-row-display;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  margin: $padding-unit 0;
+  .section-list {
+    @include relative-width(18%);
+    @include media-width($on-half-palm-laptop, 23%);
+    @include media-width($on-palm, 31%);
+    @include media-width($on-half-min-palm, 48%);
+    margin: $padding-unit 1%;
+    padding-bottom: $padding-unit;
+    border-radius: $padding-unit;
+    background: $label-color-light;
+    .section-name{
+      margin: $padding-unit $padding-unit*2;
+      h3 {
+        margin: 0 auto;
+        font-family: $title-font-family;
+        @include relative-font-size($small-header-ratio);
+        font-weight: $base-font-weight;
+        @include visit-color($blue, $blue);
+        text-decoration: none;
+        text-align: center;
+        text-transform: uppercase;
+      }
+    } // end of .section-name inside .section-list
+    .category-list {
+      margin: 0 $padding-unit;
+      list-style: none;
+      a, p {
+        font-family: $label-font-family;
+        @include relative-font-size($meta-ratio);
+        text-decoration: none;
+        color: $label-color-link;
+      }
+    } // end of .category-list inside .section-list
+  } // end of .section-list inside .home-category-list
+} // end of .home-category-list inside .home-catalog
+  // category label style is applied from layouts/catalog.scss
+
+
+/**********************/
+/* 4.Normal Post List */
+// style of .post-list-normal, the normal post list container, is not set yet
 .post-list-title{
   margin: $padding-unit auto;
   padding-bottom: $padding-unit;
@@ -221,7 +317,7 @@
     @include horizontal-line(100%, 0, 0);
     transform: translateY($padding-unit);
   }
-}
+} // end of .post-list-title, the normal post list title instide .post-list-normal
 
 .post-list {
   @include relative-width(80%);
@@ -231,7 +327,7 @@
   list-style: none;
   li {
     margin-bottom: $spacing-unit;
-  }
+  } // end of .li, the list item inside ul .post-list
   .post-title {
     margin: 0 $padding-unit*2;
     font-weight: $base-font-weight;
@@ -242,15 +338,15 @@
       @include visit-color($grey-dark, $grey-dark);
       text-decoration: none;
     }
-  }
+  } // end of .post-title inside li
   .post-meta {
     margin: 0 $padding-unit*2;
     @include relative-font-size($small-meta-ratio);
     @include visit-color($grey, $grey);
-  }
+  } // end of .post-meta inside li
   p {
     margin: 0 $padding-unit*2;
     @include relative-font-size($meta-ratio);
     @include visit-color($grey, $grey);
   }
-}
+} // end of .post-list, the unordered normal post list inside .post-list-normal

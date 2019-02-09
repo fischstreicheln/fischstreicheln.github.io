@@ -2,8 +2,8 @@
 layout: default
 ---
 <article class="post">
-  {%- include heading.html -%}
-  <div class="post-content" id="ordered-heading-post">
+  {%- include post-heading.html -%}
+  <div class="post-content" {%- if page.order != false -%}id="ordered-heading-post"{%- endif -%}>
     {%- if page.post-toc != false -%}
       <div class="post-toc" id="post-toc">
         <p class="toc-title">Contents
@@ -20,8 +20,6 @@ layout: default
   </div>
   {%- include ref/related.html -%}
   {%- include ref/quotes.html -%}
-  {%- if site.disqus_name -%}
-    {%- include ref/disqus_comments.html -%}
-  {%- endif -%}
+  {%- if site.disqus_name -%}{%- include ref/disqus_comments.html -%}{%- endif -%}
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
 </article>

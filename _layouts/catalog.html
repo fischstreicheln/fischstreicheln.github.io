@@ -47,14 +47,14 @@ layout: default
         {%- assign cur_cat = category | remove: site.weighted-txt | replace_first: site.split-txt2, " - " | split: site.split-txt -%}
         {%- if cur_cat[0] != last_section -%}
           {%- if last_section != nil -%}</ul>{%- endif -%}
-          <h2 class = "gap" id="{{ cur_cat[0] | append: "-" | append: cur_cat[1] | remove: " " }}">{{ cur_cat[0] }}</h2>
+          <h2 class = "catalog-heading-gap" id="{{ cur_cat[0] | append: "-" | append: cur_cat[1] | remove: " " }}">{{ cur_cat[0] }}</h2>
           {%- assign last_section = cur_cat[0] -%}
           <div class="category"><h3>{{ cur_cat[1] | prepend: "@" }}</h3></div>
           <ul class="post-list">
           {%- assign last_category = cur_cat[1] -%}
         {%- elsif cur_cat[1] != last_category -%}
           </ul>
-          <div class="gap" id="{{ cur_cat[0] | append: "-" | append: cur_cat[1] | remove: " " }}">&nbsp;</div>
+          <div class="catalog-heading-gap" id="{{ cur_cat[0] | append: "-" | append: cur_cat[1] | remove: " " }}">&nbsp;</div>
           <div class="category"><h3>{{ cur_cat[1] | prepend: "@" }}</h3></div>
           <ul class="post-list">
           {%- assign last_category = cur_cat[1] -%}
@@ -81,7 +81,7 @@ layout: default
       {%- for tag in site.tags -%}
         {%- assign posts = tag[1] | where:"lang", lang  -%}
         {%- if posts.size > 0 -%}
-          <div class="gap" id="{{tag[0]}}">&nbsp;</div>
+          <div class="catalog-heading-gap" id="{{tag[0]}}">&nbsp;</div>
           <div class="tag"><h2>{{ tag[0] | prepend: "#" }}</h2></div>
           <ul class="post-list">
             {%- for post in posts -%}
@@ -90,7 +90,7 @@ layout: default
           </ul>
         {%- endif -%}
       {%- endfor -%}
-      <div class="gap">&nbsp;</div>
+      <div class="catalog-heading-gap">&nbsp;</div>
     {%- endif -%}
   </div>
   {%- include ref/quotes.html -%}

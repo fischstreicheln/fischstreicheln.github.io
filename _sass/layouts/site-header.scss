@@ -1,3 +1,4 @@
+/**************/
 /* 1. General */
 .site-header {
   @if $header_fix == true {
@@ -31,6 +32,8 @@
   } // end of .site-nav
 } //.end of .site-header
 
+
+/******************************************************************/
 /* 2. Heading - Always showed: title, contacts, multilingual-list */
 .site-title {
   display: inline;
@@ -45,29 +48,35 @@
 
 .site-info {
   display: inline-block;
-  .site-contact {
-    display: inline;
-    margin: 0;
-    a {
-      display: inline-block;
-      padding: 0 $padding-unit * 2;
-      @include relative-font-size($regular-ratio);
-      @include media-font-size($on-half-min-palm, $small-regular-ratio);
-      @include hover-color-scale($grey, $grey-dark, 1.25);
-      transition: all $transform-time cubic-bezier(0.13, 0.43, 0.54, 1.82);
-    } // end of a inside .site-contact
-  } // end of .site-contact
-  .site-meta {
-    display: inline-block;
-    margin: 0;
-    font-family: $title-font-family;
-    white-space: nowrap;
-    @include relative-font-size($meta-ratio);
-    @include media-font-size($on-half-min-palm, $small-meta-ratio);
-    @include visit-color($grey, $grey);
-  } // end of .site-meta
+
 } // end of .site-info
 
+.site-contact {
+  display: inline;
+  margin: 0;
+  a {
+    display: inline-block;
+    padding: 0 $padding-unit * 2;
+    @include relative-font-size($regular-ratio);
+    @include media-font-size($on-half-min-palm, $small-regular-ratio);
+    @include hover-color-scale($grey, $grey-dark, 1.25);
+    transition: all $transform-time cubic-bezier(0.13, 0.43, 0.54, 1.82);
+  } // end of a inside .site-contact
+} // end of .site-contact
+  // Applied to contact info inside .home-sidebar
+
+.site-meta {
+  display: inline-block;
+  margin: 0;
+  font-family: $title-font-family;
+  white-space: nowrap;
+  @include relative-font-size($meta-ratio);
+  @include media-font-size($on-half-min-palm, $small-meta-ratio);
+  @include visit-color($grey, $grey);
+} // end of .site-meta
+
+
+/*******************************************/
 /* 3. Navigation - showed on media queires */
 .site-nav {
   .nav-trigger {

@@ -3,7 +3,7 @@
     <h2>{%- include ref/abbr.html show_lang = include.show_lang show_txt = "catalog" -%}</h2>
   </header>
   {%- if include.show_lang != "en" -%}{%- assign langlabel = "-" | append: include.show_lang -%}{%- endif -%}
-  <div class="tag-container">
+  <div class="home-tag-list">
     {%- for tag in site.tags -%}
       {%- assign filelink = langlabel | prepend: "catalog/tags" | prepend: site.baseurl | append: ".html#" -%}
       {%- assign posts = tag[1] | where: "lang", include.show_lang -%}
@@ -11,7 +11,7 @@
       <div class="tag"><a href="{{ filelink | append: tag[0] }}">{{ tag[0] | prepend: "#" }}</a></div>
     {%- endfor -%}
   </div>
-  <div class="category-container">
+  <div class="home-category-list">
     {%- assign my_cat = nil | split: "," -%}
     {%- for category in site.categories -%}
       {%- assign grouped_posts = category[1] | where: "lang", include.show_lang | group_by_exp: "item", "item.categories | join: site.split_txt | prepend: site.split_txt | prepend: item.division" -%}
@@ -45,7 +45,7 @@
       {%- if cur_cat[0] != last_cat -%}
         {%- if last_cat != nil -%}</ul></div>{%- endif -%}
         <div class="section-list">
-          <div class="section">
+          <div class="section-name">
             <h3>{{ cur_cat[0] }}</h3>
           </div>
           <ul class="category-list">

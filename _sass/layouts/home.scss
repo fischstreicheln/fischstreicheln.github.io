@@ -1,3 +1,14 @@
+/************/
+/* 0. Basic */
+.hoverbox {
+  box-shadow: 0 1px 1px 0 $shadow-color;
+  &:hover {
+    transform: translate(0px, -1px);
+    box-shadow: 0 5px 10px -5px $shadow-color;
+  }
+  transition: all $transform-time ease;
+}
+
 /*************/
 /* 1. Banner */
 .home-banner {
@@ -66,12 +77,6 @@
   @include media-query($on-palm) {margin: $padding-unit 1%;}
   border-radius: $padding-unit;
   background-color: $white;
-  box-shadow: 0 1px 1px 0 $shadow-color;
-  &:hover {
-    transform: translate(0px, -1px);
-    box-shadow: 0 5px 10px -5px $shadow-color;
-  }
-  transition: all $transform-time ease;
 } // end of .post-highlight, the single highlighted post item inside .post-list-highlight
 
 .post-highlight-image {
@@ -262,7 +267,7 @@
   justify-content: center;
   align-items: stretch;
   margin: $padding-unit 0;
-  .section-list {
+  .division-list {
     @include relative-width(18%);
     @include media-width($on-half-palm-laptop, 23%);
     @include media-width($on-palm, 31%);
@@ -271,8 +276,9 @@
     padding-bottom: $padding-unit;
     border-radius: $padding-unit;
     background: $label-color-light;
-    .section-name{
-      margin: $padding-unit $padding-unit*2;
+    .division-name{
+      margin: $padding-unit*2;
+      margin-bottom: $padding-unit;
       h3 {
         margin: 0 auto;
         font-family: $title-font-family;
@@ -283,7 +289,19 @@
         text-align: center;
         text-transform: uppercase;
       }
-    } // end of .section-name inside .section-list
+    } // end of .division-name inside .section-list
+    .section-name {
+      margin: 0 $padding-unit;
+      ul {
+        margin: 0 $padding-unit;
+        font-family: $title-font-family;
+        @include relative-font-size($small-header-ratio);
+        font-weight: $base-font-weight;
+        @include visit-color($blue, $blue);
+        list-style: none;
+        text-decoration: none;
+      }
+    }
     .category-list {
       margin: 0 $padding-unit;
       list-style: none;
@@ -294,7 +312,7 @@
         color: $label-color-link;
       }
     } // end of .category-list inside .section-list
-  } // end of .section-list inside .home-category-list
+  } // end of .division-list inside .home-category-list
 } // end of .home-category-list inside .home-catalog
   // category label style is applied from layouts/catalog.scss
 

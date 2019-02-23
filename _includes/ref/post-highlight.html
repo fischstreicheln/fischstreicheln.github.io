@@ -1,4 +1,4 @@
-<article class="post-highlight">
+<article class="post-highlight hoverbox">
   {%- if include.show_post.img -%}
     {%- assign image-url = site.post-image-url | prepend: site.baseurl | append : include.show_post.img -%}
   {%- else -%}
@@ -9,7 +9,6 @@
   <div class="post-highlight-content">
     <h2 class="post-highlight-title"><a href="{{ include.show_post.url | prepend: site.baseurl }}">{{ include.show_post.title }}</a></h2>
     <div class="post-label">
-      {%- for division in include.show_post.division -%}<div class="division"><p>{{ division | prepend: "[" | append: "]" }}</p></div>{%- endfor-%}
       {%- for category in include.show_post.categories -%}<div class="category"><p>{{ category | prepend: "@" }}</p></div>{%- endfor-%}
       {%- for tag in include.show_post.tags -%}<div class="tag"><p>{{ tag | prepend: "#"}}</p></div>{%- endfor-%}
     </div>

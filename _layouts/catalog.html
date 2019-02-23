@@ -11,77 +11,74 @@ layout: default
     {%- assign lang = page.lang | default: post.lang | default: site.lang | default: "en" -%}
     {%- if page.ref == "categories" -%}
       {%- assign my_cat = nil | split: "," -%}
-      {%- for category in site.categories -%}
-        {%- assign grouped_posts = category[1] | where: "lang", lang |  group_by_exp: "item", "item.categories | join: site.split_txt | prepend: site.split_txt | prepend: item.division"  -%}
-        {%- if grouped_posts.size == 0 -%}{%- continue -%}{%- endif -%}
-        {%- for group in grouped_posts -%}
-          {%- assign first_post = group.items | first -%}
-          {%- if first_post.categories[1] -%}
-            {%- if first_post.categories[1] != category[0] -%}{%- continue -%}{%- endif -%}
-            {%- assign cur_cat = first_post.categories[0] | append: site.split-txt | append: first_post.categories[1] -%}
-          {%- elsif category[0] contains "," or category[0] contains "/" -%}
-            {%- if category[0] contains "," -%}{%- assign split_txt = "," -%}
-            {%- else -%}{%- assign split_txt = "/" -%}{%- endif -%}
-            {%- assign temp_cat = category[0] | split: split_txt -%}
-            {%- assign temp_txt = temp_cat[1] | strip -%}
-            {%- assign cur_cat = temp_cat[0] | strip | append: site.split-txt | append: temp_txt | append: site.split-txt | append: category[0] -%}
+      {%- assign my_txt = site.weighted-txt | append: site.placeholder -%}
+      {%- assign grouped_posts = site.posts | where: "lang", lang | group_by_exp: "item", "item.categories | join: site.split-txt " -%}
+      {%- for group in grouped_posts -%}
+        {%- assign temp_cat = group.name | replace: "|", site.split-txt | replace: ",", site.split-txt | replace: "/", site.split-txt | split: site.split-txt | reverse -%}
+        {%- assign new_cat = nil | split: "," -%}
+        {%- assign push_cnt = 0 -%}
+        {%- for sub_cat in temp_cat limit: site.cat-depth -%}
+          {%- assign sub_cat_txt = sub_cat | strip -%}
+          {%- if sub_cat_txt == "" -%}
+            {%- assign push_cnt = push_cnt | plus: 1 -%}
           {%- else -%}
-            {%- assign cur_cat = "Others" | prepend: site.weighted-txt | append: site.split-txt | append: category[0] -%}
+            {%- assign new_cat = new_cat | push: sub_cat_txt -%}
           {%- endif -%}
-          {%- if first_post.division -%}
-            {%- assign cur_cat = cur_cat | prepend: site.split-txt2 | prepend: first_post.division -%}
-          {%- else -%}
-            {%- assign cur_cat = cur_cat | prepend: site.weighted-txt -%}
+          {%- if forloop.last -%}
+            {%- assign push_cnt = push_cnt | plus: site.cat-depth | minus: forloop.length -%}
+            {%- for i in (1..push_cnt) -%}{%- assign new_cat = new_cat | push: my_txt -%}{%- endfor -%}
           {%- endif -%}
-          {%- assign my_cat = my_cat | push: cur_cat -%}
         {%- endfor -%}
+        {%- assign new_cat = new_cat | reverse | join: site.split-txt | append: site.split-txt2 | append: group.name -%}
+        {%- assign my_cat = my_cat | push: new_cat -%}
       {%- endfor -%}
-      {%- assign sorted_cat = my_cat | uniq | sort -%}
-      {%- for category in sorted_cat -%}
-        {%- assign cur_division = category | remove: site.weighted-txt | split: site.split-txt | first -%}
-        {%- if cur_division contains site.split-txt2 -%}
-          {%- assign cur_division = cur_division | split: site.split-txt2 | first -%}
-        {%- else -%}
-          {%- assign cur_division = nil -%}
-        {% endif %}
-        {%- assign cur_cat = category | remove: site.weighted-txt | replace_first: site.split-txt2, " - " | split: site.split-txt -%}
-        {%- if cur_cat[0] != last_section -%}
-          {%- if last_section != nil -%}</ul>{%- endif -%}
-          <h2 class = "catalog-heading-gap" id="{{ cur_cat[0] | append: "-" | append: cur_cat[1] | remove: " " }}">{{ cur_cat[0] }}</h2>
-          {%- assign last_section = cur_cat[0] -%}
-          <div class="category"><h3>{{ cur_cat[1] | prepend: "@" }}</h3></div>
+      {%- assign my_cat = my_cat | uniq | sort -%}
+      {%- for sub_cat in my_cat -%}
+        {%- assign cur_cat = sub_cat | split: site.split-txt2 | first | remove: site.weighted-txt | split: site.split-txt -%}
+        {%- assign cat_pointer = sub_cat | split: site.split-txt2 | last -%}
+        {%- if site.cat-depth > 2 -%}
+          {%- assign cat_cnt = site.cat-depth | minus: 2 -%}
+          {%- for cat_name in cur_cat offset:2 limit:cat_cnt -%}
+            {%-if forloop.first -%}
+              {%- assign my_txt = cat_name -%}
+            {%- else -%}
+              {%- assign my_txt = my_txt | append: " - " | append: cat_name -%}
+            {%- endif -%}
+          {%- endfor -%}
+        {%- endif -%}
+        {%- if cur_cat[0] != last_division -%}
+          {%- if forloop.first != true -%}</ul>{%- endif -%}
+          <h2 class="division-gap" id="{{ cur_cat[0] | append: "-" | append: cur_cat[1] | remove: " " }}">{{ cur_cat[0] }}</h2>
+          <h3 class="section-gap" id="{{ cur_cat[0] | append: "-" | append: cur_cat[1] | append: "-" | append: my_txt | remove: " " }}">{{ cur_cat[1] | prepend: "@" }}</h3>
+          {%- if site.cat-depth > 2 -%}<div class="category"><h4>{{ my_txt | prepend: "@" }}</h4></div>{%- endif -%}
           <ul class="post-list">
-          {%- assign last_category = cur_cat[1] -%}
-        {%- elsif cur_cat[1] != last_category -%}
+        {%- elsif cur_cat[1] != last_section -%}
           </ul>
-          <div class="catalog-heading-gap" id="{{ cur_cat[0] | append: "-" | append: cur_cat[1] | remove: " " }}">&nbsp;</div>
-          <div class="category"><h3>{{ cur_cat[1] | prepend: "@" }}</h3></div>
+          <h3 class="division-gap"id="{{ cur_cat[0] | append: "-" | append: cur_cat[1] | remove: " " }}">&nbsp;</h3>
+          <h3 class="section-gap" id="{{ cur_cat[0] | append: "-" | append: cur_cat[1] | append: "-" | append: my_txt | remove: " " }}">{{ cur_cat[1] | prepend: "@" }}</h3>
+          {%- if site.cat-depth > 2 -%}<div class="category"><h4>{{ my_txt | prepend: "@" }}</h4></div>{%- endif -%}
           <ul class="post-list">
-          {%- assign last_category = cur_cat[1] -%}
-        {%- endif -%}
-        {%- if cur_cat[2] != nil or cur_cat[0] == "Others" -%}
-          {%- assign cat_pointer = cur_cat[1] -%}
-          {%- if cur_cat[2] != nil -%}{%- assign cat_pointer = cur_cat[2] -%}{%- endif -%}
-          {%- assign posts = site.categories[cat_pointer] | where:"lang", lang -%}
-        {%- else -%}
-          {%- assign cat_pointer = cur_cat[1] -%}
-          {%- if cur_division != nil -%}
-            {%- assign temp_cat = cur_cat[0] | remove_first: cur_division | remove_first: " - " -%}
-            {%- assign posts = site.categories[cat_pointer] | where:"lang", lang | where_exp:"item", "item.categories[0] == temp_cat" | where:"division", cur_division -%}
-          {%- else -%}
-            {%- assign posts = site.categories[cat_pointer] | where:"lang", lang | where_exp:"item", "item.categories[0] == cur_cat[0]" -%}
+        {%- elsif site.cat-depth > 2 -%}
+          {%- if my_txt != last_category -%}
+            </ul>
+            <h3 class="section-gap" id="{{ cur_cat[0] | append: "-" | append: cur_cat[1] | append: "-" | append: my_txt | remove: " " }}">&nbsp;</h3>
+            <div class="category"><h4>{{ my_txt | prepend: "@" }}</h4></div>
+            <ul class="post-list">
           {%- endif -%}
         {%- endif -%}
-        {%- for post in posts -%}
-          {%- include ref/post-normal.html show_post = post show_lang = lang -%}
+        {%- assign group = grouped_posts | where: "name", cat_pointer | first -%}
+        {%- for cur_post in group.items -%}
+          {%- include ref/post-normal.html show_post = cur_post show_lang = lang -%}
         {%- endfor -%}
-      {%- endfor -%}
-    </ul>
+        {%- assign last_division = cur_cat[0] -%}
+        {%- assign last_section = cur_cat[1] -%}
+        {%- if site.cat-depth > 2 -%}{%- assign last_category = my_txt -%}{%- endif -%}
+      {%- endfor -%}</ul>
     {%- else -%}
       {%- for tag in site.tags -%}
         {%- assign posts = tag[1] | where:"lang", lang  -%}
         {%- if posts.size > 0 -%}
-          <div class="catalog-heading-gap" id="{{tag[0]}}">&nbsp;</div>
+          <div class="tag-gap" id="{{ tag[0] }}">&nbsp;</div>
           <div class="tag"><h2>{{ tag[0] | prepend: "#" }}</h2></div>
           <ul class="post-list">
             {%- for post in posts -%}
@@ -90,7 +87,7 @@ layout: default
           </ul>
         {%- endif -%}
       {%- endfor -%}
-      <div class="catalog-heading-gap">&nbsp;</div>
+      <div class="tag-gap">&nbsp;</div>
     {%- endif -%}
   </div>
   {%- include ref/quotes.html -%}

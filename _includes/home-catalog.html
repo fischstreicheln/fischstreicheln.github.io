@@ -1,0 +1,74 @@
+{%- assign lang = page.lang | default: post.lang | default: site.lang | default: "en" -%}
+<div class="home-catalog">
+  <header class="home-catalog-title">
+    <h2>{%- include ref/abbr.html show_lang = lang show_txt = "catalog" -%}</h2>
+  </header>
+  {%- if lang != "en" -%}{%- assign langlabel = "-" | append: lang -%}{%- endif -%}
+  <div class="home-tag-list">
+    {%- for tag in site.tags -%}
+      {%- assign filelink = langlabel | prepend: "catalog/tags" | prepend: site.baseurl | append: ".html#" -%}
+      {%- assign posts = tag[1] | where: "lang", lang -%}
+      {%- if posts.size == 0 -%}{%- continue -%}{%- endif -%}
+      <div class="tag hoverbox"><a href="{{ filelink | append: tag[0] }}">{{ tag[0] | prepend: "#" }}</a></div>
+    {%- endfor -%}
+  </div>
+  <div class="home-category-list">
+    {%- assign my_cat = nil | split: "," -%}
+    {%- assign my_txt = site.weighted-txt | append: site.placeholder -%}
+    {%- assign grouped_posts = site.posts | where: "lang", lang | group_by_exp: "item", "item.categories | join: site.split-txt " -%}
+    {%- for group in grouped_posts -%}
+      {%- assign temp_cat = group.name | replace: "|", site.split-txt | replace: ",", site.split-txt | replace: "/", site.split-txt | split: site.split-txt | reverse -%}
+      {%- assign new_cat = nil | split: "," -%}
+      {%- assign push_cnt = 0 -%}
+      {%- for sub_cat in temp_cat limit: site.cat-depth -%}
+        {%- assign sub_cat_txt = sub_cat | strip -%}
+        {%- if sub_cat_txt == "" -%}
+          {%- assign push_cnt = push_cnt | plus: 1 -%}
+        {%- else -%}
+          {%- assign new_cat = new_cat | push: sub_cat_txt -%}
+        {%- endif -%}
+        {%- if forloop.last -%}
+          {%- assign push_cnt = push_cnt | plus: site.cat-depth | minus: forloop.length -%}
+          {%- for i in (1..push_cnt) -%}{%- assign new_cat = new_cat | push: my_txt -%}{%- endfor -%}
+        {%- endif -%}
+      {%- endfor -%}
+      {%- assign new_cat = new_cat | reverse | join: site.split-txt -%}
+      {%- assign my_cat = my_cat | push: new_cat -%}
+    {%- endfor -%}
+    {%- assign my_cat = my_cat | uniq | sort -%}
+    {%- assign filelink = langlabel | prepend: "catalog/categories" | prepend: site.baseurl | append: ".html#" -%}
+    {%- for sub_cat in my_cat -%}
+      {%- assign cur_cat = sub_cat | remove: site.weighted-txt | split: site.split-txt -%}
+      {%- if cur_cat[0] != last_division -%}
+        {%- if forloop.first != true -%}{%- if site.cat-depth > 2 -%}</ul>{%- endif -%}</div>{%- endif -%}
+        <div class="division-list">
+          <div class="division-name">
+            <h3>{{ cur_cat[0] }}</h3>
+          </div>
+          <div class="section-name">
+            <ul><li><a href="{{ filelink | append: cur_cat[0] | append: "-" | append: cur_cat[1] | remove: " " }}">{{ cur_cat[1] | prepend:"@" }}</a></li></ul>
+          </div>
+          {%- if site.cat-depth > 2 -%}<ul class="category-list">{%- endif -%}
+      {%- elsif cur_cat[1] != last_section -%}
+        {%- if site.cat-depth > 2 -%}</ul>{%- endif -%}
+        <div class="section-name">
+          <ul><li><a href="{{ filelink | append: cur_cat[0] | append: "-" | append: cur_cat[1] | remove: " " }}">{{ cur_cat[1] | prepend:"@" }}</a></li></ul>
+        </div>
+        {%- if site.cat-depth > 2 -%}<ul class="category-list">{%- endif -%}
+      {%- endif -%}
+      {%- if site.cat-depth >2 -%}
+        {%- assign cat_cnt = site.cat-depth | minus: 2 -%}
+        {%- for cat_name in cur_cat offset:2 limit:cat_cnt -%}
+          {%-if forloop.first -%}
+            {%- assign my_txt = cat_name -%}
+          {%- else -%}
+            {%- assign my_txt = my_txt | append: " - " | append: cat_name -%}
+          {%- endif -%}
+        {%- endfor -%}
+        <li class="category hoverbox"><a href="{{ filelink | append: cur_cat[0] | append: "-" | append: cur_cat[1] | append: "-" | append: my_txt | remove: " " }}">{{ my_txt | prepend: "@" }}</a></li>
+      {%- endif -%}
+      {%- assign last_division = cur_cat[0] -%}
+      {%- assign last_section = cur_cat[1] -%}
+    {%- endfor -%}</ul></div>
+  </div>
+</div>

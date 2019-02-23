@@ -3,8 +3,7 @@ layout: post
 title: "k-denpendent Markov Chains"
 ref: "k-denpendent Markov Chains"
 lang: en
-division: Mathematics
-category: [Probability, Stochastic Process ]
+category: [Mathematics, Probability, Stochastic Process ]
 tags: Markov DTMC
 author: Jason
 date: 2018-11-24

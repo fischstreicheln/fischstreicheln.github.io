@@ -3,8 +3,7 @@ layout: post
 title: "Time Dependency of DTMC"
 ref: "Time Dependency of DTMC"
 lang: en
-division: Mathematics
-category: [Probability, Stochastic Process ]
+category: [Mathematics, Probability, Stochastic Process ]
 tags: Markov DTMC Stationary Homogeneous
 author: Jason
 date: 2018-12-02

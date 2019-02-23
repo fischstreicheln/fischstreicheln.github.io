@@ -3,8 +3,7 @@ layout: post
 title: "Language Settings and Input Method Configurations in Ubuntu"
 ref: "Language Settings and Input Method Configurations in Ubuntu"
 lang: en
-division: Linux
-category: [Ubuntu, Operating System]
+category: [Linux, Ubuntu, Operating System]
 tags: installation setting
 author: Jason
 date: 2019-01-30

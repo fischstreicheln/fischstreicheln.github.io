@@ -9,7 +9,6 @@
 <header class="post-header">
   <h1 class="post-title">{{ page.title | escape }}</h1>
   <div class="post-label">
-    {%- for division in page.division -%}<div class="division"><p>{{ division | prepend: "[" | append: "]" }}</p></div>{%- endfor-%}
     {%- for category in page.categories -%}<div class="category"><p>{{ category | prepend: "@" }}</p></div>{%- endfor -%}
     {%- for tag in page.tags -%}<div class="tag"><p>{{ tag | prepend: "#"}}</p></div>{%- endfor-%}
   </div>

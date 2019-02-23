@@ -3,8 +3,7 @@ layout: post
 title: "(Re-)install Ubuntu dual-booting with Windows 10"
 ref: "(Re-)install Ubuntu dual-booting with Windows 10"
 lang: en
-division: Linux
-category: [Ubuntu, Operating System]
+category: [Linux, Ubuntu, Operating System]
 tags: installation dual-boot Windows
 author: Jason
 date: 2019-01-13

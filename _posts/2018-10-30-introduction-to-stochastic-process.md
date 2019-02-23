@@ -3,8 +3,7 @@ layout: post
 title: "Introduction to Stochastic Process"
 ref: "Introduction to Stochastic Process"
 lang: en
-division: Mathematics
-category: [Probability, Stochastic Process ]
+category: [Mathematics, Probability, Stochastic Process ]
 tags: Markov
 author: Jason
 date: 2018-10-30

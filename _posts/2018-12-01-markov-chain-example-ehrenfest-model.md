@@ -3,8 +3,7 @@ layout: post
 title: "Markov Chain Example: Ehrenfest Model"
 ref: "Markov Chain Example: Ehrenfest Model"
 lang: en
-division: Mathematics
-category: [Probability, Stochastic Process ]
+category: [Mathematics, Probability, Stochastic Process ]
 tags: Markov DTMC Ehrenfest
 author: Jason
 date: 2018-12-01

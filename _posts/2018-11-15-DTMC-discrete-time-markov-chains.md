@@ -3,8 +3,7 @@ layout: post
 title: "DTMC: Discrete Time Markov Chains"
 ref: "DTMC: Discrete Time Markov Chains"
 lang: en
-division: Mathematics
-category: [Probability, Stochastic Process ]
+category: [Mathematics, Probability, Stochastic Process ]
 tags: Markov DTMC
 author: Jason
 date: 2018-11-15

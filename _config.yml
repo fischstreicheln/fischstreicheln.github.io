@@ -25,12 +25,14 @@ colophon:
 # Page settings
 highlight-post-max: 4
 homepage-post-max:  30
-split-txt:          "%#%"
-split-txt2:         "%###%"
-weighted-txt:       "zzz$"
-hidden-lang-label:  personal
+cat-depth:          3
 maxRelated:         4
 minCommon:          2
+hidden-lang-label:  personal
+split-txt:          "#%#"
+split-txt2:         "#%%#"
+weighted-txt:       "zzz$"
+placeholder:        "Others"
 # header_pages:
 #   - cv.md
 #   - cv-cn.md

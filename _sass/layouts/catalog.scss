@@ -1,23 +1,18 @@
-.tag, .category, .division {
+.tag, .category {
   margin: $padding-unit;
   padding: 0 $padding-unit*3;
   text-align: center;
   border-radius: $padding-unit*2;
   background-color: $label-color;
-  box-shadow: 0 1px 1px 0 $shadow-color;
-  &:hover {
-    transform: translate(0px, -1px);
-    box-shadow: 0 1px 5px -5px $shadow-color;
-  }
-  transition: all $transform-time ease;
   a, p {
     font-family: $label-font-family;
     @include relative-font-size($meta-ratio);
     text-decoration: none;
     color: $label-color-link;
   }
-  h2, h3 {
+  h2, h3, h4 {
     text-align: left;
+    border-left: 0px;
     font-family: $label-font-family;
     @include relative-font-size($header-ratio);
     text-decoration: none;
@@ -31,7 +26,7 @@
   justify-content: flex-start;
 } // Applied to catalog label in post list and post title
 
-.catalog-heading-gap {
+.tag-gap, .division-gap, .section-gap {
   padding: 0; // No gap if $header_fix is not true
   @if $header_fix == true {
     padding-top: $spacing-unit*2;

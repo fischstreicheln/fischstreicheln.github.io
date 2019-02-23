@@ -3,8 +3,7 @@ layout: post
 title: "Things to do right after Ubuntu installation"
 ref: "Things to do right after Ubuntu installation"
 lang: en
-division: Linux
-category: [Ubuntu, Operating System]
+category: [Linux, Ubuntu, Operating System]
 tags: installation setting
 author: Jason
 date: 2019-01-19

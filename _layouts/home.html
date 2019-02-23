@@ -29,9 +29,9 @@ layout: default
       {%- if forloop.index == site.highlight-post-max -%}
         {%- assign Flag = 0 -%}
         </div> <!-- end of post-list-highlight -->
-        {%- include home/home-sidebar.html show_lang = lang -%}
+        {%- include home-sidebar.html show_lang = lang -%}
         </div> <!-- end of home-highlight -->
-        {%- include home/home-catalog.html show_lang = lang -%}
+        {%- include home-catalog.html show_lang = lang -%}
         {%- if forloop.index != site.homepage-post-max and forloop.index != posts_size -%}
           {%- assign Flag = 2 -%}
           <div class="post-list-normal">
@@ -49,11 +49,11 @@ layout: default
     {%- endif -%}
     {%- assign Flag = Flag | abs -%}
     {%- if Flag == 1 -%}
-      {%- include home/home-sidebar.html show_lang = lang -%}
+      {%- include home-sidebar.html show_lang = lang -%}
       </div> <!-- end of home-highlight -->
-      {%- include home/home-catalog.html show_lang = lang -%}
+      {%- include home-catalog.html show_lang = lang -%}
     {%- endif -%}
   {%- else -%}
-    {%- include home/home-sidebar.html show_lang = lang -%}</div> <!-- end of home-highlight -->
+    {%- include home-sidebar.html show_lang = lang -%}</div> <!-- end of home-highlight -->
   {%- endif -%}
 </div> <!-- end of home -->

@@ -1,18 +1,18 @@
 ---
 layout: post
-title: "(Re-)install Ubuntu dual-booting with Windows 10"
-ref: "(Re-)install Ubuntu dual-booting with Windows 10"
+title: "Install Ubuntu with Windows 10 dual boot"
+ref: "Install Ubuntu with Windows 10 dual boot"
 lang: en
 category: [Linux, Ubuntu, Operating System]
-tags: installation dual-boot Windows
+tags: installation
 author: Jason
 date: 2019-01-13
-last-update: 2019-01-19
+last-update: 2019-02-23
 img: warty-final-ubuntu.png
 ---
 
-Recently, I ~~fucked up with~~ broke my old **Ubuntu** and I don't have the
-patience, ~~or the ability~~, to fix it step by step. So, the easiest way to get
+Recently, I ~~*fucked up with*~~ broke my old **Ubuntu** and I don't have the
+patience, ~~*or the ability*~~, to fix it step by step. So, the easiest way to get
 my system back is to re-install it, and upgrade to the latest version by the way.
 
 My old **Ubuntu** was installed alongside with **Windows 10** in different
@@ -29,7 +29,7 @@ Before starting the installation, download the required files.
 
 ### Backup Files
 Backup all the files of those are necessary, and **Backup!!! Backup!!! Backup
-!!!** *Repeat it 3 times making it more important.*
+!!!** *Repeat it 3 times making it more important!*
 
 ### Create Start-up Drive
 > A new, or formatted USB drive is required.
@@ -56,7 +56,7 @@ format those in advanced, this could be carried out in the installation section.
   1. Follow the instruction to make unallocated space.
 
 ### Disable Fast Startup
-The feature **Fast Startup** of Windows need to be disabled.
+The feature **Fast Startup** of Windows should be disabled.
 - In **Windows**, hit **Win** and **X** keys at the same time,
 - Choose **Power Option** - **Choose what power button does?**,
 - Click **Change settings that are currently unavailable**,

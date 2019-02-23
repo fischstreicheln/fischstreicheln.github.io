@@ -4,14 +4,14 @@ title: "Things to do right after Ubuntu installation"
 ref: "Things to do right after Ubuntu installation"
 lang: en
 category: [Linux, Ubuntu, Operating System]
-tags: installation setting
+tags: setting
 author: Jason
 date: 2019-01-19
 last-update: 2019-01-30
 img: warty-final-ubuntu.png
 ---
 
-> {% include ref/more-about.html ref = "(Re-)install Ubuntu dual-booting with Windows 10" lang = page.lang direction = "last" %}
+> {% include ref/more-about.html ref = "Install Ubuntu with Windows 10 dual boot" lang = page.lang direction = "last" %}
 
 After the installation, there are several settings and customization need to be
 configured for better experience of using Ubuntu.
@@ -138,4 +138,4 @@ purges them by leaving all of the configuration files in place.
 configuration files.
 
 ## Configure Language Setting and Input Method
-> {% include ref/more-about.html ref = "Language Settings and Input Method Configurations in Ubuntu" lang = page.lang %}
+> {% include ref/more-about.html ref = "Language Settings and Pinyin Input Method in Ubuntu" lang = page.lang %}

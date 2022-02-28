@@ -2,7 +2,7 @@ interest:
   - item: Jogging
     rank: 2000
     level: 80
-    link: www.gdsc.cn
+    link: www.google.cn
     details: "Describe your role here lorem ipsum dolor sit amet, consectetuer adipiscing
               elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et
               magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
@@ -14,7 +14,7 @@ interest:
   - item: HR Intern
     rank: 2000
     level: 70%
-    link: www.gdsc.cn
+    link: www.google.cn
     details: "Describe your role here lorem ipsum dolor sit amet, consectetuer adipiscing
               elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et
               magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
@@ -29,7 +29,7 @@ skills:
   - item: Jogging
     rank: 2000
     level: 0.6
-    link: www.gdsc.cn
+    link: www.google.cn
     details: "Describe your role here lorem ipsum dolor sit amet, consectetuer adipiscing
               elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et
               magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
@@ -41,7 +41,7 @@ skills:
   - item: HR Intern
     rank: 2000
     level: -1
-    link: www.gdsc.cn
+    link: www.google.cn
     details: "Describe your role here lorem ipsum dolor sit amet, consectetuer adipiscing
               elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et
               magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
@@ -55,7 +55,7 @@ language:
   - item: Jogging
     rank: 2000
     level: 2000
-    link: www.gdsc.cn
+    link: www.google.cn
     details: "Describe your role here lorem ipsum dolor sit amet, consectetuer adipiscing
               elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et
               magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
@@ -67,7 +67,7 @@ language:
   - item: HR Intern
     rank: 2000
     level: native
-    link: www.gdsc.cn
+    link: www.google.cn
     details: "Describe your role here lorem ipsum dolor sit amet, consectetuer adipiscing
               elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et
               magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,

@@ -2,12 +2,14 @@
 title:
   en: Have you tried turning it off and on again?
   cn: 你试过关机再重启没有？
+  de: Haben Sie versucht, das System herunterzufahren und neu zu starten?
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-author: Jason Ho
+author: Jason
 author-about:
   en: Statisticsian
   cn: 统计师
+  de: Statistiker
 biography: ""
 description:
   en: This is a blog about probabilities, statistics and some others themes.

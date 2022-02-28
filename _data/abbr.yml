@@ -1,24 +1,30 @@
 lang:
   en: English
   cn: 中文
-  test: Test Page
+  de: Deutsch
+  test: sandbox
 
 catalog:
   en: Catelog
   cn: 分类目录
+  de: Katelog
 contact-me:
-  en: Contact Me
-  cn: 联系我
+  en: Contact
+  cn: 联系
+  de: Kontakt
 home:
   en: Home
   cn: 首页
+  de: Startseite
 home-url:
   en: /
   cn: /index-cn
+  de: /index-de
   test: /index-test
 minute-read:
-  en: minute read
+  en: minute(s) read
   cn: 分钟阅读时间
+  de: Minute(n) Lesezeit
 read-last:
   en: Last time we talked about
 read-next:
@@ -28,30 +34,37 @@ read-next:
 educations:
   en: Educations
   cn: 教育经历
+  de: Bildung
   logo: graduation-cap
 publications:
   en: Publications
   cn: 论文著作
+  de: Veröffentlichungen
   logo: file-text
 career:
   en: Career
   cn: 工作经历
+  de: Karriere
   logo: briefcase
 projects:
   en: Projects
   cn: 项目经历
+  de: Projekte
   logo: archive
 skills:
   en: Skills
   cn: 技能特长
+  de: Fähigkeiten
   logo: rocket
 language:
   en: Language
   cn: 语言能力
+  de: Sprache
   logo: comments-o
 interest:
   en: Interest
   cn: 兴趣爱好
+  de: Interesse
   logo: bicycle
 level-percentage:
   native: 95

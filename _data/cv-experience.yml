@@ -3,8 +3,8 @@ career:
     rank: 2000
     time: 2009 - Present
     type: fulltime
-    organization: Guangdong Science Center
-    link: www.gdsc.cn
+    organization: Textholder
+    link: www.google.cn
     details: "Describe your role here lorem ipsum dolor sit amet, consectetuer adipiscing
               elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et
               magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
@@ -17,8 +17,8 @@ career:
     rank: 2000
     time: "2009"
     type: internship
-    organization: Guangdong Science Center(temp)
-    link: www.gdsc.cn
+    organization: textholder
+    link: www.google.cn
     details: "Describe your role here lorem ipsum dolor sit amet, consectetuer adipiscing
               elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et
               magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
@@ -34,8 +34,8 @@ projects:
     rank: 2000
     time: 2009 - Present
     type: fulltime
-    organization: Guangdong Science Center
-    link: www.gdsc.cn
+    organization: Textholder
+    link: www.google.cn
     details: "Describe your role here lorem ipsum dolor sit amet, consectetuer adipiscing
               elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et
               magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
@@ -48,8 +48,8 @@ projects:
     rank: 2000
     time: "2009"
     type: internship
-    organization: Guangdong Science Center(temp)
-    link: www.gdsc.cn
+    organization: Textholder
+    link: www.google.cn
     details: "Describe your role here lorem ipsum dolor sit amet, consectetuer adipiscing
               elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et
               magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
@@ -68,8 +68,8 @@ educations:
     rank: 2000
     time: 2005 - 2009
     type: degree
-    organization: University of Science and Technology of China
-    link: www.ustc.edu.cn
+    organization: Textholder
+    link: www.google.cn
     details: "Describe your study here lorem ipsum dolor sit amet, consectetuer adipiscing"
   - title:
     rank: 100
@@ -101,8 +101,8 @@ publications:
     rank: 2000
     time: 2005 - 2009
     type: degree
-    organization: University of Science and Technology of China
-    link: www.ustc.edu.cn
+    organization: Textholder
+    link: www.google.cn
     details: "Describe your study here lorem ipsum dolor sit amet, consectetuer adipiscing"
   - title:
     rank: 100

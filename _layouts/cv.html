@@ -7,6 +7,7 @@ layout: default
   <header class="post-header">
     <h1 class="post-title">{{ page.title | escape }}</h1>
   </header>
+  {{ content }}
   <div class="post-content" id="cv-container">
     {%- include cv/cv-sidebar.html show_lang = lang -%}
     {%- if site.data.cv-experience -%}
@@ -25,5 +26,4 @@ layout: default
       </section>
     {%- endif -%}
   </div>
-  {{ content }}
 </article>

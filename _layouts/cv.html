@@ -7,22 +7,22 @@ layout: default
   <header class="post-header">
     <h1 class="post-title">{{ page.title | escape }}</h1>
   </header>
-  {{ content }}
   <div class="post-content" id="cv-container">
     {%- include cv/cv-sidebar.html show_lang = lang -%}
-    {%- if site.data.cv-experience -%}
-      <section class="cv-details">
+    <section class="cv-details">
+      {{ content }}
+      {%- if site.data.cv-experience -%}
         {%- include cv/experience.html experience_list = site.data.cv-experience.career heading = "career" show_lang = lang detail = "show" -%}
         {%- include cv/experience.html experience_list = site.data.cv-experience.projects heading = "projects" show_lang = lang detail = "show" -%}
         {%- include cv/experience.html experience_list = site.data.cv-experience.educations heading = "educations" show_lang = lang detail = "show" -%}
         {%- include cv/experience.html experience_list = site.data.cv-experience.publications heading = "publications" show_lang = lang detail = "show" -%}
-      </section>
-    {%- endif -%}
+      {%- endif -%}
+    </section>
     {%- if site.data.cv-skills -%}
       <section class="cv-details" id="narrow">
-        {%- include cv/skills.html skill_list = site.data.cv-skills.language heading = "language" show_lang = include.show_lang detail = "show" -%}
-        {%- include cv/skills.html skill_list = site.data.cv-skills.skills heading = "skills" show_lang = include.show_lang detail = "show" -%}
-        {%- include cv/skills.html skill_list = site.data.cv-skills.interest heading = "interest" show_lang = include.show_lang detail = "show" -%}
+        {%- include cv/skills.html skill_list = site.data.cv-skills.language heading = "language" show_lang = lang detail = "show" -%}
+        {%- include cv/skills.html skill_list = site.data.cv-skills.skills heading = "skills" show_lang = lang detail = "show" -%}
+        {%- include cv/skills.html skill_list = site.data.cv-skills.interest heading = "interest" show_lang = lang detail = "show" -%}
       </section>
     {%- endif -%}
   </div>

@@ -44,7 +44,7 @@ placeholder:        "Others"
 #   - catalog/tags-cn.md
 
 # Social settings
-social-github: realjasonho
+social-github: fischstreicheln
 social-twitter:
 social-facebook:
 social-linkedin:
@@ -56,7 +56,7 @@ sample-image-url: "/assets/img/samples/"
 post-image-url: "assets/img/post/"
 sample-image-max: 6
 home-banner-image: "home-banner.png"
-home-author-image: "jasonho.jpg"
+home-author-image: "avatar.jpg"
 
 # CV settings
 cv-sidebar-min-rank: 500
